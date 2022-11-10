@@ -1,16 +1,34 @@
 import React from "react";
 import { Hero } from "src/views/Hero";
+import { About } from "src/views/About";
+import { Directions } from "src/views/Directions";
+import { Why } from "src/views/Why";
+import { Team } from "src/views/Team";
+import { Services } from "src/views/Services";
+import { Header } from "src/views/Header";
+import { Gallery } from "src/views/Gallery";
+import { News } from "src/views/News";
+import { Donate } from "src/views/Donate";
+import { Form } from "src/views/Form";
+import { Contacts } from "src/views/Contacts";
+import { Footer } from "src/views/Footer";
 
 const HomePage = () => {
   return (
     <div>
-      <div>
-        <Hero />
-        H5 Heading ! Проверка языка орков ыыыэъьцйфячсбю! Перевірка солов'їної.{" "}
-      </div>
-      <p> asdfghjkl;qwertyuiopzxcvbnm,. poland </p>
-      <p> german qwertzuiopasdfghjklöäyxcvbnm,. </p>
-      <h2>ASD sdfSDF QWE</h2>
+      <Header />
+      <Hero />
+      <About />
+      <Directions />
+      <Why />
+      <Team />
+      <Services />
+      <Gallery />
+      <News />
+      <Donate />
+      <Form />
+      <Contacts />
+      <Footer />
     </div>
   );
 };

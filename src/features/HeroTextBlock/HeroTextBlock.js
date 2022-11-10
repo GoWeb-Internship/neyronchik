@@ -3,7 +3,7 @@ import { Headings } from "components";
 
 export const HeroTextBlock = () => {
   return (
-    <>
+    <div>
       <Headings type="h1">НЕЙРОНЧИКИ</Headings>
       <Headings className="mb-4" type="h2">
         Логопедичний центр
@@ -13,7 +13,6 @@ export const HeroTextBlock = () => {
         tempus elementum enim diam. Facilisis integer ut sed viverra facilisi
         molestie
       </p>
-      ;
-    </>
+    </div>
   );
 };
