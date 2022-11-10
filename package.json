@@ -6,6 +6,7 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
     "axios": "^1.1.3",
+    "classnames": "^2.3.2",
     "gatsby": "4.24.3",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-image": "^2.0.0",
@@ -61,6 +62,9 @@
     "@netlify/plugin-gatsby": "3.4.8",
     "@netlify/plugin-lighthouse": "4.0.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.27.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "gatsby-plugin-eslint": "^4.0.2",
     "gatsby-plugin-root-import": "^2.0.8",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",

@@ -10,11 +10,11 @@ module.exports = {
     // MEDIA QUERIES
     screens: {
       smOnly: { max: "767.98px" },
-      sm: "375px",
-      mdOnly: { min: "768px", max: "1439.98px" },
+      sm: "320px",
+      mdOnly: { min: "768px", max: "1199.98px" },
       md: "768px",
-      xl: "1440px",
-      notXl: { max: "1439.98px" },
+      xl: "1200px",
+      notXl: { max: "1199.98px" },
     },
     borderRadius: {
       none: "0",
