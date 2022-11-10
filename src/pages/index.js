@@ -4,10 +4,10 @@ import { Hero } from "src/views/Hero";
 const HomePage = () => {
   return (
     <div>
-      <p>
+      <div>
         <Hero />
         H5 Heading ! Проверка языка орков ыыыэъьцйфячсбю! Перевірка солов'їної.{" "}
-      </p>
+      </div>
       <p> asdfghjkl;qwertyuiopzxcvbnm,. poland </p>
       <p> german qwertzuiopasdfghjklöäyxcvbnm,. </p>
       <h2>ASD sdfSDF QWE</h2>
