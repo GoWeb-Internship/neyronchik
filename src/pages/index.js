@@ -1,11 +1,34 @@
 import React from "react";
-// import { PhoneLocal } from "../components";
+import { Hero } from "src/views/Hero";
+import { About } from "src/views/About";
+import { Directions } from "src/views/Directions";
+import { Why } from "src/views/Why";
+import { Team } from "src/views/Team";
+import { Services } from "src/views/Services";
+import { Header } from "src/views/Header";
+import { Gallery } from "src/views/Gallery";
+import { News } from "src/views/News";
+import { Donate } from "src/views/Donate";
+import { Form } from "src/views/Form";
+import { Contacts } from "src/views/Contacts";
+import { Footer } from "src/views/Footer";
 
 const HomePage = () => {
   return (
     <div>
-      {/* <PhoneLocal /> */}
-      H5 Heading ! Проверка языка орков ыыыэъьцйфячсбю! Перевірка солов'їної.
+      <Header />
+      <Hero />
+      <About />
+      <Directions />
+      <Why />
+      <Team />
+      <Services />
+      <Gallery />
+      <News />
+      <Donate />
+      <Form />
+      <Contacts />
+      <Footer />
     </div>
   );
 };

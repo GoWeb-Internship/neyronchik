@@ -1,0 +1,20 @@
+// Gatsby's required rules
+// {
+// "rules": {
+//   "no-anonymous-exports-page-templates": "warn",
+//   "limited-exports-page-templates": "warn"
+// },
+
+// "parserOptions": {
+//   "sourceType": "module",
+//   "ecmaVersion": 2020
+// }
+// }
+
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  }
+}
