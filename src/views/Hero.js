@@ -1,23 +1,30 @@
 import React from "react";
 import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
-import { Slick } from "components/Slider/Slider";
+import { Carusel } from "components/Carusel/Carusel";
 
 export const Hero = () => {
   return (
     <section className="w-full" id="hero">
-      <div className="container border-2">
-        <Slick />
-        <Grid className="relative" section="hero">
+      <div className="container relative">
+        <Carusel type="hero" />
+        <Grid section="hero">
           <HeroTextBlock />
           <div
-            id="image"
             style={{
-              width: "100%",
-              height: "300px",
-              backgroundColor: "yellow",
+              padding: "40px",
             }}
-          ></div>
+          >
+            <div
+              id="image"
+              style={{
+                padding: "20px",
+                width: "100%",
+                height: "300px",
+                backgroundColor: "yellow",
+              }}
+            ></div>
+          </div>
         </Grid>
       </div>
     </section>

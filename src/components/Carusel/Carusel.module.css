@@ -1,0 +1,24 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.arrow {
+  @apply absolute z-[5] h-full w-12 cursor-pointer fill-red-500;
+}
+.arrow svg {
+  @apply h-40 w-24 fill-purple-700;
+}
+.prev {
+  @apply top-0 left-0 z-20 flex items-center justify-center;
+}
+.next {
+  @apply right-0 top-0 z-20 flex items-center justify-center;
+}
+.slick-list {
+  @apply h-80;
+}
+.slider {
+  @apply absolute  h-80 max-w-5xl truncate;
+}
+.wrapper {
+  @apply absolute -z-10 max-h-[300px] min-h-full max-w-6xl truncate sm:w-[280px] md:w-[728px] xl:w-[1120px];
+}

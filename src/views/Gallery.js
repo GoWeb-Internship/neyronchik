@@ -6,7 +6,7 @@ import { Headings } from "src/components/Headings/Headings";
 export const Gallery = () => {
   return (
     <section className="w-full " id="hero">
-      <div className="container border-2">
+      <div className="container relative">
         <Headings type="h2">Gallery</Headings>
 
         <div

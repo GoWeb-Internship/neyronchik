@@ -6,22 +6,22 @@ import { Headings } from "src/components/Headings/Headings";
 export const Why = () => {
   const data = [
     {
-      img: "foto",
+      img: "foto1",
       title: "Advantage1",
       text: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam  amet, viverra nec pretium fermentum ut cras. Id odio velit id  ",
     },
     {
-      img: "foto",
+      img: "foto2",
       title: "Advantage2",
       text: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam  amet, viverra nec pretium fermentum ut cras. Id odio velit id  ",
     },
     {
-      img: "foto",
+      img: "foto3",
       title: "Advantage3",
       text: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam  amet, viverra nec pretium fermentum ut cras. Id odio velit id  ",
     },
     {
-      img: "foto",
+      img: "foto4",
       title: "Advantage4",
       text: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam  amet, viverra nec pretium fermentum ut cras. Id odio velit id  ",
     },
@@ -33,7 +33,7 @@ export const Why = () => {
         <Headings type="h2">Про нас</Headings>
         <Grid className="relative" section="hero">
           {data.map((i) => (
-            <div>
+            <div key={i.img}>
               <div
                 style={{
                   width: "40px",
