@@ -12,10 +12,12 @@ import { Donate } from "src/views/Donate";
 import { Form } from "src/views/Form";
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
+import { Banner } from "../views/Banner/Banner";
 
 const HomePage = () => {
   return (
     <div>
+      <Banner/>
       <Header />
       <Hero />
       <About />
