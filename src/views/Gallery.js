@@ -1,21 +1,17 @@
 import React from "react";
-import { Grid } from "src/components";
-import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
+
 import { Headings } from "src/components/Headings/Headings";
+import { Carusel } from "components/Carusel/Carusel";
 
 export const Gallery = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full py-5" id="gallery">
       <div className="container relative">
-        <Headings type="h2">Gallery</Headings>
+        <Headings className="mb-5 " type="h2">
+          Gallery
+        </Headings>
 
-        <div
-          style={{
-            width: "100%",
-            height: "200px",
-            backgroundColor: "orange",
-          }}
-        ></div>
+        <Carusel type="gallery" />
       </div>
     </section>
   );

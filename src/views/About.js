@@ -5,7 +5,7 @@ import { Headings } from "src/components/Headings/Headings";
 
 export const About = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="about">
       <div className="container border-2">
         <Headings type="h2">Про нас</Headings>
         <Grid className="relative" section="hero">

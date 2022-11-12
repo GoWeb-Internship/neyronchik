@@ -34,7 +34,7 @@ export const Team = () => {
     },
   ];
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="team">
       <div className="container border-2">
         <Headings type="h2">Наша команда</Headings>
         <Grid className="relative" section="hero">

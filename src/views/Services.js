@@ -5,7 +5,7 @@ import { Headings } from "src/components/Headings/Headings";
 
 export const Services = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="services">
       <div className="container border-2">
         <Headings type="h2">Послуги</Headings>
         <Grid className="relative" section="hero">

@@ -9,7 +9,7 @@ import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
 import { Donate } from "src/views/Donate";
-import { Form } from "src/views/Form";
+
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 
@@ -26,7 +26,7 @@ const HomePage = () => {
       <Gallery />
       <News />
       <Donate />
-      <Form />
+
       <Contacts />
       <Footer />
     </div>

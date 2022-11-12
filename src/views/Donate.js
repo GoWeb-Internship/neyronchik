@@ -5,7 +5,7 @@ import { Headings } from "src/components/Headings/Headings";
 
 export const Donate = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="donate">
       <div className="container border-2">
         <Headings type="h2">Донати</Headings>
 
