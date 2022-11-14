@@ -1,12 +1,23 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+.wrapperGallery {
+  @apply items-center  sm:w-[280px] sm:max-w-[280px] md:w-[728px] md:max-w-[728px] xl:w-[1120px] xl:max-w-[1120px];
+}
+.wrapperHero {
+  @apply absolute -z-10 max-h-[300px] min-h-full max-w-6xl truncate sm:w-[280px] md:w-[728px] xl:w-[1120px];
+}
+.wrapperTeam {
+  @apply h-[90px] max-h-[90px] min-h-full max-w-6xl truncate sm:w-[280px] md:w-[300px] xl:w-[300px];
+}
+
 .arrow {
-  @apply absolute z-[5] h-full w-12 cursor-pointer fill-red-500;
+  @apply absolute z-[5] h-[400px] w-12 cursor-pointer fill-red-500;
 }
 .arrow svg {
   @apply h-40 w-24 fill-purple-700;
 }
+
 .prev {
   @apply top-0 left-0 z-20 flex items-center justify-center;
 }
@@ -16,20 +27,28 @@
 
 .slide {
   border-radius: 50%;
-  transform: translateY(-50px) scale(0.4);
+  transform: translateY(-80px);
   transition: transform 300ms;
   opacity: 0.5;
-  border: 1px solid red;
+  border: 1px solid grey;
   overflow: hidden;
+  padding: 70px;
+  height: 350px;
+  display: flex !important;
+  background-color: lightgray;
+}
+.slideTeam {
+  margin: 20px;
+  margin-right: 10px;
+  background-color: cadetblue;
+  width: 50px;
+  height: 70px;
 }
 .activeSlide {
-  transform: scale(1);
-
+  /* height: 700px; */
+  transform: scale(1.8) translateY(80px);
+  overflow: hidden;
+  background-color: grey;
   opacity: 1;
-}
-.wrapper {
-  @apply h-full min-h-[300px] items-center sm:w-[280px] sm:max-w-[280px] md:w-[728px] md:max-w-[728px] xl:w-[1120px] xl:max-w-[1120px];
-}
-.wrapperHero {
-  @apply absolute -z-10 max-h-[300px] min-h-full max-w-6xl truncate sm:w-[280px] md:w-[728px] xl:w-[1120px];
+  z-index: 10;
 }

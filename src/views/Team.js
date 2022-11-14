@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
-
+import { Carusel } from "components/Carusel/Carusel";
 export const Team = () => {
   const data = [
     {
@@ -37,19 +37,27 @@ export const Team = () => {
     <section className="w-full " id="team">
       <div className="container border-2">
         <Headings type="h2">Наша команда</Headings>
-        <Grid className="relative" section="hero">
+        <Grid className="relative" section="team">
           {data.map((i) => (
-            <div key={i.img}>
+            <div className="flex p-5" key={i.img}>
               <div
+                className="mr-16"
                 style={{
-                  width: "40px",
-                  height: "40px",
+                  width: "140px",
+                  height: "70px",
                   backgroundColor: "yellow",
                 }}
               ></div>
-              <h3>{i.title}</h3>
-              <p>{i.sub}</p>
-              <p>{i.text}</p>
+              <div>
+                {" "}
+                <h3 className="mb-4">{i.title}</h3>
+                <p className="mb-4">{i.sub}</p>
+                <p>{i.text}</p>
+              </div>
+              <div>
+                <p className="pb-4">certificates</p>
+                {/* <Carusel type="team" /> */}
+              </div>{" "}
             </div>
           ))}
         </Grid>
