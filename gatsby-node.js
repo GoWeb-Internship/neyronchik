@@ -24,7 +24,6 @@ const { createFilePath } = require("gatsby-source-filesystem");
 //   //   }
 //   // `).then((result) => {
 //     if (result.errors) {
-//       console.log("ломается на 30 строчке");
 //       result.errors.forEach((e) => console.error(e.toString()));
 //       return Promise.reject(result.errors);
 //     }
@@ -33,7 +32,6 @@ const { createFilePath } = require("gatsby-source-filesystem");
 
 //     posts.forEach((edge) => {
 //       const id = edge.node.id;
-//       console.log("ломается на 39 строчке");
 //       createPage({
 //         path: edge.node.fields.slug,
 //         tags: edge.node.frontmatter.tags,
@@ -61,7 +59,6 @@ const { createFilePath } = require("gatsby-source-filesystem");
 //     // Make tag pages
 //     tags.forEach((tag) => {
 //       const tagPath = `/tags/${_.kebabCase(tag)}/`;
-//       console.log("ломается на 67 строчке");
 //       createPage({
 //         path: tagPath,
 //         component: path.resolve(`src/templates/tags.js`),
