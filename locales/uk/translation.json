@@ -1,7 +1,7 @@
 {
-  "Home": "киук",
-  "Hi people": "крку",
-  "Welcome to your new Gatsby site.": "іквирки",
-  "Now go build something great.": "ківиркутя",
-  "Go to page 2": "стр 2"
+  "button": {
+    "contactUsBtn": "Записатися на прийом",
+    "servicesBtn": "Усі послуги",
+    "instagramBtn": "Дізнатись більше"
+  }
 }
