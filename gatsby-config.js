@@ -90,6 +90,34 @@ module.exports = {
         // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`uk`, `en`],
+        defaultLanguage: `uk`,
+        generateDefaultLanguagePage: true,
+        redirect: true,
+        siteUrl: "",
+
+        i18nextOptions: {
+          lng: "uk",
+          load: "currentOnly",
+          interpolation: {
+            escapeValue: false,
+          },
+          nsSeparator: true,
+          keySeparator: false,
+        },
+      },
+    },
     // {
     //   resolve: "gatsby-plugin-eslint",
     //   options: {
