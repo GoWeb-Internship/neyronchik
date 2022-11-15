@@ -1,0 +1,41 @@
+/* .bannerVisible{
+    @apply flex justify-center w-[100%];
+}
+.bannerHidden{
+    @apply absolute w-px h-px p-0 m-[-1px] border-0 whitespace-nowrap overflow-hidden;
+}
+.bannerTitle{
+    @apply text-xl font-bold;
+}
+.bannerText{
+    @apply text-xl font-normal;
+}
+.bannerClsBtn{
+    @apply h-[16px] w-[16px] flex justify-center;
+} */
+.bannerIsShown{
+    background-color: blueviolet;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.bannerIsHidden{
+    display: none;
+}
+.bannerClsBtn{
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.bannerTitle{
+    font-size: 20px;
+    font-weight: 700;
+}
+.bannerText{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
