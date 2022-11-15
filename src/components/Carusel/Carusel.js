@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import Slider from "react-slick";
+
+import { Navigation, Pagination, Scrollbar, Lazy, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  arrow,
-  prev,
-  next,
-  activeSlide,
-  slide,
-  slideTeam,
-  wrapperHero,
-  wrapperGallery,
-  wrapperTeam,
-} from "./Carusel.module.css";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/lazy";
+import "swiper/css/autoplay";
 
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -52,122 +49,40 @@ export const Carusel = ({ type }) => {
     }
   `);
 
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div
-        className={classNames({
-          // arrow: type === "gallery",
-          // prev: type === "gallery",
-          arrow: type === "team",
-          prev: type === "team",
-        })}
-        onClick={onClick}
-      >
-        <BsChevronCompactRight />
-      </div>
-    );
-  };
-
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div
-        className={classNames({
-          // arrow: type === "gallery",
-          // prev: type === "gallery",
-          arrow: type === "team",
-          prev: type === "team",
-        })}
-        onClick={onClick}
-      >
-        <BsChevronCompactLeft />
-      </div>
-    );
-  };
-
-  const setSettings = (type) => {
-    switch (type) {
-      case "hero":
-        return {
-          infinite: true,
-          lazyLoad: true,
-          speed: 400,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplay: true,
-          speed: 1000,
-          autoplaySpeed: 3000,
-          fade: true,
-          arrows: false,
-        };
-      case "gallery":
-        return {
-          infinite: true,
-          className: "center",
-          lazyLoad: true,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: "60px",
-          dots: true,
-          arrows: true,
-          focusOnSelect: true,
-          style: { paddingTop: "80px", paddingBottom: "400px" },
-          // nextArrow: <NextArrow />,
-          // prevArrow: <PrevArrow />,
-          beforeChange: (current, next) => setImageIndex(next),
-        };
-      case "team":
-        return {
-          lazyLoad: true,
-          speed: 400,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-
-          dots: false,
-          // autoplaySpeed: 3000,
-          arrows: true,
-          nextArrow: <NextArrow />,
-          prevArrow: <PrevArrow />,
-        };
-
-      default:
-        return null;
-    }
-  };
-  const settings = setSettings(type);
-
-  {
-    type === "gallery" && console.log(settings);
-  }
-  console.log(data);
   return (
-    <div
-      className={classNames({
-        [wrapperHero]: type === "hero",
-        [wrapperGallery]: type === "about",
-        [wrapperTeam]: type === "team",
-      })}
-    >
-      <Slider {...settings}>
-        {data.hero.edges.map(({ node }, idx) => (
-          <div
-            className={classNames({
-              [slide]: type === "gallery",
-              [slideTeam]: type === "team",
-              [activeSlide]: idx === imageIndex && type === "gallery",
-            })}
-            key={node.name}
-          >
+    <div>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, Lazy, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        autoplay={true}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+      >
+        {/* {data.hero.edges.map(({ node }, idx) => (
+          <SwiperSlide key={node.name}>
             <GatsbyImage
               image={node.childImageSharp.gatsbyImageData}
               alt={node.name}
               // objectFit="cover"
               // objectPosition="50% 50%"
             />
-          </div>
-        ))}
-      </Slider>
+          </SwiperSlide>
+        ))} */}
+        <SwiperSlide>
+          <div
+            style={{ width: "60px", height: "60px", backgroundColor: "red" }}
+          ></div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            style={{ width: "60px", height: "60px", backgroundColor: "green" }}
+          ></div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

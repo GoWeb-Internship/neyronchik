@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import { Navigation, Pagination, Scrollbar, Lazy, Autoplay } from "swiper";
+import Slider from "react-slick";
 
 import {
   arrow,
@@ -12,12 +11,7 @@ import {
   wrapperHero,
   wrapperGallery,
   wrapperTeam,
-  swiperSlide,
-  swiper,
 } from "./Carusel.module.css";
-// import "swiper/css";
-// import "./Carusel.module.css";
-import Carusell from "nuka-carousel";
 
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -94,10 +88,8 @@ export const Carusel = ({ type }) => {
     switch (type) {
       case "hero":
         return {
-          wrapAround: true,
+          infinite: true,
           lazyLoad: true,
-          animation: "fade",
-
           speed: 400,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -109,39 +101,21 @@ export const Carusel = ({ type }) => {
         };
       case "gallery":
         return {
-          // draging: true,
-          // easing: "easeInOutElastic",
-          wrapAround: true,
-          animation: "zoom",
-          cellAlign: "center",
+          infinite: true,
+          className: "center",
           lazyLoad: true,
-          speed: 500,
+          speed: 300,
           slidesToShow: 3,
           slidesToScroll: 1,
           centerMode: true,
-          zoomScale: 0.7,
-          defaultControlsConfig: {
-            nextButtonText: "Custom Next",
-            prevButtonText: "Custom Prev",
-            nextButtonStyle: { display: "none" },
-            prevButtonStyle: { display: "none" },
-
-            pagingDotsClassName: "px-2",
-            pagingDotsStyle: {
-              fill: "transparent",
-              width: "16px",
-              height: "16px",
-              backgroundColor: "red",
-              margin: "0px 10px",
-              borderRadius: "50%",
-            },
-          },
-          // autoplay: true,
-          // focusOnSelect: true,
+          // centerPadding: "60px",
+          dots: true,
+          arrows: true,
+          focusOnSelect: true,
           style: { paddingTop: "80px", paddingBottom: "400px" },
           // nextArrow: <NextArrow />,
           // prevArrow: <PrevArrow />,
-          beforeSlide: (current, next) => setImageIndex(next),
+          beforeChange: (current, next) => setImageIndex(next),
         };
       case "team":
         return {
@@ -161,14 +135,12 @@ export const Carusel = ({ type }) => {
         return null;
     }
   };
-
   const settings = setSettings(type);
 
   {
     type === "gallery" && console.log(settings);
   }
   console.log(data);
-
   return (
     <div
       className={classNames({
@@ -177,7 +149,7 @@ export const Carusel = ({ type }) => {
         [wrapperTeam]: type === "team",
       })}
     >
-      <Carusell {...settings} className="w-full">
+      <Slider {...settings}>
         {data.hero.edges.map(({ node }, idx) => (
           <div
             className={classNames({
@@ -188,6 +160,7 @@ export const Carusel = ({ type }) => {
             key={node.name}
           >
             <GatsbyImage
+              className=""
               image={node.childImageSharp.gatsbyImageData}
               alt={node.name}
               // objectFit="cover"
@@ -195,7 +168,7 @@ export const Carusel = ({ type }) => {
             />
           </div>
         ))}
-      </Carusell>
+      </Slider>
     </div>
   );
 };
