@@ -39,7 +39,10 @@ export const Team = () => {
         <Headings type="h2">Наша команда</Headings>
         <Grid className="relative" section="team">
           {data.map((i) => (
+
             <div className="flex p-5" key={i.img}>
+
+
               <div
                 className="mr-16"
                 style={{
