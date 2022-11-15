@@ -13,234 +13,935 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - label: "Promo Banner"
+    name: "promo"
+    folder: "content/promo"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_promo_title}}"
+    create: false
+    delete: false
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
+          label: "Назва секції українською",
+          name: "uk_promo_title",
+          widget: "string",
+          default: "Акція місяця",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Section Title",
+          name: "en_promo_title",
+          widget: "string",
+          default: "Month Promo",
+        }
+      - {
+          label: "Displayed",
+          name: "promo_displayed",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Текст акції",
+          name: "uk_promo_body",
+          widget: "markdown",
+          required: true,
+          hint: "Введіть опис акції",
+        }
+      - {
+          label: "Promo Text",
+          name: "en_promo_body",
+          widget: "markdown",
+          required: true,
+          hint: "Enter promo description",
+        }
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "product-page",
-            }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Testimonials,
-              name: testimonials,
-              widget: list,
-              fields:
-                [
-                  { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
-                ],
-            }
-          - { label: Full_image, name: full_image, widget: image }
-          - {
-              label: Pricing,
-              name: pricing,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: string },
-                  {
-                    label: Plans,
-                    name: plans,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Plan, name: plan, widget: string },
-                        { label: Price, name: price, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: string,
-                        },
-                        { label: Items, name: items, widget: list },
-                      ],
-                  },
-                ],
-            }
+  - label: "Team"
+    name: "team"
+    folder: "content/team"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_team_member_name}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Fullname", name: "en_team_member_name", widget: string }
+      - { label: "П.І.Б.", name: "uk_team_member_name", widget: string }
+      - {
+          label: "Спеціалізація",
+          name: "uk_team_member_specialization",
+          widget: "string",
+        }
+      - {
+          label: "Specialization",
+          name: "en_team_member_specialization",
+          widget: "string",
+        }
+      - {
+          label: "Досвід роботи",
+          name: "uk_team_member_experience",
+          widget: "string",
+        }
+      - {
+          label: "Experience",
+          name: "en_team_member_experience",
+          widget: "string",
+        }
+      - {
+          label: "Photo",
+          name: "team_member_photo",
+          widget: "image",
+          choose_url: true,
+        }
+      - {
+          label: "Range",
+          name: "team_member_range",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          step: 1,
+          hint: "Цифра, що позначає черговість розміщення співробітника на
+            веб-сторінці (зверху вниз)",
+        }
+      - {
+          label: "Certificates",
+          name: "cert_list",
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Certificate",
+                name: "cert_img",
+                widget: "image",
+                choose_url: true,
+              },
+              {
+                label: "Назва сертифікату",
+                name: "uk_cert_alt",
+                widget: "string",
+              },
+              {
+                label: "Certificate title",
+                name: "en_cert_alt",
+                widget: "string",
+              },
+            ],
+        }
+      - {
+          label: "Ukrainian Section Title",
+          name: "uk_team_title",
+          widget: "hidden",
+          default: "Команда",
+        }
+      - {
+          label: "English Section Title",
+          name: "en_team_title",
+          widget: "hidden",
+          default: "Team",
+        }
+
+  - label: "Services"
+    name: "services"
+    folder: "content/services"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_service_title}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Service Title", name: "en_service_title", widget: string }
+      - { label: "Назва послуги", name: "uk_service_title", widget: string }
+      - {
+          label: "Опис послуги",
+          name: "uk_service_description",
+          widget: "string",
+        }
+      - {
+          label: "Service Description",
+          name: "en_service_description",
+          widget: "string",
+        }
+      - { label: "Ціна", name: "uk_service_price", widget: "string" }
+      - { label: "Price", name: "en_service_price", widget: "string" }
+      - {
+          label: "Image",
+          name: "service_img",
+          widget: "image",
+          choose_url: true,
+        }
+      - {
+          label: "Range",
+          name: "service_range",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          step: 1,
+          hint: "Цифра, що позначає черговість розміщення послуги на
+            веб-сторінці (зверху вниз)",
+        }
+      - {
+          label: "Ukrainian Section Title",
+          name: "uk_services_section_title",
+          widget: "hidden",
+          default: "Послуги",
+        }
+      - {
+          label: "English Section Title",
+          name: "en_services_section_title",
+          widget: "hidden",
+          default: "Services",
+        }
+
+  - label: "Gallery"
+    name: "gallery"
+    folder: "content/gallery"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_gallery_item_alt}}"
+    create: true
+    delete: true
+    fields:
+      - {
+          label: "Image description",
+          name: "en_gallery_item_alt",
+          widget: "string",
+          hint: "What is shown in the picture?",
+        }
+      - {
+          label: "Опис зображення",
+          name: "uk_gallery_item_alt",
+          widget: "string",
+          hint: "Що зображено на картинці?",
+        }
+      - {
+          label: "Image",
+          name: "gallery_item",
+          widget: "image",
+          choose_url: true,
+        }
+      - {
+          label: "Ukrainian Section Title",
+          name: "uk_gallery_title",
+          widget: "hidden",
+          default: "Галерея",
+        }
+      - {
+          label: "English Section Title",
+          name: "en_gallery_title",
+          widget: "hidden",
+          default: "Gallery",
+        }
+
+  - label: "Contacts"
+    name: "contacts"
+    folder: "content/contacts"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_contacts_title}}"
+    create: false
+    delete: false
+    fields:
+      - {
+          label: "Назва секції українською",
+          name: "uk_contacts_title",
+          widget: "string",
+          default: "Контакти",
+        }
+      - {
+          label: "Section Title",
+          name: "en_contacts_title",
+          widget: "string",
+          default: "Contacts",
+        }
+      - { label: "Адреса", name: "uk_address", widget: "string" }
+      - { label: "Address", name: "en_address", widget: "string" }
+      - {
+          label: "Main phone number",
+          name: "phone_main",
+          widget: "string",
+          # pattern: [
+          #     "^+?[1-9][0-9]{7,14}$",
+          #     "Може містити тільки цифри та +",
+          #   ],
+        }
+      - {
+          label: "Additional phone number",
+          name: "phone_add",
+          widget: "string",
+          required: false,
+          # pattern: [
+          #     "^+?[1-9][0-9]{7,14}$",
+          #     "Може містити тільки цифри та +",
+          #   ],
+        }
+      - {
+          label: "Email",
+          name: "email",
+          widget: "string",
+          # pattern: [
+          #     "^+?[1-9][0-9]{7,14}$",
+          #     "Може містити тільки цифри та +",
+          #   ],
+        }
+      - {
+          label: "Latitude",
+          name: "latitude",
+          widget: "number",
+          value_type: "float",
+        }
+      - {
+          label: "Longitude",
+          name: "longitude",
+          widget: "number",
+          value_type: "float",
+        }
+
+  # ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ
+  # - label: "UA Sections"
+  #   name: "ua_sections"
+  #   folder: "content/sections"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{section_title}}"
+  #   description: "Секції українською мовою (ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ)"
+  #   create: true
+  #   delete: true
+  #   filter: { field: "language", value: "uk" }
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "section_title",
+  #         widget: "string",
+  #         required: true,
+  #         hint: "Введіть назву секції",
+  #       }
+  #     # - {
+  #     #     label: "Section Title",
+  #     #     name: "section_title",
+  #     #     widget: "select",
+  #     #     options:
+  #     #       ["Акція місяця", "Команда", "Послуги", "Галерея", "Контакти"],
+  #     #     required: true,
+  #     #     hint: "Виберіть назву секції",
+  #     #   }
+  #     - { label: "Language", name: "language", widget: "hidden", default: "uk" }
+  #     - {
+  #         label: "Promo text",
+  #         name: "body",
+  #         widget: "markdown",
+  #         required: false,
+  #       }
+  #     - {
+  #         label: "Team Members",
+  #         name: "team_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Name",
+  #               name: "team_member_name",
+  #               widget: string,
+  #               hint: "Ім'я співробітника",
+  #             },
+  #             {
+  #               label: "Specialization",
+  #               name: "team_member_specialization",
+  #               widget: "string",
+  #               hint: "Спеціалізація",
+  #             },
+  #             {
+  #               label: "Experience",
+  #               name: "team_member_experience",
+  #               widget: "string",
+  #               hint: "Досвід роботи",
+  #             },
+  #             {
+  #               label: "Photo",
+  #               name: "team_member_photo",
+  #               widget: "image",
+  #               choose_url: true,
+  #               hint: "Фото співробітника",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "team_member_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення співробітника на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Gallery",
+  #         name: "gallery_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Image",
+  #               name: "gallery_item",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Image description",
+  #               name: "gallery_item_alt",
+  #               widget: "string",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Services",
+  #         name: "service_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Service Title",
+  #               name: "service_title",
+  #               widget: string,
+  #               hint: "Назва послуги",
+  #             },
+  #             {
+  #               label: "Image",
+  #               name: "service_img",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Service Description",
+  #               name: "service_description",
+  #               widget: "string",
+  #               hint: "Опис послуги",
+  #             },
+  #             {
+  #               label: "Price",
+  #               name: "service_price",
+  #               widget: "string",
+  #               hint: "Ціна",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "service_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення послуги на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Phone number 1",
+  #         name: "phone_main",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Phone number 2",
+  #         name: "phone_add",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Email",
+  #         name: "email",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - { label: "Address", name: "address", widget: "string", required: false }
+  #     - {
+  #         label: "Latitude",
+  #         name: "latitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         required: false,
+  #       }
+  #     - {
+  #         label: "Longitude",
+  #         name: "longitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         required: false,
+  #       }
+
+  # - label: "EN Sections"
+  #   name: "en_sections"
+  #   folder: "content/sections"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{section_title}}"
+  #   description: "Секції англійською мовою (ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ)"
+  #   create: true
+  #   delete: true
+  #   filter: { field: "language", value: "en" }
+  #   fields:
+  #     # - {
+  #     #     label: "Section Title",
+  #     #     name: "section_title",
+  #     #     widget: "string",
+  #     #     required: true,
+  #     #     hint: "Введіть назву секції",
+  #     #   }
+  #     - {
+  #         label: "Section Title",
+  #         name: "section_title",
+  #         widget: "select",
+  #         options: ["Month promo", "Team", "Services", "Gallery", "Contacts"],
+  #         required: true,
+  #         hint: "Виберіть назву секції",
+  #       }
+  #     - { label: "Language", name: "language", widget: "hidden", default: "en" }
+  #     - {
+  #         label: "Promo text",
+  #         name: "body",
+  #         widget: "markdown",
+  #         required: false,
+  #       }
+  #     - {
+  #         label: "Team Members",
+  #         name: "team_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Name",
+  #               name: "team_member_name",
+  #               widget: string,
+  #               hint: "Ім'я співробітника",
+  #             },
+  #             {
+  #               label: "Specialization",
+  #               name: "team_member_specialization",
+  #               widget: "string",
+  #               hint: "Спеціалізація",
+  #             },
+  #             {
+  #               label: "Experience",
+  #               name: "team_member_experience",
+  #               widget: "string",
+  #               hint: "Досвід роботи",
+  #             },
+  #             {
+  #               label: "Photo",
+  #               name: "team_member_photo",
+  #               widget: "image",
+  #               choose_url: true,
+  #               hint: "Фото співробітника",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "team_member_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення співробітника на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Gallery",
+  #         name: "gallery_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Image",
+  #               name: "gallery_item",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Image description",
+  #               name: "gallery_item_alt",
+  #               widget: "string",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Services",
+  #         name: "service_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Service Title",
+  #               name: "service_title",
+  #               widget: string,
+  #               hint: "Назва послуги",
+  #             },
+  #             {
+  #               label: "Image",
+  #               name: "service_img",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Service Description",
+  #               name: "service_description",
+  #               widget: "string",
+  #               hint: "Опис послуги",
+  #             },
+  #             {
+  #               label: "Price",
+  #               name: "service_price",
+  #               widget: "string",
+  #               hint: "Ціна",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "service_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення послуги на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+  #     - {
+  #         label: "Phone number 1",
+  #         name: "phone_main",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Phone number 2",
+  #         name: "phone_add",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Email",
+  #         name: "email",
+  #         widget: "string",
+  #         required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - { label: "Address", name: "address", widget: "string", required: false }
+  #     - {
+  #         label: "Latitude",
+  #         name: "latitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         required: false,
+  #       }
+  #     - {
+  #         label: "Longitude",
+  #         name: "longitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         required: false,
+  #       }
+
+  # ДВЕ РАЗНЫЕ ЗАПИСИ В ЗАВИСИМОСТИ ОТ ЯЗЫКА В ОДНОЙ КОЛЛЕКЦИИ (СЕКЦИИ)
+  # - label: "Promo Banner"
+  #   name: "promo_banner"
+  #   folder: "content/promo_banner"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{promo_title}}"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "promo_title",
+  #         widget: "string",
+  #         default: "Акція місяця",
+  #         required: true,
+  #         hint: "Введіть назву секції відповідною мовою",
+  #       }
+  #     - {
+  #         label: "Language",
+  #         name: "language",
+  #         widget: "select",
+  #         options: ["uk", "en"],
+  #       }
+  #     - {
+  #         label: "Promo text",
+  #         name: "promo_body",
+  #         widget: "markdown",
+  #         required: true,
+  #         hint: "Введіть опис акції відповідною мовою",
+  #       }
+
+  # - label: "Team"
+  #   name: "team"
+  #   folder: "content/team"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{team_section_title}}"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "team_section_title",
+  #         widget: "string",
+  #         default: "Команда",
+  #         required: true,
+  #         hint: "Введіть назву секції відповідною мовою",
+  #       }
+  #     - {
+  #         label: "Language",
+  #         name: "language",
+  #         widget: "select",
+  #         options: ["uk", "en"],
+  #       }
+  #     - {
+  #         label: "Team Members",
+  #         name: "team_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Name",
+  #               name: "team_member_name",
+  #               widget: string,
+  #               hint: "Ім'я співробітника",
+  #             },
+  #             {
+  #               label: "Specialization",
+  #               name: "team_member_specialization",
+  #               widget: "string",
+  #               hint: "Спеціалізація",
+  #             },
+  #             {
+  #               label: "Experience",
+  #               name: "team_member_experience",
+  #               widget: "string",
+  #               hint: "Досвід роботи",
+  #             },
+  #             {
+  #               label: "Photo",
+  #               name: "team_member_photo",
+  #               widget: "image",
+  #               choose_url: true,
+  #               hint: "Фото співробітника",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "team_member_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення співробітника на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+
+  # - label: "Services"
+  #   name: "services"
+  #   folder: "content/services"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{services_section_title}}"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "services_section_title",
+  #         widget: "string",
+  #         default: "Послуги",
+  #         required: true,
+  #         hint: "Введіть назву секції відповідною мовою",
+  #       }
+  #     - {
+  #         label: "Language",
+  #         name: "language",
+  #         widget: "select",
+  #         options: ["uk", "en"],
+  #       }
+  #     - {
+  #         label: "Services",
+  #         name: "service_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Service Title",
+  #               name: "service_title",
+  #               widget: string,
+  #               hint: "Назва послуги",
+  #             },
+  #             {
+  #               label: "Image",
+  #               name: "service_img",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Service Description",
+  #               name: "service_description",
+  #               widget: "string",
+  #               hint: "Опис послуги",
+  #             },
+  #             {
+  #               label: "Price",
+  #               name: "service_price",
+  #               widget: "string",
+  #               hint: "Ціна",
+  #             },
+  #             {
+  #               label: "Range",
+  #               name: "service_range",
+  #               widget: "number",
+  #               value_type: "int",
+  #               min: 1,
+  #               step: 1,
+  #               hint: "Цифра, що позначає черговість розміщення послуги на
+  #                 веб-сторінці (зверху вниз)",
+  #             },
+  #           ],
+  #       }
+
+  # - label: "Gallery"
+  #   name: "gallery"
+  #   folder: "content/gallery"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{gallery_section_title}}"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "gallery_section_title",
+  #         widget: "string",
+  #         default: "Галерея",
+  #         required: true,
+  #         hint: "Введіть назву секції відповідною мовою",
+  #       }
+  #     - {
+  #         label: "Language",
+  #         name: "language",
+  #         widget: "select",
+  #         options: ["uk", "en"],
+  #       }
+  #     - {
+  #         label: "Gallery",
+  #         name: "gallery_list",
+  #         widget: "list",
+  #         fields:
+  #           [
+  #             {
+  #               label: "Image",
+  #               name: "gallery_item",
+  #               widget: "image",
+  #               choose_url: true,
+  #             },
+  #             {
+  #               label: "Image description",
+  #               name: "gallery_item_alt",
+  #               widget: "string",
+  #               hint: "Що зображено на картинці?",
+  #             },
+  #           ],
+  #       }
+
+  # - label: "Contacts"
+  #   name: "contacts"
+  #   folder: "content/contacts"
+  #   media_folder: "/static/img"
+  #   public_folder: /img
+  #   slug: "{{contacts_section_title}}"
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - {
+  #         label: "Section Title",
+  #         name: "contacts_section_title",
+  #         widget: "string",
+  #         default: "Контакти",
+  #         required: true,
+  #         hint: "Введіть назву секції відповідною мовою",
+  #       }
+  #     - {
+  #         label: "Language",
+  #         name: "language",
+  #         widget: "select",
+  #         options: ["uk", "en"],
+  #       }
+  #     - {
+  #         label: "Phone number 1",
+  #         name: "phone_main",
+  #         widget: "string",
+  #         # required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Phone number 2",
+  #         name: "phone_add",
+  #         widget: "string",
+  #         # required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Email",
+  #         name: "email",
+  #         widget: "string",
+  #         # required: false,
+  #         # pattern: [
+  #         #     "^+?[1-9][0-9]{7,14}$",
+  #         #     "Може містити тільки цифри та +",
+  #         #   ],
+  #       }
+  #     - {
+  #         label: "Address",
+  #         name: "address",
+  #         widget: "string",
+  #         # required: false,
+  #       }
+  #     - {
+  #         label: "Latitude",
+  #         name: "latitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         # required: false,
+  #       }
+  #     - {
+  #         label: "Longitude",
+  #         name: "longitude",
+  #         widget: "number",
+  #         value_type: "float",
+  #         # required: false,
+  #       }
