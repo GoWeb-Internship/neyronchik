@@ -39,8 +39,13 @@
     "react-notifications": "^1.7.4",
     "react-phone-input-2": "^2.15.1",
     "react-slick": "^0.29.0",
-    "react-world-flags": "^1.5.1"
+    "react-world-flags": "^1.5.1",
+    "slick-carousel": "^1.8.1"
   },
+  "keywords": [
+    "Логопедичний центр",
+    "Нейрончик"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -64,5 +69,8 @@
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.2.2"
+  },
+  "engines": {
+    "node": ">= 14.17.0"
   }
 }
