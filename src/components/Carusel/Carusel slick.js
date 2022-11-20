@@ -109,6 +109,7 @@ export const Carusel = ({ type }) => {
           slidesToScroll: 1,
           centerMode: true,
           // centerPadding: "60px",
+
           dots: true,
           arrows: true,
           focusOnSelect: true,
@@ -140,7 +141,15 @@ export const Carusel = ({ type }) => {
   {
     type === "gallery" && console.log(settings);
   }
-  console.log(data);
+
+  // const CustomSlide=(props)= {
+  //        const { index, ...props } = props
+  //     return (<div {...props  } >
+  //         <h3>{index}</h3>
+  //       </div>)
+
+  // }
+
   return (
     <div
       className={classNames({
@@ -149,7 +158,7 @@ export const Carusel = ({ type }) => {
         [wrapperTeam]: type === "team",
       })}
     >
-      <Slider {...settings}>
+      <Slider {...settings} classNames={s.qwe}>
         {data.hero.edges.map(({ node }, idx) => (
           <div
             className={classNames({
