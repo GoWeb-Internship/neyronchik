@@ -55,6 +55,81 @@ collections:
           hint: "Enter promo description",
         }
 
+  - label: "About us"
+    name: "about"
+    folder: "content/about"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_about_title}}"
+    create: false
+    delete: false
+    fields:
+      - {
+          label: "Назва секції українською",
+          name: "uk_about_title",
+          widget: "string",
+          default: "Про нас",
+        }
+      - {
+          label: "Section Title",
+          name: "en_about_title",
+          widget: "string",
+          default: "About us",
+        }
+      - {
+          label: "Текст",
+          name: "uk_about_body",
+          widget: "markdown",
+          required: true,
+          hint: "Введіть інформацію",
+        }
+      - {
+          label: "Text",
+          name: "en_about_body",
+          widget: "markdown",
+          required: true,
+          hint: "Enter information",
+        }
+      - { label: "Photo", name: "about_img", widget: "image", choose_url: true }
+
+  - label: "Work areas"
+    name: "work"
+    folder: "content/work"
+    media_folder: "/static/img"
+    public_folder: /img
+    slug: "{{en_work_specialist}}"
+    create: true
+    delete: true
+    fields:
+      - { label: "Doctor", name: "en_work_specialist", widget: "string" }
+      - { label: "Спеціаліст", name: "uk_work_specialist", widget: "string" }
+      - {
+          label: "Текст",
+          name: "uk_work_body",
+          widget: "markdown",
+          required: true,
+          hint: "Введіть інформацію",
+        }
+      - {
+          label: "Text",
+          name: "en_work_body",
+          widget: "markdown",
+          required: true,
+          hint: "Enter information",
+        }
+      - {
+          label: "Назва секції українською",
+          name: "uk_work_title",
+          widget: "hidden",
+          default: "Напрямки роботи",
+        }
+      - {
+          label: "Section Title",
+          name: "en_work_title",
+          widget: "hidden",
+          default: "Work areas",
+        }
+
   - label: "Team"
     name: "team"
     folder: "content/team"
