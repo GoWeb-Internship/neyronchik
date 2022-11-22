@@ -228,12 +228,14 @@ collections:
       - {
           label: "Опис послуги",
           name: "uk_service_description",
-          widget: "string",
+          widget: "markdown",
+          required: true,
         }
       - {
           label: "Service Description",
           name: "en_service_description",
-          widget: "string",
+          widget: "markdown",
+          required: true,
         }
       - { label: "Ціна", name: "uk_service_price", widget: "string" }
       - { label: "Price", name: "en_service_price", widget: "string" }
