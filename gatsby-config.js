@@ -19,7 +19,6 @@ module.exports = {
 
   plugins: [
     "gatsby-plugin-root-import",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -39,6 +38,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        path: `${__dirname}/content`,
+        name: "pages",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         path: `${__dirname}/src/img`,
         name: "images",
       },
@@ -47,6 +53,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    // "gatsby-transformer-remark",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -59,12 +66,6 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 2048,
-            },
-          },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: "static",
             },
           },
         ],
@@ -83,17 +84,36 @@ module.exports = {
         // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-eslint",
-    //   options: {
-    //     // Gatsby required rules directory
-    //     rulePaths: [gatsbyRequiredRules],
-    //     // Default settings that may be ommitted or customized
-    //     stages: ["develop"],
-    //     extensions: ["js", "jsx", "ts", "tsx"],
-    //     exclude: ["node_modules", ".cache", "public"],
-    //   },
-    // },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`uk`, `en`],
+        defaultLanguage: `uk`,
+        generateDefaultLanguagePage: true,
+        redirect: true,
+        siteUrl: "",
+
+        i18nextOptions: {
+          lng: "uk",
+          load: "currentOnly",
+          interpolation: {
+            escapeValue: false,
+          },
+          nsSeparator: true,
+          keySeparator: false,
+        },
+      },
+    },
+
 
     // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array
