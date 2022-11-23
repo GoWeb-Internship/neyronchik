@@ -19,7 +19,6 @@ module.exports = {
 
   plugins: [
     "gatsby-plugin-root-import",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -68,12 +67,6 @@ module.exports = {
               maxWidth: 2048,
             },
           },
-          {
-            resolve: "gatsby-remark-copy-linked-files",
-            options: {
-              destinationDir: "static",
-            },
-          },
         ],
       },
     },
@@ -90,6 +83,7 @@ module.exports = {
         // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -118,17 +112,7 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-eslint",
-    //   options: {
-    //     // Gatsby required rules directory
-    //     rulePaths: [gatsbyRequiredRules],
-    //     // Default settings that may be ommitted or customized
-    //     stages: ["develop"],
-    //     extensions: ["js", "jsx", "ts", "tsx"],
-    //     exclude: ["node_modules", ".cache", "public"],
-    //   },
-    // },
+
 
     // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array
