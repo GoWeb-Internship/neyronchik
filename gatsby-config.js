@@ -38,6 +38,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        path: `${__dirname}/content`,
+        name: "pages",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         path: `${__dirname}/src/img`,
         name: "images",
       },
@@ -45,6 +52,7 @@ module.exports = {
     `gatsby-plugin-image`,
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    // "gatsby-transformer-remark",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -75,6 +83,36 @@ module.exports = {
         // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`uk`, `en`],
+        defaultLanguage: `uk`,
+        generateDefaultLanguagePage: true,
+        redirect: true,
+        siteUrl: "",
+
+        i18nextOptions: {
+          lng: "uk",
+          load: "currentOnly",
+          interpolation: {
+            escapeValue: false,
+          },
+          nsSeparator: true,
+          keySeparator: false,
+        },
+      },
+    },
+
 
     // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array

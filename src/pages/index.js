@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { Hero } from "src/views/Hero";
 import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
@@ -9,7 +10,6 @@ import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
 import { Donate } from "src/views/Donate";
-import { Form } from "src/views/Form";
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 import { Banner } from "../views/Banner/Banner";
@@ -17,7 +17,7 @@ import { Banner } from "../views/Banner/Banner";
 const HomePage = () => {
   return (
     <div>
-      <Banner/>
+      <Banner />
       <Header />
       <Hero />
       <About />
@@ -28,10 +28,24 @@ const HomePage = () => {
       <Gallery />
       <News />
       <Donate />
-      <Form />
       <Contacts />
       <Footer />
     </div>
   );
 };
+
 export default HomePage;
+
+export const pageQuery = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
