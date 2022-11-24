@@ -54,6 +54,12 @@ collections:
           required: true,
           hint: "Enter promo description",
         }
+      - {
+          label: "Identifier",
+          name: "promo_identifier",
+          widget: "hidden",
+          default: "banner",
+        }
 
   - label: "About us"
     name: "about"
@@ -91,6 +97,12 @@ collections:
           hint: "Enter information",
         }
       - { label: "Photo", name: "about_img", widget: "image", choose_url: true }
+      - {
+          label: "Identifier",
+          name: "about_identifier",
+          widget: "hidden",
+          default: "about",
+        }
 
   - label: "Work areas"
     name: "work"
