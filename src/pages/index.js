@@ -9,7 +9,6 @@ import { Services } from "src/views/Services";
 import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
-import { Donate } from "src/views/Donate";
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 import { Banner } from "../views/Banner/Banner";
@@ -27,7 +26,6 @@ const HomePage = () => {
       <Services />
       <Gallery />
       <News />
-      <Donate />
       <Contacts />
       <Footer />
     </div>
