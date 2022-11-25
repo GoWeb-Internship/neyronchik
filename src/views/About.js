@@ -35,7 +35,7 @@ export const About = () => {
   const aboutImg = file.childImageSharp.gatsbyImageData;
 
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="about">
       <div className="container border-2">
         <Headings type="h2">{frontmatter[`${language}_about_title`]}</Headings>
         <Grid className="relative" section="hero">

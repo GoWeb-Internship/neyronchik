@@ -30,10 +30,9 @@ export const Contacts = () => {
 
   const { frontmatter } = markdownRemark;
   const { language } = useI18next();
-  console.log(frontmatter);
 
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="contacts">
       <div className="container border-2">
         <Headings type="h2">
           {frontmatter[`${language}_contacts_title`]}
