@@ -383,6 +383,12 @@ collections:
           widget: "number",
           value_type: "float",
         }
+      - {
+          label: "Identifier",
+          name: "contacts_identifier",
+          widget: "hidden",
+          default: "contacts",
+        }
 
   # ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ
   # - label: "UA Sections"
