@@ -48,11 +48,3 @@ export const About = () => {
     </section>
   );
 };
-
-// file(name: { eq: "main" }) {
-//   id
-//   publicURL
-//   childImageSharp {
-//     gatsbyImageData(formats: [AUTO, WEBP])
-//   }
-// }
