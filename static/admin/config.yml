@@ -64,8 +64,8 @@ collections:
   - label: "About us"
     name: "about"
     folder: "content/about"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_about_title}}"
     create: false
     delete: false
@@ -96,7 +96,13 @@ collections:
           required: true,
           hint: "Enter information",
         }
-      - { label: "Photo", name: "about_img", widget: "image", choose_url: true }
+      - {
+          label: "Photo",
+          name: "about_img",
+          widget: image,
+          choose_url: true,
+          media_folder: "static/img",
+        }
       - {
           label: "Identifier",
           name: "about_identifier",

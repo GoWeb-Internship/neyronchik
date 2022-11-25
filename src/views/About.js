@@ -7,21 +7,20 @@ import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
 
 export const About = () => {
-  const { markdownRemark, file } = useStaticQuery(
+  const { markdownRemark } = useStaticQuery(
     graphql`
       query AboutQuery {
-        file(name: { eq: "main" }) {
-          id
-          publicURL
-          childImageSharp {
-            gatsbyImageData(formats: [AUTO, WEBP])
-          }
-        }
         markdownRemark(frontmatter: { about_identifier: { eq: "about" } }) {
           frontmatter {
             en_about_body
             en_about_title
-            about_img
+            about_img {
+              id
+              publicURL
+              childImageSharp {
+                gatsbyImageData(formats: [AUTO, WEBP])
+              }
+            }
             uk_about_title
             uk_about_body
           }
@@ -32,7 +31,7 @@ export const About = () => {
 
   const { language } = useI18next();
   const { frontmatter } = markdownRemark;
-  const aboutImg = file.childImageSharp.gatsbyImageData;
+  const aboutImg = frontmatter.about_img?.childImageSharp.gatsbyImageData;
 
   return (
     <section className="w-full " id="about">
@@ -49,3 +48,11 @@ export const About = () => {
     </section>
   );
 };
+
+// file(name: { eq: "main" }) {
+//   id
+//   publicURL
+//   childImageSharp {
+//     gatsbyImageData(formats: [AUTO, WEBP])
+//   }
+// }
