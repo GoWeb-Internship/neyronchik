@@ -54,6 +54,12 @@ collections:
           required: true,
           hint: "Enter promo description",
         }
+      - {
+          label: "Identifier",
+          name: "promo_identifier",
+          widget: "hidden",
+          default: "banner",
+        }
 
   - label: "About us"
     name: "about"
@@ -91,6 +97,12 @@ collections:
           hint: "Enter information",
         }
       - { label: "Photo", name: "about_img", widget: "image", choose_url: true }
+      - {
+          label: "Identifier",
+          name: "about_identifier",
+          widget: "hidden",
+          default: "about",
+        }
 
   - label: "Work areas"
     name: "work"
@@ -128,6 +140,12 @@ collections:
           name: "en_work_title",
           widget: "hidden",
           default: "Work areas",
+        }
+      - {
+          label: "Identifier",
+          name: "work_identifier",
+          widget: "hidden",
+          default: "work",
         }
 
   - label: "Team"
@@ -213,6 +231,12 @@ collections:
           widget: "hidden",
           default: "Team",
         }
+      - {
+          label: "Identifier",
+          name: "team_identifier",
+          widget: "hidden",
+          default: "team",
+        }
 
   - label: "Services"
     name: "services"
@@ -267,6 +291,12 @@ collections:
           widget: "hidden",
           default: "Services",
         }
+      - {
+          label: "Identifier",
+          name: "services_identifier",
+          widget: "hidden",
+          default: "services",
+        }
 
   - label: "Gallery"
     name: "gallery"
@@ -306,6 +336,12 @@ collections:
           name: "en_gallery_title",
           widget: "hidden",
           default: "Gallery",
+        }
+      - {
+          label: "Identifier",
+          name: "gallery_identifier",
+          widget: "hidden",
+          default: "gallery",
         }
 
   - label: "Contacts"
@@ -370,6 +406,12 @@ collections:
           name: "longitude",
           widget: "number",
           value_type: "float",
+        }
+      - {
+          label: "Identifier",
+          name: "contacts_identifier",
+          widget: "hidden",
+          default: "contacts",
         }
 
   # ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ
