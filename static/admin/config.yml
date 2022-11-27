@@ -16,8 +16,8 @@ collections:
   - label: "Promo Banner"
     name: "promo"
     folder: "content/promo"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_promo_title}}"
     create: false
     delete: false
@@ -54,12 +54,16 @@ collections:
           required: true,
           hint: "Enter promo description",
         }
+      - {
+          label: "Identifier",
+          name: "promo_identifier",
+          widget: "hidden",
+          default: "banner",
+        }
 
   - label: "About us"
     name: "about"
     folder: "content/about"
-    media_folder: "/static/img"
-    public_folder: /img
     slug: "{{en_about_title}}"
     create: false
     delete: false
@@ -90,13 +94,25 @@ collections:
           required: true,
           hint: "Enter information",
         }
-      - { label: "Photo", name: "about_img", widget: "image", choose_url: true }
+      - {
+          label: "Photo",
+          name: "about_img",
+          widget: image,
+          choose_url: true,
+          media_folder: "static/img",
+        }
+      - {
+          label: "Identifier",
+          name: "about_identifier",
+          widget: "hidden",
+          default: "about",
+        }
 
   - label: "Work areas"
     name: "work"
     folder: "content/work"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_work_specialist}}"
     create: true
     delete: true
@@ -129,12 +145,18 @@ collections:
           widget: "hidden",
           default: "Work areas",
         }
+      - {
+          label: "Identifier",
+          name: "work_identifier",
+          widget: "hidden",
+          default: "work",
+        }
 
   - label: "Team"
     name: "team"
     folder: "content/team"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_team_member_name}}"
     create: true
     delete: true
@@ -166,6 +188,7 @@ collections:
           name: "team_member_photo",
           widget: "image",
           choose_url: true,
+          media_folder: "static/img",
         }
       - {
           label: "Range",
@@ -188,6 +211,7 @@ collections:
                 name: "cert_img",
                 widget: "image",
                 choose_url: true,
+                media_folder: "static/certificates/img",
               },
               {
                 label: "Назва сертифікату",
@@ -213,12 +237,18 @@ collections:
           widget: "hidden",
           default: "Team",
         }
+      - {
+          label: "Identifier",
+          name: "team_identifier",
+          widget: "hidden",
+          default: "team",
+        }
 
   - label: "Services"
     name: "services"
     folder: "content/services"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_service_title}}"
     create: true
     delete: true
@@ -244,6 +274,7 @@ collections:
           name: "service_img",
           widget: "image",
           choose_url: true,
+          media_folder: "static/img",
         }
       - {
           label: "Range",
@@ -267,12 +298,18 @@ collections:
           widget: "hidden",
           default: "Services",
         }
+      - {
+          label: "Identifier",
+          name: "services_identifier",
+          widget: "hidden",
+          default: "services",
+        }
 
   - label: "Gallery"
     name: "gallery"
     folder: "content/gallery"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_gallery_item_alt}}"
     create: true
     delete: true
@@ -294,6 +331,7 @@ collections:
           name: "gallery_item",
           widget: "image",
           choose_url: true,
+          media_folder: "static/img",
         }
       - {
           label: "Ukrainian Section Title",
@@ -307,12 +345,18 @@ collections:
           widget: "hidden",
           default: "Gallery",
         }
+      - {
+          label: "Identifier",
+          name: "gallery_identifier",
+          widget: "hidden",
+          default: "gallery",
+        }
 
   - label: "Contacts"
     name: "contacts"
     folder: "content/contacts"
-    media_folder: "/static/img"
-    public_folder: /img
+    # media_folder: "/static/img"
+    # public_folder: /img
     slug: "{{en_contacts_title}}"
     create: false
     delete: false
@@ -370,6 +414,12 @@ collections:
           name: "longitude",
           widget: "number",
           value_type: "float",
+        }
+      - {
+          label: "Identifier",
+          name: "contacts_identifier",
+          widget: "hidden",
+          default: "contacts",
         }
 
   # ОДНО БОЛЬШОЕ ПОЛОТНО ДЛЯ ВСЕХ СЕКЦИЙ

@@ -8,4 +8,5 @@ phone_add: "456"
 email: t@t.com
 latitude: 50.4547
 longitude: 30.5238
+contacts_identifier: contacts
 ---
