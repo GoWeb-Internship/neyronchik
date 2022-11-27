@@ -7,8 +7,8 @@ export const Grid = ({ children, section, className, ...props }) => {
     <div
       className={classNames(className, {
         [type1]: section === "hero",
-        [type2]: section === "about",
-        [type3]: section === "workVector",
+        // [type2]: section === "about",
+        // [type3]: section === "workVector",
         // [type4]: section === "choose",
         // [type5]: section === "team",
       })}

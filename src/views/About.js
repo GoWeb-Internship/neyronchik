@@ -8,7 +8,7 @@ export const About = () => {
     <section className="w-full " id="about">
       <div className="container border-2">
         <Headings type="h2">Про нас</Headings>
-        <Grid className="relative" section="hero">
+        <Grid className="relative">
           <div
             id="image2"
             style={{

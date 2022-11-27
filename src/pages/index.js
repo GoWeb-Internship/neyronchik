@@ -14,19 +14,23 @@ import { Donate } from "src/views/Donate";
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 import { Banner } from "../views/Banner/Banner";
+import useImages from "../queries/sliderQuery";
 
 const HomePage = () => {
+  const images = useImages();
+  console.log("🚀 ~ file: index.js ~ line 21 ~ HomePage ~ images", images);
+
   return (
     <div>
       <Banner />
       <Header />
-      <Hero />
+      <Hero images={images?.hero} />
       <About />
       <Directions />
       <Why />
-      <Team />
+      <Team images={images?.hero} />
       <Services />
-      <Gallery />
+      <Gallery images={images?.hero} />
       <News />
       <Donate />
 

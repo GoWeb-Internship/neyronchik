@@ -8,7 +8,7 @@ export const Services = () => {
     <section className="w-full " id="services">
       <div className="container border-2">
         <Headings type="h2">Послуги</Headings>
-        <Grid className="relative" section="hero">
+        <Grid className="relative">
           <div
             style={{
               width: "40px",

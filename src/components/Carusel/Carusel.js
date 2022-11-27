@@ -1,157 +1,146 @@
-import React, { useState } from "react";
-
+import React, { forwardRef } from "react";
 import {
   Autoplay,
-  EffectCards,
   EffectCoverflow,
   Lazy,
   Navigation,
   Pagination,
-  Scrollbar,
 } from "swiper";
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./styles.css";
 
-import {
-  activeSlide,
-  slide,
-  slideTeam,
-  wrapperGallery,
-  wrapperHero,
-  wrapperTeam,
-} from "./Carusel.module.css";
+import * as s from "./Carusel.module.css";
 
 import classNames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import useImages from "../../queries/sliderQuery";
 
-export const Carusel = ({ type }) => {
-  const [imageIndex, setImageIndex] = useState(0);
+export const Carusel = ({ type, images }) => {
+  // const { type, images } = props;
+  // const images = useImages();
 
-  const data = useStaticQuery(graphql`
-    query HeroSliderQuery {
-      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-            name
-            relativeDirectory
-          }
-        }
-      }
-      hero: allFile(
-        filter: { sourceInstanceName: {}, relativeDirectory: { in: "hero" } }
-      ) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
-            name
-            relativeDirectory
-          }
-        }
-      }
-    }
-  `);
-
-  const setSettings = (type) => {
+  const typeSettings = (type) => {
     switch (type) {
       case "hero":
         return {
-          modules: [Navigation, Pagination, Scrollbar, Lazy, Autoplay],
+          modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
           lazy: true,
           speed: 400,
           slidesPerView: 1,
-
-          autoplay: true,
+          autoplay: { delay: 3000 },
           speed: 1000,
-
           loop: true,
+          // navigation: true,
+          // navigation: {
+          //   nextEl: nextRef,
+          //   prevEl: prevRef,
+          // }
         };
       case "gallery":
         return {
-          modules: [
-            Navigation,
-            Pagination,
-            Scrollbar,
-            Lazy,
-            Autoplay,
-            EffectCoverflow,
-          ],
-          lazy: true,
-
-          slidesPerView: 3,
+          modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
           loop: true,
+          lazy: true,
+          speed: 300,
+          slidesPerView: 3,
+          className: s.mySwiper,
           centeredSlides: true,
+          pagination: { clickable: true },
+          // navigation
+          // navigation:
+          //   nextEl: nextRef,
+          //   prevEl: prevRef,
+          //
           effect: "coverflow",
+
+          slideToClickedSlide: true,
           coverflowEffect: {
-            // scale: 0.5,
+            scale: 0.5,
             rotate: 0,
             stretch: 0,
-            depth: 390,
+            depth: 30,
             modifier: 1,
             slideShadows: false,
             height: 700,
+            pagination: {
+              clickable: true,
+            },
           },
-
-          slideToClickedSlide: true,
-
-          pagination: { clickable: true },
         };
       case "team":
         return {
+          modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
           lazy: true,
           speed: 400,
-          slidesPerView: 2,
-          slidesToScroll: 1,
+          navigation: true,
+          slidesPerView: 3,
+          slidesToScroll: 3,
 
-          dots: false,
-
-          nextArrow: <NextArrow />,
-          prevArrow: <PrevArrow />,
+          // nextArrow:
+          // prevArrow:
+          spaceBetween: 30,
+          navigation: true,
         };
 
       default:
         return null;
     }
   };
-  const settings = setSettings(type);
-  const swiperSlide = useSwiperSlide();
+
+  // const SliderButton = (props) => {
+  //   return (
+  //     <div
+  //       style={{
+  //         position: "absolute",
+  //         width: "30px",
+  //         height: "100%",
+  //         zIndex: 20,
+  //         top: 0,
+  //         left: 0,
+  //         backgroundColor: "red",
+  //       }}
+  //     >
+  //       <p>*</p>
+  //     </div>
+  //   );
+  // };
+  const settings = typeSettings(type);
+
+  console.log(images);
   return (
     <div
+      // onClick={(e) => console.log(e)}
       className={classNames({
-        [wrapperHero]: type === "hero",
-        // [wrapperGallery]: type === "about",
-        [wrapperTeam]: type === "team",
+        [s.wrapperHero]: type === "hero",
+        [s.wrapperGallery]: type === "gallery",
+        [s.wrapperTeam]: type === "team",
       })}
     >
-      <Swiper {...settings} className="h-[700px]">
-        {data.hero.edges.map(({ node }, idx) => (
+      <Swiper {...settings}>
+        {images.edges.map(({ node }, idx) => (
           <SwiperSlide key={node.name}>
             {(isActive) => (
               <div
                 className={classNames({
-                  // [slide]: type === "gallery",
-                  [slideTeam]: type === "team",
-                  [activeSlide]: isActive && type === "gallery",
+                  [s.slideGallery]: type === "gallery",
+                  [s.slideHero]: type === "hero",
+                  // [s.slideTeam]: type === "team",
+                  // [activeSlide]: isActive && type === "gallery",
                 })}
                 key={node.name}
               >
                 <GatsbyImage
                   image={node.childImageSharp.gatsbyImageData}
                   alt={node.name}
-                  // objectFit="cover"
-                  // objectPosition="50% 50%"
                 />
               </div>
             )}
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* <SliderButton />
+      <SliderButton back /> */}
     </div>
   );
 };

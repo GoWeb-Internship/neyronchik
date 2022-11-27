@@ -3,7 +3,7 @@ import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
 import { Carusel } from "components/Carusel/Carusel";
-export const Team = () => {
+export const Team = ({ images }) => {
   const data = [
     {
       img: "foto1",
@@ -39,10 +39,7 @@ export const Team = () => {
         <Headings type="h2">Наша команда</Headings>
         <Grid className="relative" section="team">
           {data.map((i) => (
-
             <div className="flex p-5" key={i.img}>
-
-
               <div
                 className="mr-16"
                 style={{
@@ -59,7 +56,7 @@ export const Team = () => {
               </div>
               <div>
                 <p className="pb-4">certificates</p>
-                {/* <Carusel type="team" /> */}
+                <Carusel type="team" images={images} />
               </div>{" "}
             </div>
           ))}

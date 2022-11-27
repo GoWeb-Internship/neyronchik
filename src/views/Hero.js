@@ -1,62 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Carusel } from "components/Carusel/Carusel";
-// import Carusel from "nuka-carousel";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SliderButton } from "components/SliderButton/SliderButton";
+import classNames from "classnames";
 
-// Import Swiper styles
-import "swiper/css";
-export const Hero = () => {
-  // const params = {
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     type: "bullets",
-  //     clickable: true,
-  //   },
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  //   spaceBetween: 30,
-  // };
+export const Hero = ({ images }) => {
+  // const nextRef = useRef(null);
+  // const prevRef = useRef(null);
+  // const rrr = useRef({ prevRef, nextRef });
+  console.log(images);
   return (
-    <section className="w-full" id="hero">
-      <div className="container relative">
-        {/* <Carusel
-          slidesToShow={1}
-          infinit={true}
-          lazyLoad={true}
-          spaceBetween={50}
-          // spaceBetween={50}
-          // slidesPerView={3}
-          // onSlideChange={() => console.log("slide change")}
-          // onCarusel={(swiper) => console.log(swiper)}
-        >
-          <div>Slide 1</div>
-          <div>Slide 2</div>
-          <div>Slide 3</div>
-          <div>Slide 4</div>
-        </Carusel> */}
-
-        <Carusel type="hero" />
+    <section id="hero">
+      <div className="heroContainer container relative">
+        {images && <Carusel type="hero" images={images} />}
+        {/* <SliderButton back ref={prevRef} />
+        <SliderButton ref={nextRef} />{" "} */}
         <Grid section="hero">
           <HeroTextBlock />
           <div
             style={{
               padding: "40px",
             }}
-          >
-            <div
-              id="image"
-              style={{
-                padding: "20px",
-                width: "100%",
-                height: "300px",
-                backgroundColor: "yellow",
-              }}
-            ></div>
-          </div>
+          ></div>
         </Grid>
       </div>
     </section>
