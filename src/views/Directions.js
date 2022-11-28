@@ -1,12 +1,19 @@
 import React from "react";
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { Grid } from "src/components";
 import { Headings } from "src/components/Headings/Headings";
 
 export const Directions = () => {
+  const { language } = useI18next();
+  const { t } = useTranslation();
+  const { work_title } = t("titles", {
+    returnObjects: true,
+  });
+
   return (
     <section className="w-full " id="directions">
       <div className="container border-2">
-        <Headings type="h2">Напрямки роботи:</Headings>
+        <Headings type="h2">{work_title}:</Headings>
         {/* <Grid className="relative" section="hero"> */}
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet,

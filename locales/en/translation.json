@@ -1,4 +1,15 @@
 {
+  "titles": {
+    "promo_title": "Month Promo",
+    "about_title": "About us",
+    "whyUs_title": "Why do they choose us?",
+    "work_title": "Direction of work",
+    "team_title": "Our team",
+    "services_title": "Services and prices",
+    "gallery_title": "Gallery",
+    "news_title": "Latest news",
+    "contacts_title": "Contacts"
+  },
   "button": {
     "contactUsBtn": "Contact us",
     "servicesBtn": "See all services",
