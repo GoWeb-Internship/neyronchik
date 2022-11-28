@@ -1,4 +1,15 @@
 {
+  "titles": {
+    "promo_title": "Акція місяця",
+    "about_title": "Про нас",
+    "whyUs_title": "Чому обирають саме нас?",
+    "work_title": "Напрямки роботи",
+    "team_title": "Наша команда",
+    "services_title": "Послуги та ціни",
+    "gallery_title": "Галерея",
+    "news_title": "Останні новини",
+    "contacts_title": "Контакти"
+  },
   "button": {
     "contactUsBtn": "Записатися на прийом",
     "servicesBtn": "Усі послуги",

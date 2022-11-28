@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
-import { useI18next } from "gatsby-plugin-react-i18next";
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 
 // import * as s from './Banner.module.css'
 
@@ -20,21 +20,20 @@ export const Banner = () => {
     setHidden(true);
   };
 
-  // const ClsBtn = <button onClick={handleClick}>X</button>
-  // const { t } = useTranslation();
-
   const { language } = useI18next();
+  const { t } = useTranslation();
+  const { promo_title } = t("titles", {
+    returnObjects: true,
+  });
 
   const { markdownRemark } = useStaticQuery(
     graphql`
       query BannerQuery {
         markdownRemark(frontmatter: { promo_identifier: { eq: "banner" } }) {
           frontmatter {
-            en_promo_body
-            en_promo_title
             promo_displayed
+            en_promo_body
             uk_promo_body
-            uk_promo_title
           }
         }
       }
@@ -46,9 +45,7 @@ export const Banner = () => {
   return (
     frontmatter.promo_displayed && (
       <div className={`${isHidden ? "hidden" : "flex"}`}>
-        <h2 className="text-xl font-bold">
-          {frontmatter[`${language}_promo_title`]}
-        </h2>
+        <h2 className="text-xl font-bold">{promo_title}</h2>
         <strong className="ext-xl font-normal">
           {frontmatter[`${language}_promo_body`]}
         </strong>

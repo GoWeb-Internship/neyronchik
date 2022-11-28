@@ -9,11 +9,9 @@ export default function useTeam() {
         edges {
           node {
             frontmatter {
-              en_team_title
               en_team_member_name
               en_team_member_specialization
               en_team_member_experience
-              uk_team_title
               uk_team_member_name
               uk_team_member_specialization
               uk_team_member_experience

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
@@ -27,10 +28,15 @@ export const Why = () => {
     },
   ];
 
+  const { t } = useTranslation();
+  const { whyUs_title } = t("titles", {
+    returnObjects: true,
+  });
+
   return (
     <section className="w-full " id="why">
       <div className="container border-2">
-        <Headings type="h2">Про нас</Headings>
+        <Headings type="h2">{whyUs_title}</Headings>
         <Grid className="relative" section="hero">
           {data.map((i) => (
             <div key={i.img}>

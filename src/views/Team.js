@@ -1,17 +1,23 @@
 import React from "react";
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Grid } from "src/components";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
 import { Carusel } from "components/Carusel/Carusel";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 export const Team = ({ data, images }) => {
+  const { language } = useI18next();
+  const { t } = useTranslation();
+  const { team_title } = t("titles", {
+    returnObjects: true,
+  });
   // console.log("🚀 ~ file: Team.js ~ line 7 ~ Team ~ data", data);
 
   return (
     <section className="w-full " id="team">
       <div className="container border-2">
-        <Headings type="h2">Наша команда</Headings>
+        <Headings type="h2">{team_title}</Headings>
         <Grid className="relative" section="team">
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div className="flex p-5" key={node.id}>
@@ -29,15 +35,17 @@ export const Team = ({ data, images }) => {
                     node.frontmatter.team_member_photo.childrenImageSharp[0]
                       .gatsbyImageData
                   }
-                  alt={node.frontmatter.en_team_member_name}
+                  alt={node.frontmatter[`${language}_team_member_name`]}
                 />
               </div>
               <div>
-                <h3 className="mb-4">{node.frontmatter.en_team_member_name}</h3>
+                <h3 className="mb-4">
+                  {node.frontmatter[`${language}_team_member_name`]}
+                </h3>
                 <p className="mb-4">
-                  {node.frontmatter.en_team_member_specialization}
+                  {node.frontmatter[`${language}_team_member_specialization`]}
                 </p>
-                <p>{node.frontmatter.en_team_member_experience}</p>
+                <p>{node.frontmatter[`${language}_team_member_experience`]}</p>
               </div>
               <div>
                 <p className="pb-4">certificates</p>
