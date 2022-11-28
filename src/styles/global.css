@@ -10,6 +10,9 @@
   font-named-instance: "Regular";
   src: url(/fonts/e-Ukraine-Regular.otf) format("opentype");
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Ukraine";
 }

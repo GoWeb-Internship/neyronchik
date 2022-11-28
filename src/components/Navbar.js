@@ -1,73 +1,55 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
+import instagram from "../img/social/instagram.svg";
+import facebook from "../img/social/facebook.svg";
 import logo from "../img/logo.svg";
 
-const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+const sections = ["about", "team", "services", "gallery", "news", "contacts"];
 
+const Navbar = () => {
   return (
-    <nav role="navigation" aria-label="main-navigation">
-      <div className="container">
-        <div className="navbar-brand">
-          <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+    <nav
+      className="absolute left-1/2 top-0 w-full "
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      <div className="container flex h-32 items-center bg-yellow-200 py-4">
+        <div>
+          <Link to="/" title="Logo">
+            <img
+              src={logo}
+              alt="Neyronchik"
+              style={{ backgroundColor: "red", width: "164px", height: "80px" }}
+            />
           </Link>
-          {/* Hamburger menu */}
-          <button
-            className={`navbar-burger burger ${isActive && "is-active"}`}
-            aria-expanded={isActive}
-            onClick={() => setIsActive(!isActive)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
         </div>
-        <ul
-          id="navMenu"
-          className={` navbar-start has-text-centered navbar-menu ${
-            isActive && "is-active"
-          }`}
-        >
-          {/* TODO: inline override of padding is a result of refactoring
-                to a ul for accessibilty purposes, would like to see a css
-                re-write that makes this unneccesary.
-             */}
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/blog">
-              Blog
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
-            </Link>
-          </li>
-          <li className="navbar-end has-text-centered">
+        <ul id="navMenu" className="flex ">
+          {sections.map((section) => (
+            <li>
+              <Link to={"#" + section}>{section}</Link>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex">
+          <li className="h-10 w-10">
             <a
-              className="navbar-item"
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+              href="https://instagram.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nodeffer"
             >
               <span className="icon">
-                <img src={github} alt="Github" />
+                <img src={instagram} alt="instagram" />
+              </span>
+            </a>
+          </li>
+          <li className="h-10 w-10">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer nodeffer"
+            >
+              <span className="icon">
+                <img src={facebook} alt="facebook" />
               </span>
             </a>
           </li>

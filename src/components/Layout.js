@@ -1,10 +1,10 @@
 import * as React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-// import useSiteMetadata from "./SiteMetadata";
+// import useSiteMetadata from "queries/SiteMetadata";
 // import { withPrefix } from "gatsby";
 
-const TemplateWrapper = ({ children }) => {
+export const Layout = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -14,5 +14,3 @@ const TemplateWrapper = ({ children }) => {
     </div>
   );
 };
-
-export default TemplateWrapper;

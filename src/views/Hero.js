@@ -8,7 +8,7 @@ import classNames from "classnames";
 export const Hero = ({ images }) => {
   console.log(images);
   return (
-    <section id="hero">
+    <section id="hero" className="pt-32">
       <div className=" heroContainer container relative">
         {images && (
           <>
