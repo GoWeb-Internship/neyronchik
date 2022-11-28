@@ -8,11 +8,11 @@
 .wrapperTeam {
   @apply h-[90px] max-h-[90px] min-h-full max-w-6xl truncate sm:w-[280px] md:w-[300px] xl:w-[300px];
 }
-.mySwiper .swiper-wrapper {
+/* .mySwiper .swiper-wrapper {
   @apply h-[700px];
-}
+} */
 .mySwiper {
-  @apply h-[700px];
+  @apply h-[400px];
 }
 .arrow {
   @apply absolute z-[5] h-[400px] w-12 cursor-pointer fill-red-500;
@@ -26,7 +26,7 @@
 }
 
 .slideGallery {
-  @apply flex scale-150 transform truncate rounded-[50%] md:h-[364px]  md:w-[364px]  xl:h-[360px]  xl:w-[360px];
+  @apply flex scale-150 transform truncate rounded-[50%];
 }
 .slideTeam {
   margin: 20px;

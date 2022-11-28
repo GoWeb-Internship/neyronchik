@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-export default function useImages() {
+export default function useSliderQuery() {
   const images = useStaticQuery(graphql`
     query HeroSliderQuery {
       allFile(filter: { sourceInstanceName: { eq: "images" } }) {
@@ -26,6 +26,26 @@ export default function useImages() {
             }
             name
             relativeDirectory
+          }
+        }
+      }
+      gallery: allMarkdownRemark(
+        filter: { frontmatter: { gallery_identifier: { eq: "gallery" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              en_gallery_item_alt
+              uk_gallery_item_alt
+              gallery_identifier
+              gallery_item {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED)
+                  id
+                }
+              }
+            }
+            id
           }
         }
       }

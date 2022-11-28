@@ -32,28 +32,29 @@ export const Services = () => {
       }
     }
   `);
-  console.log(allMarkdownRemark);
+  // console.log(allMarkdownRemark);
   const { nodes } = allMarkdownRemark;
-  console.log(nodes);
+  // console.log(nodes);
 
   return (
     <section className="w-full " id="services">
       <div className="container border-2">
         <Headings type="h2">Послуги</Headings>
 
+        <ul>
+          {nodes.map(({ frontmatter }) => (
+            <li key={frontmatter.en_service_title}>
+              <p>{frontmatter.en_service_title}</p>
 
-        {nodes.map(({ frontmatter }) => (
-          <li key={frontmatter.en_service_title}>
-            <p>{frontmatter.en_service_title}</p>
-            <p>
               <Markdown>{frontmatter.en_service_description}</Markdown>
-            </p>
-            <GatsbyImage
-              image={frontmatter.service_img?.childImageSharp.gatsbyImageData}
-              alt=""
-            />
-          </li>
-        ))}
+
+              <GatsbyImage
+                image={frontmatter.service_img?.childImageSharp.gatsbyImageData}
+                alt=""
+              />
+            </li>
+          ))}
+        </ul>
 
         <div className="flex  h-[600px] w-full flex-row flex-wrap overflow-y-hidden">
           <div className="h-80 w-64 bg-orange-400">
@@ -78,7 +79,6 @@ export const Services = () => {
         <button className="h-10 w-48 bg-green-500" type="button">
           See more...
         </button>
-
       </div>
     </section>
   );

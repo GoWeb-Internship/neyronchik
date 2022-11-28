@@ -35,6 +35,13 @@ module.exports = {
         name: "pages",
       },
     },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: `${__dirname}/content/gallery`,
+    //     name: "gallery",
+    //   },
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -113,7 +120,6 @@ module.exports = {
         },
       },
     },
-
 
     // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array

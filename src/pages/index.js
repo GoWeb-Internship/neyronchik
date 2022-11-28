@@ -13,11 +13,12 @@ import { News } from "src/views/News";
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 import { Banner } from "../views/Banner/Banner";
-import useImages from "../queries/sliderQuery";
+import useSliderQuery from "../queries/useSliderQuery";
+import useTeamQuery from "../queries/useTeamQuery";
 
 const HomePage = () => {
-  const images = useImages();
-  console.log("🚀 ~ file: index.js ~ line 21 ~ HomePage ~ images", images);
+  const teamData = useTeamQuery();
+  const images = useSliderQuery();
 
   return (
     <div>
@@ -27,11 +28,10 @@ const HomePage = () => {
       <About />
       <Directions />
       <Why />
-      <Team images={images?.hero} />
+      <Team data={teamData} />
       <Services />
-      <Gallery images={images?.hero} />
+      <Gallery images={images?.gallery} />
       <News />
-
       <Contacts />
       <Footer />
     </div>

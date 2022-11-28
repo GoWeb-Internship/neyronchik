@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import {
   Autoplay,
   EffectCoverflow,
@@ -10,16 +10,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 
 import * as s from "./Carusel.module.css";
-
 import classNames from "classnames";
-import { graphql, useStaticQuery } from "gatsby";
+
 import { GatsbyImage } from "gatsby-plugin-image";
-import useImages from "../../queries/sliderQuery";
 
 export const Carusel = ({ type, images }) => {
-  // const { type, images } = props;
-  // const images = useImages();
-
   const typeSettings = (type) => {
     switch (type) {
       case "hero":
@@ -75,13 +70,70 @@ export const Carusel = ({ type, images }) => {
           speed: 400,
           navigation: true,
           slidesPerView: 3,
-          slidesToScroll: 3,
 
           // nextArrow:
           // prevArrow:
           spaceBetween: 30,
           navigation: true,
         };
+
+      default:
+        return null;
+    }
+  };
+  const typeData = (type, images) => {
+    switch (type) {
+      case "hero":
+        return images.edges.map(({ node }) => (
+          <SwiperSlide key={node.id}>
+            <div className={s.slideHero} key={node.id}>
+              <GatsbyImage
+                image={node.childImageSharp.gatsbyImageData}
+                alt={node.name}
+              />
+            </div>
+          </SwiperSlide>
+        ));
+      case "gallery":
+        return images.edges?.length
+          ? images.edges.map(({ node }) => (
+              <SwiperSlide key={node.id}>
+                {(isActive) => (
+                  <div
+                    className={classNames(
+                      s.slideGallery
+                      // [s.activeSlide]: isActive
+                    )}
+                  >
+                    <GatsbyImage
+                      image={
+                        node.frontmatter.gallery_item.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt={node.frontmatter.en_gallery_item_alt || ""}
+                    />
+                  </div>
+                )}
+              </SwiperSlide>
+            ))
+          : null;
+      case "team":
+        return images.length
+          ? images.map((item, idx) => (
+              <SwiperSlide key={item.cert_img.id}>
+                {(isActive) => (
+                  <div>
+                    <GatsbyImage
+                      image={
+                        item.cert_img.childrenImageSharp[0].gatsbyImageData
+                      }
+                      alt={item.en_cert_alt}
+                    />
+                  </div>
+                )}
+              </SwiperSlide>
+            ))
+          : null;
 
       default:
         return null;
@@ -106,8 +158,8 @@ export const Carusel = ({ type, images }) => {
   //   );
   // };
   const settings = typeSettings(type);
+  const data = typeData(type, images);
 
-  console.log(images);
   return (
     <div
       // onClick={(e) => console.log(e)}
@@ -117,28 +169,7 @@ export const Carusel = ({ type, images }) => {
         [s.wrapperTeam]: type === "team",
       })}
     >
-      <Swiper {...settings}>
-        {images.edges.map(({ node }, idx) => (
-          <SwiperSlide key={node.name}>
-            {(isActive) => (
-              <div
-                className={classNames({
-                  [s.slideGallery]: type === "gallery",
-                  [s.slideHero]: type === "hero",
-                  // [s.slideTeam]: type === "team",
-                  // [activeSlide]: isActive && type === "gallery",
-                })}
-                key={node.name}
-              >
-                <GatsbyImage
-                  image={node.childImageSharp.gatsbyImageData}
-                  alt={node.name}
-                />
-              </div>
-            )}
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Swiper {...settings}>{data}</Swiper>
       {/* <SliderButton />
       <SliderButton back /> */}
     </div>
