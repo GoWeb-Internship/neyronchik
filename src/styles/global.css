@@ -22,11 +22,11 @@ body {
 @import "swiper/css/effect-cards";
 
 .heroContainer {
-  @apply xl:h-[700px];
+  @apply px-0 xl:h-[700px];
 }
 .buttonNextHero {
-  @apply absolute top-0 left-5 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-50;
+  @apply absolute top-0 left-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-60;
 }
 .buttonPrevHero {
-  @apply absolute right-5 top-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all  hover:bg-slate-400 hover:opacity-50;
+  @apply absolute right-0 top-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all  hover:bg-slate-400 hover:opacity-60;
 }
