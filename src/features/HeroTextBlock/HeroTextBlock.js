@@ -3,7 +3,7 @@ import { Headings } from "components";
 
 export const HeroTextBlock = () => {
   return (
-    <div>
+    <div className="p-5">
       <Headings type="h1">НЕЙРОНЧИКИ</Headings>
       <Headings className="mb-4" type="h2">
         Логопедичний центр

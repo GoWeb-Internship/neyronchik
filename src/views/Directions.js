@@ -4,7 +4,7 @@ import { Headings } from "src/components/Headings/Headings";
 
 export const Directions = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="directions">
       <div className="container border-2">
         <Headings type="h2">Напрямки роботи:</Headings>
         {/* <Grid className="relative" section="hero"> */}

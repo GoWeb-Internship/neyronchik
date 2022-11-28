@@ -7,7 +7,7 @@ import InstaFeeds from "../components/InstaFeeds/InstaFeeds";
 
 export const News = () => {
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="news">
       <div className="container border-2">
         <Headings type="h2">News</Headings>
 

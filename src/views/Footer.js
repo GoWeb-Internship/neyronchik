@@ -5,6 +5,7 @@ import { Headings } from "src/components/Headings/Headings";
 
 export const Footer = () => {
   return (
+
     <footer className="w-full " id="footer">
       <div className="container border-2">
         <div>

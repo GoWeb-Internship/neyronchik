@@ -6,7 +6,7 @@ import { Headings } from "src/components/Headings/Headings";
 export const Why = () => {
   const data = [
     {
-      img: "foto",
+      img: "foto1",
       title: "Advantage1",
       text: "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam  amet, viverra nec pretium fermentum ut cras. Id odio velit id  ",
     },
@@ -28,7 +28,7 @@ export const Why = () => {
   ];
 
   return (
-    <section className="w-full " id="hero">
+    <section className="w-full " id="why">
       <div className="container border-2">
         <Headings type="h2">Про нас</Headings>
         <Grid className="relative" section="hero">

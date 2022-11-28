@@ -9,22 +9,28 @@ import { Services } from "src/views/Services";
 import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
+
 import { Contacts } from "src/views/Contacts";
 import { Footer } from "src/views/Footer";
 import { Banner } from "../views/Banner/Banner";
+import useSliderQuery from "../queries/useSliderQuery";
+import useTeamQuery from "../queries/useTeamQuery";
 
 const HomePage = () => {
+  const teamData = useTeamQuery();
+  const images = useSliderQuery();
+
   return (
     <div>
       <Banner />
       <Header />
-      <Hero />
+      <Hero images={images?.hero} />
       <About />
       <Directions />
       <Why />
-      <Team />
+      <Team data={teamData} />
       <Services />
-      <Gallery />
+      <Gallery images={images?.gallery} />
       <News />
       <Contacts />
       <Footer />

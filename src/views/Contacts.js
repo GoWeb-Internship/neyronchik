@@ -6,6 +6,7 @@ import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
 
 export const Contacts = () => {
+
   const { markdownRemark } = useStaticQuery(
     graphql`
       query ContactQuery {
@@ -27,6 +28,7 @@ export const Contacts = () => {
       }
     `
   );
+
 
   const { frontmatter } = markdownRemark;
   const { language } = useI18next();
