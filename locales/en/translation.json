@@ -14,5 +14,9 @@
     "contactUsBtn": "Contact us",
     "servicesBtn": "See all services",
     "instagramBtn": "See more"
+  },
+  "contactsSection": {
+    "contactUs": "Please contact or visit us",
+    "socials": "Our social media"
   }
 }

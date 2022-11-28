@@ -351,6 +351,8 @@ collections:
           widget: "string",
           default: "contacts",
         }
+      - { label: "Місто", name: "uk_city", widget: "string" }
+      - { label: "City", name: "en_city", widget: "string" }
       - { label: "Адреса", name: "uk_address", widget: "string" }
       - { label: "Address", name: "en_address", widget: "string" }
       - {
