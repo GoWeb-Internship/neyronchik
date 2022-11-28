@@ -9,7 +9,7 @@ export const Hero = ({ images }) => {
   // const nextRef = useRef(null);
   // const prevRef = useRef(null);
   // const rrr = useRef({ prevRef, nextRef });
-  console.log(images);
+  // console.log(images);
   return (
     <section id="hero">
       <div className="heroContainer container relative">

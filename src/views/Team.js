@@ -6,7 +6,7 @@ import { Carusel } from "components/Carusel/Carusel";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const Team = ({ data, images }) => {
-  console.log("🚀 ~ file: Team.js ~ line 7 ~ Team ~ data", data);
+  // console.log("🚀 ~ file: Team.js ~ line 7 ~ Team ~ data", data);
 
   return (
     <section className="w-full " id="team">
