@@ -1,9 +1,11 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { useJsApiLoader } from "@react-google-maps/api";
 // import { Grid } from "src/components";
 // import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import { Headings } from "src/components/Headings/Headings";
+import Map from "../components/Map/Map";
 
 export const Contacts = () => {
   const { markdownRemark } = useStaticQuery(
@@ -38,11 +40,28 @@ export const Contacts = () => {
     returnObjects: true,
   });
 
+  const center = {
+    lat: frontmatter.latitude,
+    lng: frontmatter.longitude,
+  };
+
+  const GATSBY_GOOGLE_API_KEY = process.env.GATSBY_GOOGLE_API_KEY;
+
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: GATSBY_GOOGLE_API_KEY,
+  });
+
   return (
-    <section className="w-full " id="contacts">
-      <Headings type="h2">{contacts_title}</Headings>
-      <div className="container relative border-2">
-        <div className="w-96 py-7">
+    <section className="relative w-full overflow-hidden" id="contacts">
+      <Headings type="h2" className="mb-10">
+        {contacts_title}
+      </Headings>
+      <div className="absolute top-20 left-0 -z-10 bg-red-300">
+        {isLoaded && <Map center={center} />}
+      </div>
+      <div className="container relative">
+        <div className="w-96 bg-green-300 py-7">
           <Headings type="h3">{contactUs}</Headings>
           <address className="flex not-italic">
             <div className="flex-col border-r-2 pr-3">
@@ -84,11 +103,6 @@ export const Contacts = () => {
             </div>
           </address>
         </div>
-        {/* <div className="absolute top-0 left-0 -z-10 h-full w-full bg-red-300">
-          Мапа <br />
-          {frontmatter.latitude} <br />
-          {frontmatter.longitude}
-        </div> */}
       </div>
     </section>
   );
