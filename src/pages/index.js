@@ -4,7 +4,7 @@ import { Hero } from "src/views/Hero";
 import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
 import { Why } from "src/views/Why";
-import { Team } from "src/views/Team";
+import { Team } from "src/views/Team/Team";
 import { Services } from "src/views/Services";
 import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
