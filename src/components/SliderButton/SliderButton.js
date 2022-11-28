@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
-import { prev, next } from "./SliderButton.module.css";
+import { buttonNextHero, buttonPrevHero } from "./SliderButton.module.css";
 
-export const SliderButton = forwardRef((props, ref) => {
+export const SliderButton = (props) => {
   return (
-    <div ref={ref} className={props.back ? prev : next}>
+    <div className={props.className}>
       <p>*</p>
     </div>
   );
-});
+};

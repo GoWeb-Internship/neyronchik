@@ -24,3 +24,9 @@ body {
 .heroContainer {
   @apply xl:h-[700px];
 }
+.buttonNextHero {
+  @apply absolute top-0 left-5 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-50;
+}
+.buttonPrevHero {
+  @apply absolute right-5 top-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all  hover:bg-slate-400 hover:opacity-50;
+}

@@ -7,7 +7,7 @@ import {
   Pagination,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./styles.css";
+import { useI18next } from "gatsby-plugin-react-i18next";
 
 import * as s from "./Carusel.module.css";
 import classNames from "classnames";
@@ -15,6 +15,8 @@ import classNames from "classnames";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const Carusel = ({ type, images }) => {
+  const { language } = useI18next();
+
   const typeSettings = (type) => {
     switch (type) {
       case "hero":
@@ -27,10 +29,10 @@ export const Carusel = ({ type, images }) => {
           speed: 1000,
           loop: true,
           // navigation: true,
-          // navigation: {
-          //   nextEl: nextRef,
-          //   prevEl: prevRef,
-          // }
+          navigation: {
+            nextEl: ".buttonNextHero",
+            prevEl: ".buttonPrevHero",
+          },
         };
       case "gallery":
         return {
@@ -98,19 +100,18 @@ export const Carusel = ({ type, images }) => {
         return images.edges?.length
           ? images.edges.map(({ node }) => (
               <SwiperSlide key={node.id}>
-                {(isActive) => (
+                {({ isActive }) => (
                   <div
-                    className={classNames(
-                      s.slideGallery
-                      // [s.activeSlide]: isActive
-                    )}
+                    className={classNames(s.slideGallery, {
+                      [s.activeSlide]: isActive,
+                    })}
                   >
                     <GatsbyImage
                       image={
                         node.frontmatter.gallery_item.childImageSharp
                           .gatsbyImageData
                       }
-                      alt={node.frontmatter.en_gallery_item_alt || ""}
+                      alt={node.frontmatter[`${language}_gallery_item_alt`]}
                     />
                   </div>
                 )}
@@ -127,7 +128,7 @@ export const Carusel = ({ type, images }) => {
                       image={
                         item.cert_img.childrenImageSharp[0].gatsbyImageData
                       }
-                      alt={item.en_cert_alt}
+                      alt={item[`${language}_cert_alt`]}
                     />
                   </div>
                 )}
