@@ -10,6 +10,14 @@
   font-named-instance: "Regular";
   src: url(/fonts/e-Ukraine-Regular.otf) format("opentype");
 }
+@font-face {
+  font-family: "Adigiana";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url(/fonts/Adigiana_Extreme.ttf) format("truetype");
+}
 html {
   scroll-behavior: smooth;
 }
@@ -25,7 +33,7 @@ body {
 @import "swiper/css/effect-cards";
 
 .heroContainer {
-  @apply px-0 xl:h-[700px];
+  @apply px-0  xl:h-[700px];
 }
 .buttonNextHero {
   @apply absolute top-0 left-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-60;

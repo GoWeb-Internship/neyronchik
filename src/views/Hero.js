@@ -8,8 +8,8 @@ import classNames from "classnames";
 export const Hero = ({ images }) => {
   console.log(images);
   return (
-    <section id="hero" className="pt-32">
-      <div className=" heroContainer container relative">
+    <section id="hero" style={{ paddingTop: "72px" }}>
+      <div className=" heroContainer container relative ">
         {images && (
           <>
             <Carusel type="hero" images={images} />{" "}

@@ -11,11 +11,10 @@ import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
 
 import { Contacts } from "src/views/Contacts";
-import { Footer } from "src/views/Footer";
 import { Banner } from "src/views/Banner/Banner";
 import useSliderQuery from "src/queries/useSliderQuery";
 import useTeamQuery from "src/queries/useTeamQuery";
-import { Layout } from "components/Layout";
+import Layout from "components/Layout";
 
 const HomePage = () => {
   const teamData = useTeamQuery();
@@ -34,7 +33,6 @@ const HomePage = () => {
         <Gallery images={images?.gallery} />
         <News />
         <Contacts />
-        <Footer />
       </Layout>
     </>
   );

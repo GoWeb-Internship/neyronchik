@@ -1,3 +1,7 @@
+.heading {
+  @apply mb-14 text-center  text-5xl font-bold text-white;
+}
+
 .teamBg {
   background: linear-gradient(
       89.96deg,

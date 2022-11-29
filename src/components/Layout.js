@@ -1,10 +1,10 @@
 import * as React from "react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "components/Footer";
+import Navbar from "components/Navbar/Navbar";
 // import useSiteMetadata from "queries/SiteMetadata";
 // import { withPrefix } from "gatsby";
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   // const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -14,3 +14,4 @@ export const Layout = ({ children }) => {
     </div>
   );
 };
+export default Layout;

@@ -18,13 +18,16 @@ export const Team = ({ data }) => {
     <section className="w-full " id="team">
       <div
         className={classnames(
-          "container border-2 bg-amber-400 pt-10 pb-14",
+          " container border-2 bg-amber-400 pt-10 pb-14",
           s.teamBg
         )}
       >
         <Headings
           type="h2"
-          className="shadow- mb-14 text-center text-5xl text-white "
+          className={
+           s.heading
+         
+        }
         >
           {language === "uk" ? " Наша команда" : "Our team"}
         </Headings>
