@@ -18,5 +18,9 @@
   "contactsSection": {
     "contactUs": "Зв’яжіться з нами або завітайте у гості",
     "socials": "Ми у соціальних мережах:"
+  },
+  "servicesValues": {
+    "time": "хв",
+    "currency": "грн"
   }
 }
