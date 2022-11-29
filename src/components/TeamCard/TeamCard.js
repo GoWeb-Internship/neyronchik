@@ -7,7 +7,6 @@ import { Carusel } from "components/Carusel/Carusel";
 export const TeamCard = ({ data }) => {
   const { language } = useI18next();
 
-  console.log("🚀 ~ file: TeamCard.js ~ line 4 ~ TeamCard ~ data", data);
   return (
     <div className={s.wrapper}>
       <div

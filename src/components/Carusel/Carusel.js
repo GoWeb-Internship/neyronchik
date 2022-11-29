@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Autoplay,
   EffectCoverflow,
@@ -13,9 +13,24 @@ import * as s from "./Carusel.module.css";
 import classNames from "classnames";
 
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Modal } from "components/Modal/Modal";
 
 export const Carusel = ({ type, images }) => {
   const { language } = useI18next();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+  const [modalImageAlt, setModalImageAlt] = useState(null);
+
+  const handleOpenModal = (image, alt) => {
+    console.log(alt);
+    setModalImage(image);
+    setModalImageAlt(alt);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   const typeSettings = (type) => {
     switch (type) {
@@ -122,16 +137,19 @@ export const Carusel = ({ type, images }) => {
         return images.length
           ? images.map((item, idx) => (
               <SwiperSlide key={item.cert_img.id}>
-                {(isActive) => (
-                  <div>
-                    <GatsbyImage
-                      image={
-                        item.cert_img.childrenImageSharp[0].gatsbyImageData
-                      }
-                      alt={item[`${language}_cert_alt`]}
-                    />
-                  </div>
-                )}
+                <div
+                  onClick={() =>
+                    handleOpenModal(
+                      item.cert_img.childrenImageSharp[0].gatsbyImageData,
+                      item[`${language}_cert_alt`]
+                    )
+                  }
+                >
+                  <GatsbyImage
+                    image={item.cert_img.childrenImageSharp[0].gatsbyImageData}
+                    alt={item[`${language}_cert_alt`]}
+                  />
+                </div>
               </SwiperSlide>
             ))
           : null;
@@ -141,29 +159,11 @@ export const Carusel = ({ type, images }) => {
     }
   };
 
-  // const SliderButton = (props) => {
-  //   return (
-  //     <div
-  //       style={{
-  //         position: "absolute",
-  //         width: "30px",
-  //         height: "100%",
-  //         zIndex: 20,
-  //         top: 0,
-  //         left: 0,
-  //         backgroundColor: "red",
-  //       }}
-  //     >
-  //       <p>*</p>
-  //     </div>
-  //   );
-  // };
   const settings = typeSettings(type);
   const data = typeData(type, images);
-
   return (
     <div
-      // onClick={(e) => console.log(e)}
+      id="carusel"
       className={classNames({
         [s.wrapperHero]: type === "hero",
         [s.wrapperGallery]: type === "gallery",
@@ -171,8 +171,12 @@ export const Carusel = ({ type, images }) => {
       })}
     >
       <Swiper {...settings}>{data}</Swiper>
-      {/* <SliderButton />
-      <SliderButton back /> */}
+      <Modal
+        image={modalImage}
+        alt={modalImageAlt}
+        isModalOpen={isModalOpen}
+        handleCloseModal={handleCloseModal}
+      />
     </div>
   );
 };
