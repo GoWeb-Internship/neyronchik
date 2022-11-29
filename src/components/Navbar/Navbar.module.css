@@ -1,0 +1,18 @@
+.navSection {
+  @apply fixed top-0 z-30 w-full;
+}
+.navContainer {
+  @apply flex  w-full items-center bg-sky-200 py-3 px-20;
+}
+.phone {
+  @apply ml-6;
+}
+.socialContainer {
+  @apply ml-6 flex;
+}
+.socialItem {
+  @apply h-8 w-8;
+}
+.socialItem:not(:first-child) {
+  @apply ml-3;
+}

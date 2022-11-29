@@ -30,7 +30,7 @@ module.exports = {
         DEFAULT: "1.25rem",
         sm: "1.25rem",
         md: "2rem",
-        xl: "2.5rem",
+        xl: "6rem",
       },
     },
     extend: {},

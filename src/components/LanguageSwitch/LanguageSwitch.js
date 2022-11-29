@@ -7,7 +7,7 @@ const showLanguage = (lang) => {
   return lang === "uk" ? "UA" : lang.toUpperCase();
 };
 
-const LanguageSwitch = () => {
+const LanguageSwitch = (props) => {
   const [open, setOpen] = React.useState(false);
   const { languages, originalPath, language } = useI18next();
 
@@ -19,7 +19,7 @@ const LanguageSwitch = () => {
   const langArray = languages.filter((lang) => lang !== language);
 
   return (
-    <div>
+    <div {...props}>
       <button
         type="button"
         aria-label="open language switcher"

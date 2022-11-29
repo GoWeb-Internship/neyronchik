@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
@@ -9,5 +9,13 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="Ukraine"
     />,
-  ])
-}
+    <link
+      rel="preload"
+      href="/static/fonts/Adigiana_Extreme.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="Adigiana"
+    />,
+  ]);
+};

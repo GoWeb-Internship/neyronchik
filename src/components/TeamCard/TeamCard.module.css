@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  background: rgba(253, 253, 253, 0.65);
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.15),
+    inset -5px -4px 13px #dae9ef, inset 5px 4px 13px #dae9ef;
+  backdrop-filter: blur(4px);
+  border-radius: 30px;
+}
+.wrapper:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.photo {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid grey;
+  width: 240px;
+  height: 240px;
+  margin-right: 24px;
+}
+.textBlock {
+  margin-right: 24px;
+  width: 450px;
+}
+.name {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  width: 100%;
+}
+.specification {
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  width: 100%;
+}
+.experience {
+  width: 100%;
+}
+.caruselWrapper {
+  align-self: center;
+}
+.sertificates {
+  padding-bottom: 16px;
+}
