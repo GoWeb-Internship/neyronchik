@@ -5,7 +5,7 @@ import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
 import { Why } from "src/views/Why";
 import { Team } from "src/views/Team";
-import { Services } from "src/views/Services";
+import { Services } from "src/views/ServicesSection/Services";
 import { Header } from "src/views/Header";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";

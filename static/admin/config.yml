@@ -234,6 +234,7 @@ collections:
                 name: "uk_service_description",
                 widget: "string",
                 required: true,
+                pattern: ["^.{1,15}$", "Довжина тексту максимум 15 літер"],
                 hint: "Наприклад, консультація, заняття тощо",
               },
               {
@@ -241,6 +242,7 @@ collections:
                 name: "en_service_description",
                 widget: "string",
                 required: true,
+                pattern: ["^.{1,15}$", "Довжина тексту максимум 15 літер"],
                 hint: "For example, consulting, lesson etc",
               },
               {

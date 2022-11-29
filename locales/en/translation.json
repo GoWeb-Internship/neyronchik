@@ -18,5 +18,9 @@
   "contactsSection": {
     "contactUs": "Please contact or visit us",
     "socials": "Our social media"
+  },
+  "servicesValues": {
+    "time": "minutes",
+    "currency": "uah"
   }
 }
