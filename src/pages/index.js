@@ -4,12 +4,12 @@ import { Hero } from "src/views/Hero";
 import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
 import { Why } from "src/views/Why";
+
 import { Team } from "src/views/Team/Team";
 import { Services } from "src/views/Services";
 
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
-
 import { Contacts } from "src/views/Contacts";
 import { Banner } from "src/views/Banner/Banner";
 import useSliderQuery from "src/queries/useSliderQuery";

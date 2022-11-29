@@ -16,23 +16,21 @@ collections:
   - label: "Promo Banner"
     name: "promo"
     folder: "content/promo"
-    # media_folder: "/static/img"
-    # public_folder: /img
-    slug: "{{en_promo_title}}"
+    slug: "{{promo_title}}"
     create: false
     delete: false
     fields:
       - {
-          label: "Назва секції українською",
-          name: "uk_promo_title",
+          label: "Title",
+          name: "promo_title",
           widget: "string",
-          default: "Акція місяця",
+          default: "banner",
         }
       - {
-          label: "Section Title",
-          name: "en_promo_title",
-          widget: "string",
-          default: "Month Promo",
+          label: "Identifier",
+          name: "promo_identifier",
+          widget: "hidden",
+          default: "banner",
         }
       - {
           label: "Displayed",
@@ -54,31 +52,25 @@ collections:
           required: true,
           hint: "Enter promo description",
         }
-      - {
-          label: "Identifier",
-          name: "promo_identifier",
-          widget: "hidden",
-          default: "banner",
-        }
 
   - label: "About us"
     name: "about"
     folder: "content/about"
-    slug: "{{en_about_title}}"
+    slug: "{{about_title}}"
     create: false
     delete: false
     fields:
       - {
-          label: "Назва секції українською",
-          name: "uk_about_title",
+          label: "Title",
+          name: "about_title",
           widget: "string",
-          default: "Про нас",
+          default: "about",
         }
       - {
-          label: "Section Title",
-          name: "en_about_title",
-          widget: "string",
-          default: "About us",
+          label: "Identifier",
+          name: "about_identifier",
+          widget: "hidden",
+          default: "about",
         }
       - {
           label: "Текст",
@@ -101,24 +93,18 @@ collections:
           choose_url: true,
           media_folder: "static/img",
         }
-      - {
-          label: "Identifier",
-          name: "about_identifier",
-          widget: "hidden",
-          default: "about",
-        }
 
-  - label: "Work areas"
+  - label: "Work directions"
     name: "work"
     folder: "content/work"
-    # media_folder: "/static/img"
-    # public_folder: /img
     slug: "{{en_work_specialist}}"
     create: true
     delete: true
     fields:
       - { label: "Doctor", name: "en_work_specialist", widget: "string" }
       - { label: "Спеціаліст", name: "uk_work_specialist", widget: "string" }
+      - { label: "Why needed", name: "en_work_text", widget: "string" }
+      - { label: "Чому потрібен", name: "uk_work_text", widget: "string" }
       - {
           label: "Текст",
           name: "uk_work_body",
@@ -134,16 +120,14 @@ collections:
           hint: "Enter information",
         }
       - {
-          label: "Назва секції українською",
-          name: "uk_work_title",
-          widget: "hidden",
-          default: "Напрямки роботи",
-        }
-      - {
-          label: "Section Title",
-          name: "en_work_title",
-          widget: "hidden",
-          default: "Work areas",
+          label: "Range",
+          name: "work_range",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          step: 1,
+          hint: "Цифра, що позначає черговість розміщення спеціаліста на
+            веб-сторінці (зверху вниз)",
         }
       - {
           label: "Identifier",
@@ -155,8 +139,6 @@ collections:
   - label: "Team"
     name: "team"
     folder: "content/team"
-    # media_folder: "/static/img"
-    # public_folder: /img
     slug: "{{en_team_member_name}}"
     create: true
     delete: true
@@ -226,18 +208,6 @@ collections:
             ],
         }
       - {
-          label: "Ukrainian Section Title",
-          name: "uk_team_title",
-          widget: "hidden",
-          default: "Команда",
-        }
-      - {
-          label: "English Section Title",
-          name: "en_team_title",
-          widget: "hidden",
-          default: "Team",
-        }
-      - {
           label: "Identifier",
           name: "team_identifier",
           widget: "hidden",
@@ -247,8 +217,6 @@ collections:
   - label: "Services"
     name: "services"
     folder: "content/services"
-    # media_folder: "/static/img"
-    # public_folder: /img
     slug: "{{en_service_title}}"
     create: true
     delete: true
@@ -256,26 +224,70 @@ collections:
       - { label: "Service Title", name: "en_service_title", widget: string }
       - { label: "Назва послуги", name: "uk_service_title", widget: string }
       - {
-          label: "Опис послуги",
-          name: "uk_service_description",
-          widget: "markdown",
-          required: true,
+          label: "Service description",
+          name: "service_list",
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Опис послуги",
+                name: "uk_service_description",
+                widget: "string",
+                required: true,
+                pattern: ["^.{1,15}$", "Довжина тексту максимум 15 літер"],
+                hint: "Наприклад, консультація, заняття тощо",
+              },
+              {
+                label: "Service Description",
+                name: "en_service_description",
+                widget: "string",
+                required: true,
+                pattern: ["^.{1,15}$", "Довжина тексту максимум 15 літер"],
+                hint: "For example, consulting, lesson etc",
+              },
+              {
+                label: "Service Duration",
+                name: "service_duration",
+                widget: "number",
+                value_type: "int",
+                min: 1,
+                step: 1,
+                required: true,
+                hint: "Тривалість послуги в хвилинах",
+              },
+              {
+                label: "Ціна",
+                name: "service_price",
+                widget: "number",
+                value_type: "int",
+                min: 1,
+                step: 1,
+                required: true,
+                hint: "Ціна послуги в гривнях",
+              },
+            ],
         }
-      - {
-          label: "Service Description",
-          name: "en_service_description",
-          widget: "markdown",
-          required: true,
-        }
-      - { label: "Ціна", name: "uk_service_price", widget: "string" }
-      - { label: "Price", name: "en_service_price", widget: "string" }
-      - {
-          label: "Image",
-          name: "service_img",
-          widget: "image",
-          choose_url: true,
-          media_folder: "static/img",
-        }
+      # - {
+      #     label: "Опис послуги",
+      #     name: "uk_service_description",
+      #     widget: "markdown",
+      #     required: true,
+      #   }
+      # - {
+      #     label: "Service Description",
+      #     name: "en_service_description",
+      #     widget: "markdown",
+      #     required: true,
+      #   }
+      # - { label: "Ціна", name: "uk_service_price", widget: "string" }
+      # - { label: "Price", name: "en_service_price", widget: "string" }
+      # - {
+      #     label: "Image",
+      #     name: "service_img",
+      #     widget: "image",
+      #     choose_url: true,
+      #     media_folder: "static/img",
+      #   }
       - {
           label: "Range",
           name: "service_range",
@@ -285,18 +297,6 @@ collections:
           step: 1,
           hint: "Цифра, що позначає черговість розміщення послуги на
             веб-сторінці (зверху вниз)",
-        }
-      - {
-          label: "Ukrainian Section Title",
-          name: "uk_services_section_title",
-          widget: "hidden",
-          default: "Послуги",
-        }
-      - {
-          label: "English Section Title",
-          name: "en_services_section_title",
-          widget: "hidden",
-          default: "Services",
         }
       - {
           label: "Identifier",
@@ -334,18 +334,6 @@ collections:
           media_folder: "static/img",
         }
       - {
-          label: "Ukrainian Section Title",
-          name: "uk_gallery_title",
-          widget: "hidden",
-          default: "Галерея",
-        }
-      - {
-          label: "English Section Title",
-          name: "en_gallery_title",
-          widget: "hidden",
-          default: "Gallery",
-        }
-      - {
           label: "Identifier",
           name: "gallery_identifier",
           widget: "hidden",
@@ -355,24 +343,18 @@ collections:
   - label: "Contacts"
     name: "contacts"
     folder: "content/contacts"
-    # media_folder: "/static/img"
-    # public_folder: /img
-    slug: "{{en_contacts_title}}"
+    slug: "{{contacts_title}}"
     create: false
     delete: false
     fields:
       - {
-          label: "Назва секції українською",
-          name: "uk_contacts_title",
+          label: "Title",
+          name: "contacts_title",
           widget: "string",
-          default: "Контакти",
+          default: "contacts",
         }
-      - {
-          label: "Section Title",
-          name: "en_contacts_title",
-          widget: "string",
-          default: "Contacts",
-        }
+      - { label: "Місто", name: "uk_city", widget: "string" }
+      - { label: "City", name: "en_city", widget: "string" }
       - { label: "Адреса", name: "uk_address", widget: "string" }
       - { label: "Address", name: "en_address", widget: "string" }
       - {

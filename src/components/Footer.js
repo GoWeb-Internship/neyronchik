@@ -1,7 +1,4 @@
-import React from "react";
-import { Grid } from "src/components";
-import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
-import { Headings } from "src/components/Headings/Headings";
+import * as React from "react";
 
 const Footer = () => {
   return (
