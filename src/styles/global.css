@@ -32,12 +32,29 @@ body {
 @import "swiper/css/autoplay";
 @import "swiper/css/effect-cards";
 
-.heroContainer {
-  @apply px-0  xl:h-[700px];
-}
 .buttonNextHero {
   @apply absolute top-0 left-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-60;
 }
 .buttonPrevHero {
   @apply absolute right-0 top-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all  hover:bg-slate-400 hover:opacity-60;
+}
+
+/* ======== team certificate modal styles ======== */
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+.ReactModal__Overlay {
+  overflow: auto;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    transform 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ReactModal__Overlay--before-close {
+  transform: translateY(-10%);
+  opacity: 0;
 }
