@@ -13,7 +13,7 @@
 .bannerClsBtn{
     @apply h-[16px] w-[16px] flex justify-center;
 } */
-.bannerIsShown{
+/* .bannerIsShown{
     background-color: blueviolet;
     display: flex;
     width: 100%;
@@ -38,4 +38,4 @@
     margin-left: 10px;
     font-size: 20px;
     font-weight: 400;
-}
+} */

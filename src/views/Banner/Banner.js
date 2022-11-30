@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 
-// import * as s from './Banner.module.css'
+import * as s from "./Banner.module.css";
 
 export const Banner = () => {
   const [isHidden, setHidden] = useState(false);
@@ -44,16 +44,22 @@ export const Banner = () => {
 
   return (
     frontmatter.promo_displayed && (
-      <div className={`${isHidden ? "hidden" : "flex"}`}>
-        <h2 className="text-xl font-bold">{promo_title}</h2>
-        <strong className="ext-xl font-normal">
-          {frontmatter[`${language}_promo_body`]}
-        </strong>
+      <div
+        className={`container ${
+          isHidden ? "hidden" : "flex bg-black text-center text-white"
+        }`}
+      >
+        <div className="flex w-full ">
+          <h2 className="text-xl font-bold">{promo_title}</h2>
+          <strong className="ext-xl font-normal">
+            {frontmatter[`${language}_promo_body`]}
+          </strong>
+        </div>
         <button
-          className="flex h-[16px] w-[16px] justify-center"
+          className="ml-5 flex h-[16px] w-[16px] justify-center font-black "
           onClick={handleClick}
         >
-          Кнопка "закрыть Х"
+          Х
         </button>
       </div>
     )

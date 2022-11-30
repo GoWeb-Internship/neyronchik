@@ -11,7 +11,6 @@ import { Services } from "src/views/ServicesSection/Services";
 import { Gallery } from "src/views/Gallery";
 import { News } from "src/views/News";
 import { Contacts } from "src/views/Contacts";
-import { Banner } from "src/views/Banner/Banner";
 import useSliderQuery from "src/queries/useSliderQuery";
 import useTeamQuery from "src/queries/useTeamQuery";
 import Layout from "components/Layout";
@@ -22,7 +21,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Banner />
       <Layout>
         <Hero images={images?.hero} />
         <About />
