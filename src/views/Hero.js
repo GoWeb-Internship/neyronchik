@@ -1,28 +1,27 @@
-import React from "react";
-import { Grid } from "src/components";
-import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
-import { Carusel } from "components/Carusel/Carusel";
-import { SliderButton } from "components/SliderButton/SliderButton";
-import classNames from "classnames";
+import React from 'react';
+import { Grid } from 'src/components';
+import { HeroTextBlock } from 'src/features/HeroTextBlock/HeroTextBlock';
+import { Carusel } from 'components/Carusel/Carusel';
+import { SliderButton } from 'components/SliderButton/SliderButton';
+import classNames from 'classnames';
 
 export const Hero = ({ images }) => {
-  console.log(images);
   return (
-    <section id="hero" style={{ paddingTop: "72px" }}>
-      <div className=" heroContainer container relative ">
+    <section id='hero' className='py-[20px]'>
+      <div className=' heroContainer container relative '>
         {images && (
           <>
-            <Carusel type="hero" images={images} />{" "}
-            <SliderButton className="buttonPrevHero" />
-            <SliderButton className="buttonNextHero" />
+            <Carusel type='hero' images={images} />{' '}
+            <SliderButton className='buttonPrevHero' />
+            <SliderButton className='buttonNextHero' />
           </>
         )}
 
-        <Grid section="hero">
+        <Grid section='hero'>
           <HeroTextBlock />
           <div
             style={{
-              padding: "40px",
+              padding: '40px',
             }}
           ></div>
         </Grid>

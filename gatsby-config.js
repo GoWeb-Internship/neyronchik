@@ -1,40 +1,40 @@
-const path = require("path");
+const path = require('path');
 
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 const gatsbyRequiredRules = path.join(
   process.cwd(),
-  "node_modules",
-  "gatsby",
-  "dist",
-  "utils",
-  "eslint-rules"
+  'node_modules',
+  'gatsby',
+  'dist',
+  'utils',
+  'eslint-rules'
 );
 
 module.exports = {
   siteMetadata: {
-    title: "Neyronchik",
-    description: "Landing page of speech therapy center Neyronchik",
+    title: 'Neyronchik',
+    description: 'Landing page of speech therapy center Neyronchik',
   },
 
   plugins: [
-    "gatsby-plugin-root-import",
-    "gatsby-plugin-postcss",
+    'gatsby-plugin-root-import',
+    'gatsby-plugin-postcss',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
-        name: "uploads",
+        name: 'uploads',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages",
+        name: 'pages',
       },
     },
     // {
@@ -45,31 +45,31 @@ module.exports = {
     //   },
     // },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
-        name: "pages",
+        name: 'pages',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: "images",
+        name: 'images',
       },
     },
 
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     // "gatsby-transformer-remark",
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          'gatsby-remark-relative-images',
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
@@ -81,18 +81,18 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    {
-      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
+    //   options: {
+    //     develop: true, // Activates purging in npm run develop
+    //     // purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
+    //   },
+    // },
 
     {
       resolve: `gatsby-source-filesystem`,
@@ -109,11 +109,11 @@ module.exports = {
         defaultLanguage: `uk`,
         generateDefaultLanguagePage: true,
         redirect: true,
-        siteUrl: "",
+        siteUrl: '',
 
         i18nextOptions: {
-          lng: "uk",
-          load: "currentOnly",
+          lng: 'uk',
+          load: 'currentOnly',
           interpolation: {
             escapeValue: false,
           },
@@ -131,6 +131,6 @@ module.exports = {
     },
 
     // must be after other CSS plugins
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 };

@@ -3,10 +3,10 @@ import * as React from "react";
 const Footer = () => {
   return (
     <footer className="w-full " id="footer">
-      <div className="container border-2 bg-red-500">
+      <div className="container border-2 text-center">
         <div>
-          {new Date().getFullYear()} Нейрончики - логопедичний центр. <br />
-          Усі права захищені
+          &#169; {new Date().getFullYear()} Нейрончики - логопедичний центр. Усі
+          права захищені
         </div>
       </div>
     </footer>
