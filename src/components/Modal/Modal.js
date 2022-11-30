@@ -1,6 +1,6 @@
 import React from "react";
 import ReactModal from "react-modal";
-ReactModal.setAppElement("#portal");
+
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as s from "./Modal.module.css";
 

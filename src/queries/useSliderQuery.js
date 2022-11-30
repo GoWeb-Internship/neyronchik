@@ -3,13 +3,15 @@ import { graphql, useStaticQuery } from "gatsby";
 export default function useSliderQuery() {
   const images = useStaticQuery(graphql`
     query HeroSliderQuery {
-      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          extension: { nin: "svg" }
+        }
+      ) {
         edges {
           node {
             id
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
             name
             relativeDirectory
           }

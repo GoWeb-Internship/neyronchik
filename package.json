@@ -13,7 +13,6 @@
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-netlify": "^5.0.0",
     "gatsby-plugin-netlify-cms": "^6.0.0",
-    "gatsby-plugin-portal": "^1.0.7",
     "gatsby-plugin-postcss": "^5.23.0",
     "gatsby-plugin-purgecss": "^6.1.2",
     "gatsby-plugin-react-i18next": "^1.2.3",
