@@ -23,5 +23,10 @@
   "servicesValues": {
     "time": "minutes",
     "currency": "uah"
+  },
+  "404": {
+    "title": "Oops... something went wrong",
+    "description": "Would you like to return to the home page?",
+    "button": "Home"
   }
 }
