@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 // import Markdown from 'markdown-to-jsx';
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 
 import ServicesItem from "./ServicesItem";
+import AnimateHeight from "react-animate-height";
 
 export const Services = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
@@ -45,48 +46,88 @@ export const Services = () => {
   const { services_title } = t("titles", {
     returnObjects: true,
   });
+  const { servicesBtn, servicesHideBtn } = t("button", {
+    returnObjects: true,
+  });
+
+  let styles;
+  let serviceCard;
+  let serviceSection;
+  // if (typeof window !== `undefined`) {
+  // }
+
+  useEffect(() => {
+    serviceSection = document.getElementById("services");
+    console.log(serviceSection);
+
+    serviceCard = document.getElementById("service-card");
+    styles = getComputedStyle(serviceCard);
+    console.log(styles.height);
+  }, []);
+
+  const [height, setHeight] = useState(0.1);
+
+  const visibleServices = nodes?.slice(0, 3);
+  // console.log(visibleServices);
+  const hideServices = nodes.length > 3 ? nodes?.slice(3) : null;
+  // console.log(hideServices);
 
   return (
-    <section className="w-full " id="services">
-      <div className="container border-2">
+    <section
+      className={` w-full overflow-hidden transition-all duration-[2500ms] ease-linear`}
+      id="services"
+    >
+      <div className={` container border-2`}>
         <Headings type="h2">{services_title}</Headings>
-        <ul>
-          {nodes?.map(({ frontmatter }) => (
-            <li key={frontmatter.en_service_title}>
-              <p className="text-2xl">
-                {frontmatter[`${language}_service_title`]}
-              </p>
-              <ServicesItem data={frontmatter.service_list} />
-            </li>
-          ))}
-        </ul>
+        <div>
+          {visibleServices &&
+            visibleServices?.map(({ frontmatter }) => (
+              <div
+                key={frontmatter.en_service_title}
+                id="service-card"
+                className="mb-2"
+              >
+                <p className="text-2xl">
+                  {frontmatter[`${language}_service_title`]}
+                </p>
+                <ServicesItem data={frontmatter.service_list} />
+              </div>
+            ))}
 
-        {nodes.length > 3 && (
-          <button className="h-10 w-48 bg-green-500" type="button">
-            See more...
-          </button>
-        )}
-
-        {/* <div className="flex  h-[600px] w-full flex-row flex-wrap overflow-y-hidden">
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 1</p>
-          </div>
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 2</p>
-          </div>
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 3</p>
-          </div>
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 4</p>
-          </div>
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 5</p>
-          </div>
-          <div className="h-80 w-64 bg-orange-400">
-            <p>service 6</p>
-          </div>
-        </div> */}
+          {hideServices && (
+            <div>
+              <AnimateHeight
+                id="example-panel"
+                duration={700}
+                height={height}
+                aria-hidden="false"
+              >
+                {hideServices &&
+                  hideServices?.map(({ frontmatter }) => (
+                    <div
+                      key={frontmatter.en_service_title}
+                      id="service-card"
+                      className="mb-2"
+                    >
+                      <p className="text-2xl">
+                        {frontmatter[`${language}_service_title`]}
+                      </p>
+                      <ServicesItem data={frontmatter.service_list} />
+                    </div>
+                  ))}
+              </AnimateHeight>
+              <button
+                className="h-10 w-48 bg-green-500"
+                type="button"
+                aria-expanded={height !== 0.1}
+                aria-controls="example-panel"
+                onClick={() => setHeight(height === 0.1 ? "auto" : 0.1)}
+              >
+                {height === 0.1 ? `${servicesBtn}` : `${servicesHideBtn}`}
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

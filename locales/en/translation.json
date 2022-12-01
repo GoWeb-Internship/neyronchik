@@ -13,6 +13,7 @@
   "button": {
     "contactUsBtn": "Contact us",
     "servicesBtn": "See all services",
+    "servicesHideBtn": "Hide",
     "instagramBtn": "See more"
   },
   "contactsSection": {
