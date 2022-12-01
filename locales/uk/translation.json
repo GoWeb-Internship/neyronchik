@@ -13,6 +13,7 @@
   "button": {
     "contactUsBtn": "Записатися на прийом",
     "servicesBtn": "Усі послуги",
+    "servicesHideBtn": "Згорнути",
     "instagramBtn": "Дізнатись більше"
   },
   "contactsSection": {
