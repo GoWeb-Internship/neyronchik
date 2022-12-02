@@ -14,7 +14,9 @@
     "contactUsBtn": "Contact us",
     "servicesBtn": "See all services",
     "servicesHideBtn": "Hide",
-    "instagramBtn": "See more"
+    "instagramBtn": "See more",
+    "teamBtn": "All specialists",
+    "teamHideBtn": "Hide"
   },
   "contactsSection": {
     "contactUs": "Please contact or visit us",
