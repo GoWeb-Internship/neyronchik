@@ -11,6 +11,3 @@ const Footer = () => {
   );
 };
 export default Footer;
-
-// font-family: 'e-Ukraine';
-// font-style: normal;

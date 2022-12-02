@@ -25,7 +25,7 @@ export const Contact = ({
           {contactUs}
         </h3>
         <address className="flex text-left not-italic ">
-          <div className="flex-col border-r-2 border-neutral-900 pr-3">
+          <div className="flex-col border-r-2 border-neutral-900 pr-5">
             <a href={`tel:${phone_main}`} className="mb-4 block">
               {phone_main}
             </a>
@@ -38,12 +38,12 @@ export const Contact = ({
               {email}
             </a>
             <ul className="mb-7 flex">
-              <li className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900">
+              <li className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer">
                 <a href="">
                   <FaTelegramPlane />
                 </a>
               </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded border border-neutral-900">
+              <li className="flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer">
                 <a href="">
                   <FaWhatsapp />
                 </a>
@@ -52,19 +52,19 @@ export const Contact = ({
             {/* <Headings type="h3">{socials}</Headings> */}
             <h3 className="mb-4">{socials}</h3>
             <ul className="flex">
-              <li className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900">
+              <li className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer">
                 <a href="">
                   <FaFacebookF />
                 </a>
               </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded border border-neutral-900">
+              <li className="flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer">
                 <a href="">
                   <FaInstagram />
                 </a>
               </li>
             </ul>
           </div>
-          <div className="max-w-[166px] pl-3">
+          <div className="max-w-[166px] pl-4">
             <p>{city}</p>
             <p className="mb-8">{address}</p>
             <p>
