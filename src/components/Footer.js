@@ -2,14 +2,15 @@ import * as React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full " id="footer">
-      <div className="container border-2 text-center">
-        <div>
-          &#169; {new Date().getFullYear()} Нейрончики - логопедичний центр. Усі
-          права захищені
-        </div>
+    <footer className="w-full text-neutral-900" id="footer">
+      <div className="container py-7 text-center text-[14px] font-light leading-[21px] tracking-[-0.019em]">
+        &#169; {new Date().getFullYear()} Нейрончики - логопедичний центр. Усі
+        права захищені
       </div>
     </footer>
   );
 };
 export default Footer;
+
+// font-family: 'e-Ukraine';
+// font-style: normal;
