@@ -14,7 +14,9 @@
     "contactUsBtn": "Записатися на прийом",
     "servicesBtn": "Усі послуги",
     "servicesHideBtn": "Згорнути",
-    "instagramBtn": "Дізнатись більше"
+    "instagramBtn": "Дізнатись більше",
+    "teamBtn": "Усі спеціалісти",
+    "teamHideBtn": "Згорнути"
   },
   "contactsSection": {
     "contactUs": "Зв’яжіться з нами або завітайте у гості",
