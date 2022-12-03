@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 
-import ServicesItem from "./ServicesItem";
+import { ServicesCard } from "components/ServicesCard/ServicesCard";
 
 export const Services = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
@@ -55,16 +55,10 @@ export const Services = () => {
         <div>
           {nodes &&
             nodes?.map(({ frontmatter }) => (
-              <div
+              <ServicesCard
+                data={frontmatter}
                 key={frontmatter.en_service_title}
-                id="service-card"
-                className="mb-2"
-              >
-                <p className="text-2xl">
-                  {frontmatter[`${language}_service_title`]}
-                </p>
-                <ServicesItem data={frontmatter.service_list} />
-              </div>
+              />
             ))}
         </div>
       </div>
