@@ -18,7 +18,7 @@ const defaultOptions = {
   fullscreenControl: false,
 };
 
-const Map = ({ center }) => {
+export const Map = ({ center }) => {
   const mapRef = React.useRef(undefined);
 
   const onLoad = React.useCallback(function callback(map) {
@@ -48,5 +48,3 @@ const Map = ({ center }) => {
     </GoogleMap>
   );
 };
-
-export default Map;

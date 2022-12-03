@@ -10,7 +10,7 @@ import { Services } from "src/views/ServicesSection/Services";
 
 import { Gallery } from "src/views/Gallery/Gallery";
 import { News } from "src/views/News";
-import { Contacts } from "src/views/Contacts";
+import { Contacts } from "src/views/Contacts/Contacts";
 import useSliderQuery from "src/queries/useSliderQuery";
 import useTeamQuery from "src/queries/useTeamQuery";
 import Layout from "components/Layout";

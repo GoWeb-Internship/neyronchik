@@ -18,7 +18,7 @@ export const Headings = ({ children, type = "h2", className, ...props }) => {
       );
     case "h3":
       return (
-        <h3 className={classNames(h2, className)} {...props}>
+        <h3 className={classNames(h3, className)} {...props}>
           {children}
         </h3>
       );
