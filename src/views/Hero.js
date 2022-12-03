@@ -12,19 +12,12 @@ export const Hero = ({ images }) => {
         {images && (
           <>
             <Carusel type="hero" images={images} />
-            <SliderButton className="buttonPrevHero" />
-            <SliderButton className="buttonNextHero" />
+            <SliderButton back className="buttonPrevHero " />
+            <SliderButton className="buttonNextHero  " />
           </>
         )}
 
-        <Grid section="hero">
-          <HeroTextBlock />
-          <div
-            style={{
-              padding: "40px",
-            }}
-          ></div>
-        </Grid>
+        <HeroTextBlock />
       </div>
     </section>
   );

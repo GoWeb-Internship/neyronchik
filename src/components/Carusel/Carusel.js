@@ -21,8 +21,8 @@ export const Carusel = ({ type, images }) => {
   const [modalImage, setModalImage] = useState(null);
   const [modalImageAlt, setModalImageAlt] = useState(null);
 
+  // console.log(ref);
   const handleOpenModal = (image, alt) => {
-    console.log(alt);
     setModalImage(image);
     setModalImageAlt(alt);
     setIsModalOpen(true);
@@ -55,26 +55,19 @@ export const Carusel = ({ type, images }) => {
           loop: true,
           lazy: true,
           speed: 300,
-          slidesPerView: 3,
-          className: s.mySwiper,
+          slidesPerView: 2,
+          className: "gallerySwiper",
           centeredSlides: true,
           pagination: { clickable: true },
-          // navigation
           // navigation:
           //   nextEl: nextRef,
           //   prevEl: prevRef,
           //
-          effect: "coverflow",
-
           slideToClickedSlide: true,
+          effect: "coverflow",
           coverflowEffect: {
-            scale: 0.5,
             rotate: 0,
-            stretch: 0,
-            depth: 30,
-            modifier: 1,
             slideShadows: false,
-            height: 700,
             pagination: {
               clickable: true,
             },
@@ -82,16 +75,13 @@ export const Carusel = ({ type, images }) => {
         };
       case "team":
         return {
-          modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
+          modules: [Navigation, Lazy],
           lazy: true,
           speed: 400,
-          navigation: true,
+          loop: true,
           slidesPerView: 3,
-
-          // nextArrow:
-          // prevArrow:
-          spaceBetween: 30,
-          navigation: true,
+          spaceBetween: 24,
+          navigation: { nextEl: ".buttonNextCertificate" },
         };
 
       default:
@@ -103,7 +93,7 @@ export const Carusel = ({ type, images }) => {
       case "hero":
         return images.edges.map(({ node }) => (
           <SwiperSlide key={node.id}>
-            <div className={s.slideHero} key={node.id}>
+            <div key={node.id}>
               <GatsbyImage
                 image={node.childImageSharp.gatsbyImageData}
                 alt={node.name}
@@ -165,9 +155,9 @@ export const Carusel = ({ type, images }) => {
     <div
       id="carusel"
       className={classNames({
-        [s.wrapperHero]: type === "hero",
-        [s.wrapperGallery]: type === "gallery",
-        [s.wrapperTeam]: type === "team",
+        ["wrapperHero"]: type === "hero",
+        ["wrapperGallery"]: type === "gallery",
+        ["wrapperTeam"]: type === "team",
       })}
     >
       <Swiper {...settings}>{data}</Swiper>

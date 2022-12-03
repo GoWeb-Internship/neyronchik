@@ -3,21 +3,13 @@ import * as s from "./TeamCard.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useI18next } from "gatsby-plugin-react-i18next";
 import { Carusel } from "components/Carusel/Carusel";
-
+import { SliderButton } from "components/SliderButton/SliderButton";
 export const TeamCard = ({ data }) => {
   const { language } = useI18next();
 
   return (
     <div className={s.wrapper}>
-      <div
-        className={s.photo}
-        // style={{
-        //   display: "flex",
-        //   width: "150px",
-        //   height: "150px",
-        //   backgroundColor: "yellow",
-        // }}
-      >
+      <div className={s.photo}>
         <GatsbyImage
           image={data.team_member_photo.childrenImageSharp[0].gatsbyImageData}
           alt={data[`${language}_team_member_name`]}
@@ -35,9 +27,13 @@ export const TeamCard = ({ data }) => {
 
       <div className={s.caruselWrapper}>
         <p className={s.sertificates}>
-          {language === "uk" ? "Сартифікати" : "Certificates"}
+          {language === "uk" ? "Сартифікати:" : "Certificates:"}
         </p>
-        <Carusel type="team" images={data.cert_list} />
+        <div className={s.caruselNavigationWrapper}>
+          {" "}
+          <Carusel type="team" images={data.cert_list} />
+          <SliderButton className="buttonNextCertificate" />
+        </div>
       </div>
     </div>
   );

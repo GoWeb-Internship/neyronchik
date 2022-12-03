@@ -1,11 +1,12 @@
 .wrapper {
   display: flex;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
-  background: rgba(253, 253, 253, 0.65);
+  background: rgba(253, 253, 253, 0.8);
+  border: 1px solid #ffffff;
   box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.15),
     inset -5px -4px 13px #dae9ef, inset 5px 4px 13px #dae9ef;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(11.5px);
   border-radius: 30px;
 }
 .wrapper:not(:last-child) {
@@ -16,7 +17,7 @@
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid grey;
-  width: 240px;
+  width: 220px;
   height: 240px;
   margin-right: 24px;
 }
@@ -43,8 +44,11 @@
   width: 100%;
 }
 .caruselWrapper {
-  align-self: center;
+  @apply w-[310px] self-center;
+}
+.caruselNavigationWrapper {
+  @apply relative flex items-center;
 }
 .sertificates {
-  padding-bottom: 16px;
+  @apply pb-5 text-xl tracking-[0.04em];
 }

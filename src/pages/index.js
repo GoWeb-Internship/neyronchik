@@ -8,7 +8,7 @@ import { Why } from "src/views/Why";
 import { Team } from "src/views/Team/Team";
 import { Services } from "src/views/ServicesSection/Services";
 
-import { Gallery } from "src/views/Gallery";
+import { Gallery } from "src/views/Gallery/Gallery";
 import { News } from "src/views/News";
 import { Contacts } from "src/views/Contacts";
 import useSliderQuery from "src/queries/useSliderQuery";
