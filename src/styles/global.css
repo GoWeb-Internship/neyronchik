@@ -70,6 +70,29 @@ body {
   @apply absolute right-24 top-1/2 z-20 flex h-16 w-16 cursor-pointer items-center justify-center rounded-[50%] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
 }
 
+/* ======== swiper services styles ======== */
+.servicesContainer {
+  @apply px-3;
+}
+.servicesContainer .swiper-wrapper {
+  @apply pb-[70px];
+}
+.servicesContainer .swiper-pagination-bullet {
+  @apply h-4  w-4 bg-sky-500 opacity-100;
+}
+.servicesContainer .swiper-pagination-bullet-active {
+  @apply bg-rose-600;
+}
+.servicesContainer .swiper-slide {
+  /* width: 332px !important; */
+
+  scale: 1;
+}
+.servicesContainer .swiper-slide-active {
+  /* width: 546px !important; */
+  scale: 1;
+}
+
 /* ======== team certificate modal styles ======== */
 .ReactModal__Body--open {
   overflow: hidden;

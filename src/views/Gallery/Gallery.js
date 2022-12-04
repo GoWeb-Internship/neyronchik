@@ -2,7 +2,6 @@ import React from "react";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 import { Carusel } from "components/Carusel/Carusel";
-import boy from "img/gallery/boy.svg";
 import * as s from "./Gallery.module.css";
 
 export const Gallery = ({ images }) => {

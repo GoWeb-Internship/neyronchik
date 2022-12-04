@@ -2,6 +2,6 @@
   @apply relative text-center xl:max-w-[1280px] xl:px-0 xl:pt-[150px];
 }
 .wrapper {
-  background: url("../../img/gallery/boy.svg") left 46px top 160px no-repeat,
-    url("../../img/gallery/boy-mirror.svg") right 46px top 160px no-repeat;
+  background: url("../../img/boy.svg") left 46px top 160px no-repeat,
+    url("../../img/boy-mirror.svg") right 46px top 160px no-repeat;
 }

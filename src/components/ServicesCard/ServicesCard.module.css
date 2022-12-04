@@ -1,8 +1,12 @@
 .wrapper {
-  @apply relative flex justify-center px-8 pt-8 xl:w-[546px];
+  @apply relative flex justify-center px-3 pt-[95px] xl:w-[332px];
+}
+.wrapper {
+  background: url("../../img/hands.svg") center top no-repeat;
+  background-size: 70%;
 }
 .pinkRectangle {
-  @apply absolute top-0 -z-20 rounded-[30px] bg-rose-600 xl:h-[208px] xl:w-[546px];
+  @apply absolute top-[83px] -z-20 rounded-[20px] bg-rose-600 xl:h-[148px] xl:w-[332px];
 }
 .pinkRectangle {
   box-shadow: 0px 25px 50px -12px rgba(14, 165, 233, 0.2),
@@ -10,7 +14,7 @@
     inset 5px 4px 40px rgba(255, 255, 255, 0.5);
 }
 .infoBlock {
-  @apply w-full rounded-[20px] px-5 pt-[70px] text-center;
+  @apply w-full rounded-[20px] px-5 pt-[30px] text-center;
 }
 .infoBlock {
   background: rgba(250, 250, 250, 0.3);
@@ -20,6 +24,34 @@
     inset 20px 20px 40px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
 }
-.title {
-  @apply mb-7 text-[40px] text-[#FAFAFA];
+.cardTitle {
+  @apply mb-0 text-[36px] text-[#FAFAFA];
+}
+
+table {
+  @apply w-full text-left;
+}
+.thead {
+  @apply h-[56px] text-base font-light tracking-[-0.019em] text-white;
+}
+/* .theaders {
+  @apply;
+} */
+
+.trow {
+  @apply h-[56px] text-sm tracking-[-0.019em];
+}
+.trowActive {
+  @apply h-[56px] text-xl tracking-[0.04em];
+}
+.trow:not(:last-child) {
+  border-bottom: 1px solid rgba(252, 213, 219, 1);
+}
+
+.logo {
+  @apply absolute top-[85px] left-1/2 h-[100px] w-[100px] translate-x-[-50%] translate-y-[-50%] rounded-[50%] border-[1px] border-[#FFCFD6] bg-neutral-50;
+}
+.logo {
+  background: url("../../img/boy.svg") center/80% no-repeat,
+    linear-gradient(#fafafa, #fafafa);
 }

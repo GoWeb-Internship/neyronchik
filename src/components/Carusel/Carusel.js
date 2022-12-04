@@ -16,12 +16,13 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Modal } from "components/Modal/Modal";
 
 export const Carusel = ({ type, images }) => {
+  // type -> в залежності від секції де використовується (hero, gallery...) налаштовується swiper в typeSettings
+  // images -> масив об'єктів, що ми хочемо рендерити (налаштовується окреемо для різних видів даних в typeData)
   const { language } = useI18next();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [modalImageAlt, setModalImageAlt] = useState(null);
 
-  // console.log(ref);
   const handleOpenModal = (image, alt) => {
     setModalImage(image);
     setModalImageAlt(alt);
@@ -43,7 +44,6 @@ export const Carusel = ({ type, images }) => {
           autoplay: { delay: 3000 },
           speed: 1000,
           loop: true,
-          // navigation: true,
           navigation: {
             nextEl: ".buttonNextHero",
             prevEl: ".buttonPrevHero",
@@ -59,10 +59,6 @@ export const Carusel = ({ type, images }) => {
           className: "gallerySwiper",
           centeredSlides: true,
           pagination: { clickable: true },
-          // navigation:
-          //   nextEl: nextRef,
-          //   prevEl: prevRef,
-          //
           slideToClickedSlide: true,
           effect: "coverflow",
           coverflowEffect: {
@@ -101,6 +97,7 @@ export const Carusel = ({ type, images }) => {
             </div>
           </SwiperSlide>
         ));
+
       case "gallery":
         return images.edges?.length
           ? images.edges.map(({ node }) => (
@@ -108,7 +105,7 @@ export const Carusel = ({ type, images }) => {
                 {({ isActive }) => (
                   <div
                     className={classNames(s.slideGallery, {
-                      [s.activeSlide]: isActive,
+                      [s.slideGalleryActive]: isActive,
                     })}
                   >
                     <GatsbyImage

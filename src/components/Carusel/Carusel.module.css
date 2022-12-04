@@ -1,13 +1,6 @@
-.slideHero {
-  transition: all 300ms;
-}
-
 .slideGallery {
   @apply flex truncate rounded-[30px] blur-[2px] xl:h-[360px];
 }
-.slideTeam {
-  @apply m-2;
-}
-.activeSlide {
+.slideGalleryActive {
   @apply blur-0;
 }
