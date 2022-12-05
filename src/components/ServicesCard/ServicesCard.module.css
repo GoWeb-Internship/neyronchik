@@ -35,7 +35,7 @@
   backdrop-filter: blur(8px);
 }
 .cardTitle {
-  @apply mb-0 text-[36px] text-[#FAFAFA];
+  @apply mb-0 font-adigiana text-[36px] text-[#FAFAFA];
 }
 
 table {
