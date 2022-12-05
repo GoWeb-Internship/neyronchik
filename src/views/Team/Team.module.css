@@ -1,7 +1,7 @@
 .heading {
-  @apply mb-14 text-center  text-5xl font-bold text-white;
+  @apply mb-14  text-center  text-5xl font-bold text-sky-500;
 }
 
 .teamBg {
-  background: url("../../img/boy-mirror.svg") no-repeat center/contain;
+  background: url("../../../static/img/boy-mirror.svg") no-repeat center/contain;
 }

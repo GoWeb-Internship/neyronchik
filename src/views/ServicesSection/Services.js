@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 // import Markdown from 'markdown-to-jsx';
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
@@ -9,11 +9,14 @@ import {
   Lazy,
   Navigation,
   Pagination,
+  Zoom,
 } from "swiper";
 import { ServicesCard } from "components/ServicesCard/ServicesCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const Services = () => {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -68,49 +71,59 @@ export const Services = () => {
         </Headings>
 
         <Swiper
-          modules={[Navigation, EffectCoverflow, Pagination, Lazy, Autoplay]}
+          modules={[
+            Navigation,
+            Zoom,
+            EffectCoverflow,
+            Pagination,
+            Lazy,
+            Autoplay,
+          ]}
           loop={true}
+          zoom={true}
           // lazy={true}
-          // speed={300}
-          // slidesPerView={3}
-          spaceBetween={90}
+          speed={300}
+          slidesPerView={"auto"}
+          spaceBetween={20}
           centeredSlides={true}
           pagination={{ clickable: true }}
           slideToClickedSlide={true}
           // effect={"coverflow"}
-          breakpoints={{
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            // when window width is >= 480px
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            // when window width is >= 640px
-            1200: {
-              slidesPerView: 3,
-              spaceBetween: 90,
-            },
-          }}
-          // coverflowEffect={{
-          //   rotate: 0,
-          //   // scale: 0.8,
-          //   slideShadows: false,
-          //   pagination: {
-          //     clickable: true,
+          // breakpoints={{
+          //   // when window width is >= 320px
+          //   320: {
+          //     slidesPerView: 1,
+          //     spaceBetween: 20,
+          //   },
+          //   // when window width is >= 480px
+          //   768: {
+          //     slidesPerView: 2,
+          //     spaceBetween: 30,
+          //   },
+          //   // when window width is >= 640px
+          //   1200: {
+          //     slidesPerView: 3,
+          //     spaceBetween: 90,
           //   },
           // }}
+          coverflowEffect={{
+            rotate: 0,
+            // scale: 0.8,
+            slideShadows: false,
+            // pagination: {
+            //   clickable: true,
+            // },
+          }}
         >
           {nodes &&
             nodes?.map(({ frontmatter }) => (
               <SwiperSlide>
-                <ServicesCard
-                  data={frontmatter}
-                  key={frontmatter.en_service_title}
-                />
+                <div className="swiper-zoom-container">
+                  <ServicesCard
+                    data={frontmatter}
+                    key={frontmatter.en_service_title}
+                  />
+                </div>
               </SwiperSlide>
             ))}
         </Swiper>

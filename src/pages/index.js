@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Hero } from "src/views/Hero";
+import { Hero } from "src/views/Hero/Hero";
 import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
 import { Why } from "src/views/Why";

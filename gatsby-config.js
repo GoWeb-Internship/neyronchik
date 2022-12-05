@@ -12,6 +12,11 @@ const gatsbyRequiredRules = path.join(
   "utils",
   "eslint-rules"
 );
+const myCustomQueries = {
+  sm: "(max-width: 767.98px)",
+  md: "(max-width: 1279.98px)",
+  xl: "(min-width: 1280px)",
+};
 
 module.exports = {
   siteMetadata: {
@@ -116,7 +121,12 @@ module.exports = {
         },
       },
     },
-
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
+      },
+    },
     // must be after other CSS plugins
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
