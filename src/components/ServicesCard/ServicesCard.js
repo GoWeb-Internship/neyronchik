@@ -44,10 +44,10 @@ export const ServicesCard = ({ data }) => {
           <tbody>
             {data.service_list.map((list, index) => (
               <tr
+                key={index}
                 className={classnames(s.trow, {
                   [s.trowActive]: swiperSlide.isActive,
                 })}
-                key={index}
               >
                 <td>
                   {capitalizeFirstLetter(
