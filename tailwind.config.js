@@ -32,7 +32,11 @@ module.exports = {
         xl: "6rem",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        adigiana: ["Adigiana"],
+      },
+    },
   },
   plugins: ["gatsby-plugin-postcss"],
 };
