@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Hero } from "src/views/Hero";
+import { Hero } from "src/views/Hero/Hero";
 import { About } from "src/views/About";
 import { Directions } from "src/views/Directions";
 import { Why } from "src/views/Why";
@@ -8,7 +8,7 @@ import { Why } from "src/views/Why";
 import { Team } from "src/views/Team/Team";
 import { Services } from "src/views/ServicesSection/Services";
 
-import { Gallery } from "src/views/Gallery";
+import { Gallery } from "src/views/Gallery/Gallery";
 import { News } from "src/views/News";
 import { Contacts } from "src/views/Contacts/Contacts";
 import useSliderQuery from "src/queries/useSliderQuery";

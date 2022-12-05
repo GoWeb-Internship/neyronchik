@@ -12,10 +12,10 @@ module.exports = {
     screens: {
       smOnly: { max: "767.98px" },
       sm: "320px",
-      mdOnly: { min: "768px", max: "1199.98px" },
+      mdOnly: { min: "768px", max: "1279.98px" },
       md: "768px",
-      xl: "1200px",
-      notXl: { max: "1199.98px" },
+      xl: "1280px",
+      notXl: { max: "1279.98px" },
     },
     borderRadius: {
       none: "0",
@@ -27,8 +27,8 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: "1.25rem",
-        sm: "1.25rem",
-        md: "2rem",
+        sm: "0.75rem",
+        md: "0.75rem",
         xl: "6rem",
       },
     },

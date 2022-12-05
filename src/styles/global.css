@@ -32,11 +32,65 @@ body {
 @import "swiper/css/autoplay";
 @import "swiper/css/effect-cards";
 
-.buttonNextHero {
-  @apply absolute top-0 left-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all hover:bg-slate-400 hover:opacity-60;
+/* ======== swiper gallery styles ======== */
+.gallerySwiper {
+  @apply items-center sm:w-[280px] sm:max-w-[280px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
+}
+.wrapperGallery .swiper-pagination {
+  @apply bottom-0;
+}
+.wrapperGallery .swiper-pagination-bullet {
+  @apply h-4  w-4 bg-rose-400 opacity-100;
+}
+.wrapperGallery .swiper-pagination-bullet-active {
+  @apply bg-sky-500;
+}
+
+/* ======== swiper team styles ======== */
+.wrapperTeam {
+  @apply max-h-24 min-h-full  truncate sm:w-[280px] md:w-[300px] xl:h-[90px] xl:w-[260px];
+}
+.buttonNextCertificate {
+  @apply ml-6 flex h-24 w-6 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(245,245,245,0.5)] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
+}
+.buttonNextCertificate {
+  /* background: rgba(245, 245, 245, 0.5); */
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* ======== swiper hero styles ======== */
+.wrapperHero {
+  @apply absolute -z-10 truncate sm:max-h-[468px]  sm:w-[320px] md:max-h-[492px] md:w-[768px] xl:max-h-[700px] xl:w-[1280px];
 }
 .buttonPrevHero {
-  @apply absolute right-0 top-0 z-20 flex h-full w-8 cursor-pointer items-center justify-center transition-all  hover:bg-slate-400 hover:opacity-60;
+  @apply absolute top-1/2 left-24 z-20 flex h-16 w-16 translate-y-[-50%] cursor-pointer items-center justify-center rounded-[50%] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
+}
+.buttonNextHero {
+  @apply absolute right-24 top-1/2  z-20 flex h-16 w-16 translate-y-[-50%] cursor-pointer items-center justify-center rounded-[50%] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
+}
+
+/* ======== swiper services styles ======== */
+.servicesContainer {
+  @apply px-3;
+}
+.servicesContainer .swiper-wrapper {
+  @apply items-end pb-[70px];
+}
+.servicesContainer .swiper-pagination-bullet {
+  @apply h-4  w-4 bg-sky-500 opacity-100;
+}
+.servicesContainer .swiper-pagination-bullet-active {
+  @apply bg-rose-600;
+}
+.servicesContainer .swiper-slide {
+  @apply flex w-[546px];
+}
+.servicesContainer .swiper-slide-active {
+  @apply z-10 flex;
+}
+.servicesContainer .swiper-slide-prev {
+  @apply justify-end;
 }
 
 /* ======== team certificate modal styles ======== */

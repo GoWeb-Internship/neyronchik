@@ -2,6 +2,7 @@ import React from "react";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 import { Carusel } from "components/Carusel/Carusel";
+import * as s from "./Gallery.module.css";
 
 export const Gallery = ({ images }) => {
   const { language } = useI18next();
@@ -12,8 +13,8 @@ export const Gallery = ({ images }) => {
 
   return (
     <section className="w-full py-5" id="gallery">
-      <div className="container relative">
-        <Headings className="mb-5 " type="h2">
+      <div className={`container ${s.wrapper}`}>
+        <Headings className="mb-20 text-sky-500" type="h2">
           {gallery_title}
         </Headings>
 

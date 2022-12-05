@@ -1,0 +1,7 @@
+.wrapper {
+  @apply relative text-center xl:max-w-[1280px] xl:px-0 xl:pt-[150px];
+}
+.wrapper {
+  background: url("../../../static/img/boy.svg") left 46px top 160px no-repeat,
+    url("../../../static/img/boy-mirror.svg") right 46px top 160px no-repeat;
+}

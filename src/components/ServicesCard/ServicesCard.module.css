@@ -1,0 +1,67 @@
+.wrapper {
+  @apply relative flex justify-center px-3 pt-[95px] xl:w-[332px];
+}
+.wrapperActive {
+  @apply px-8 pt-[155px] xl:w-[546px];
+}
+.wrapperBg {
+  background: url("../../../static/img/hands.svg") center top no-repeat;
+  background-size: 70%;
+}
+.pinkRectangle {
+  @apply absolute top-[83px] -z-20 rounded-[20px] bg-rose-600 xl:h-[148px] xl:w-[332px];
+}
+.pinkRectangleActive {
+  @apply top-[120px] pt-[170px] xl:h-[208px] xl:w-[546px];
+}
+.pinkRectangleBg {
+  box-shadow: 0px 25px 50px -12px rgba(14, 165, 233, 0.2),
+    inset -5px -4px 40px rgba(255, 255, 255, 0.5),
+    inset 5px 4px 40px rgba(255, 255, 255, 0.5);
+}
+.infoBlock {
+  @apply max-h-[368px] min-h-[368px] w-full rounded-[20px] px-5 pt-[30px] text-center;
+}
+.infoBlockActive {
+  @apply max-h-[428px] min-h-[428px] pt-[62px];
+}
+
+.infoBlockBg {
+  background: rgba(250, 250, 250, 0.3);
+  border: 1px solid #fafafa;
+  box-shadow: 0px 0px 19px 5px rgba(52, 101, 123, 0.15),
+    inset -20px -20px 40px rgba(255, 255, 255, 0.2),
+    inset 20px 20px 40px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+.cardTitle {
+  @apply mb-0 text-[36px] text-[#FAFAFA];
+}
+
+table {
+  @apply w-full text-left;
+}
+.thead {
+  @apply h-[56px] text-base font-light tracking-[-0.019em] text-white;
+}
+
+.trow {
+  @apply h-[52px] text-sm tracking-[-0.019em];
+}
+.trowActive {
+  @apply h-[64px] text-xl tracking-[0.04em];
+}
+.trow:not(:last-child) {
+  border-bottom: 1px solid rgba(252, 213, 219, 1);
+}
+
+.logo {
+  @apply absolute top-[85px] left-1/2 h-[100px] w-[100px] translate-x-[-50%] translate-y-[-50%] rounded-[50%] border-[1px] border-[#FFCFD6] bg-neutral-50;
+}
+.logoActive {
+  @apply absolute top-[120px] left-1/2 h-[166px] w-[166px] translate-x-[-50%] translate-y-[-50%] rounded-[50%] border-[1px] border-[#FFCFD6] bg-neutral-50;
+}
+.logoBg {
+  background: url("../../../static/img/boy.svg") center/80% no-repeat,
+    linear-gradient(#fafafa, #fafafa);
+}

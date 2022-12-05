@@ -1,0 +1,10 @@
+.wrapper {
+  @apply smOnly:px-3 mdOnly:pl-3 md:pt-20 xl:pl-[177px] xl:pt-[118px];
+}
+.subtitle {
+  @apply select-none text-2xl text-rose-600 sm:mb-4 md:mb-7;
+}
+.text {
+  @apply select-none font-light leading-6 tracking-[-0.019em]
+    sm:mb-[264px] md:mb-[60px] md:max-w-[360px] xl:max-w-[486px];
+}

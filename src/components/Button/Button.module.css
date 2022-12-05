@@ -1,0 +1,4 @@
+.button {
+  @apply flex items-center justify-center rounded-[30px] bg-rose-600 py-4 px-11 text-base text-white hover:bg-rose-700 
+   smOnly:mx-auto sm:h-[52px] sm:w-[296px] md:h-[60px] md:w-[356px];
+}

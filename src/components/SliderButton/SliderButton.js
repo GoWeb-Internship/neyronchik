@@ -1,10 +1,21 @@
-import React, { forwardRef } from "react";
-import { buttonNextHero, buttonPrevHero } from "./SliderButton.module.css";
+import React from "react";
+import {
+  MdOutlineArrowForwardIos,
+  MdOutlineArrowBackIosNew,
+} from "react-icons/md";
 
-export const SliderButton = (props) => {
+export const SliderButton = ({
+  back = false,
+  className = "",
+  aria = "button",
+}) => {
   return (
-    <div className={props.className}>
-      <p>*</p>
-    </div>
+    <button type="button" aria-label={aria} className={className}>
+      {back ? (
+        <MdOutlineArrowBackIosNew size={40} />
+      ) : (
+        <MdOutlineArrowForwardIos size={40} />
+      )}
+    </button>
   );
 };

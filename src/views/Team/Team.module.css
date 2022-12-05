@@ -1,34 +1,7 @@
 .heading {
-  @apply mb-14 text-center  text-5xl font-bold text-white;
+  @apply mb-14  text-center  text-5xl font-bold text-sky-500;
 }
 
 .teamBg {
-  background: linear-gradient(
-      89.96deg,
-      rgb(251 191 36) 0%,
-      rgb(251 191 36) 100%
-    ),
-    url("../../img/team/bg-team.png") no-repeat center/cover;
+  background: url("../../../static/img/boy-mirror.svg") no-repeat center/contain;
 }
-
-@supports (background: url("../../img/team/bg-team.webp")) {
-  .teamBg {
-    background: url("../../img/team/bg-team.webp") no-repeat center/cover;
-  }
-}
-
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx),
-  (min-width: 768px) {
-  .teamBg {
-    background: url("../../img/team/bg-team-2x.png") no-repeat center/cover;
-  }
-  @supports (background: url("../../img/team/bg-team-2x.webp")) {
-    .teamBg {
-      background: url("../../img/team/bg-team-2x.webp") no-repeat center/cover;
-    }
-  }
-}
-
-/* :global(.dark) .teamBg */

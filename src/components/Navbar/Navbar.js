@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
-import instagram from "img/social/instagram.svg";
-import facebook from "img/social/facebook.svg";
-import logo from "img/logo.png";
+import instagram from "../../../static/img/social/instagram.svg";
+import logo from "../../../static/img/logo.svg";
 import { Banner } from "src/views/Banner/Banner";
-
+import { capitalizeFirstLetter } from "utils/capitalizeFirst";
 import LanguageSwitch from "components/LanguageSwitch/LanguageSwitch";
 import * as s from "./Navbar.module.css";
 import classnames from "classnames";
+
 const sections = ["about", "team", "services", "gallery", "news", "contacts"];
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
 const Navbar = () => {
   return (
     <>
