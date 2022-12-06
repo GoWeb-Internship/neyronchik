@@ -17,7 +17,6 @@ export const Team = ({ data }) => {
     returnObjects: true,
   });
 
-  console.log(data);
   const breakpoints = useBreakpoint();
   const [height, setHeight] = useState(0.1);
   const visibleTeam = data.allMarkdownRemark.edges.slice(0, 3);
@@ -25,20 +24,30 @@ export const Team = ({ data }) => {
     data.allMarkdownRemark.edges.length > 3
       ? data.allMarkdownRemark.edges.slice(3)
       : null;
-  console.log(breakpoints.notSm);
+
   return (
-    <section className="w-full " id="team">
+    <section className="w-full " id="teamSection">
       <div className=" container ">
         {breakpoints.sm && data.allMarkdownRemark.edges.length && (
           <div className="mobileCertificatesRrapper">
             <Headings type="h2" className={s.heading}>
+              {/* TODO lang */}
               {language === "uk" ? " Наша команда" : "Our team"}
             </Headings>
-            <Swiper modules={[Navigation]} speed={300} slidesPerView={1}>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={20}
+              speed={300}
+              slidesPerView={1}
+            >
               {data.allMarkdownRemark.edges?.map(({ node }) => (
                 <SwiperSlide>
                   <div>
-                    <TeamCard key={node.id} data={node.frontmatter} />
+                    <TeamCard
+                      key={node.id}
+                      id={node.id}
+                      data={node.frontmatter}
+                    />
                   </div>
                 </SwiperSlide>
               ))}
@@ -51,7 +60,7 @@ export const Team = ({ data }) => {
               {language === "uk" ? " Наша команда" : "Our team"}
             </Headings>
             {visibleTeam.map(({ node }) => (
-              <TeamCard key={node.id} data={node.frontmatter} />
+              <TeamCard key={node.id} id={node.id} data={node.frontmatter} />
             ))}
             {hiddenTeam && (
               <div>
@@ -63,7 +72,11 @@ export const Team = ({ data }) => {
                 >
                   {hiddenTeam &&
                     hiddenTeam.map(({ node }) => (
-                      <TeamCard key={node.id} data={node.frontmatter} />
+                      <TeamCard
+                        key={node.id}
+                        id={node.id}
+                        data={node.frontmatter}
+                      />
                     ))}
                 </AnimateHeight>
                 <button

@@ -1,0 +1,21 @@
+.innerScroll::-webkit-scrollbar-track {
+  @apply rounded-[5px] bg-rose-100;
+}
+.innerScroll::-webkit-scrollbar {
+  @apply w-1 rounded-[5px] bg-rose-100;
+}
+.innerScroll::-webkit-scrollbar-thumb {
+  @apply w-1 rounded-[5px] bg-rose-300;
+}
+
+body::-webkit-scrollbar-track {
+  @apply rounded-[5px] bg-rose-100;
+}
+
+body::-webkit-scrollbar {
+  @apply w-1 rounded-[5px] bg-rose-100;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply w-1 rounded-[5px] bg-rose-300;
+}

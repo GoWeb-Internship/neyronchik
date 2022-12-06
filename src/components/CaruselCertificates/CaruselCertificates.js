@@ -8,7 +8,7 @@ import { SliderButton } from "components/SliderButton/SliderButton";
 import { Modal } from "components/Modal/Modal";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export const CaruselCertificates = ({ cerificates }) => {
+export const CaruselCertificates = ({ cerificates, id = "" }) => {
   const { language } = useI18next();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
@@ -19,28 +19,40 @@ export const CaruselCertificates = ({ cerificates }) => {
     setModalImageAlt(alt);
     setIsModalOpen(true);
   };
-  const caruselRef = useRef();
-
+  console.log(cerificates);
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  console.log(caruselRef.current);
 
   const settings = {
     modules: [Navigation, Lazy],
     lazy: true,
-    loop: true,
     speed: 500,
     height: 92,
-    loop: true,
-    slidesPerView: "auto",
+    slidesPerView: 3,
     spaceBetween: 24,
-    navigation: { nextEl: caruselRef.current },
-    // navigation: { nextEl: ".buttonNextCertificate" },
+    breakpoints: {
+      // when window width is >= 320px
+
+      // when window width is >= 480px
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+      },
+      // when window width is >= 640px
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    },
+    navigation: { nextEl: `.id-${id}` },
   };
 
   return (
-    <div id="caruselCertificates" className="wrapperCertificates">
+    <div
+      id="caruselCertificates"
+      className="wrapperCertificates md:auto relative flex truncate xl:h-[90px] xl:w-[260px]"
+    >
       <Swiper {...settings}>
         {cerificates.map((item) => (
           <SwiperSlide key={item.cert_img.id}>
@@ -68,14 +80,13 @@ export const CaruselCertificates = ({ cerificates }) => {
         handleCloseModal={handleCloseModal}
       />
       <button
-        ref={caruselRef}
         type="button"
-        aria-label="{aria}"
-        className="buttonNextCertificate"
+        // TODO language
+        aria-label={language === "en" ? "next slide" : "наступний слайд"}
+        className={`buttonNextCertificate id-${id}`}
       >
-        <MdOutlineArrowForwardIos size={40} />
+        <MdOutlineArrowForwardIos size={13} />
       </button>
-      {/* <SliderButton ref={caruselRef} className="buttonNextCertificate" /> */}
     </div>
   );
 };
