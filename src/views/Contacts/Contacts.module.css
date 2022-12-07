@@ -1,3 +1,11 @@
 .section {
-  @apply relative w-full pt-16 text-center;
+  @apply w-full pt-16 text-center;
+}
+
+.sectionTitle {
+  @apply mb-[128px] smOnly:mb-[148px];
+}
+
+.wrapper {
+  @apply overflow-hidden xl:grid xl:grid-cols-2;
 }
