@@ -1,5 +1,5 @@
 .contactsContainer {
-  @apply relative smOnly:px-3 smOnly:py-10 mdOnly:px-[60px] mdOnly:py-10 xl:py-[60px] xl:px-[52px];
+  @apply relative smOnly:px-3 smOnly:py-10 mdOnly:px-[60px] mdOnly:py-10 xl:px-[52px] xl:pt-[60px];
 }
 
 .wrapper {
@@ -35,7 +35,7 @@
 }
 
 .location {
-  @apply mdOnly:pl-10;
+  @apply md:pl-10 xl:pl-6;
 }
 
 .background {

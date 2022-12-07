@@ -80,7 +80,7 @@ export const Contacts = () => {
           address={frontmatter[`${language}_address`]}
         />
         {/* <div className="bg-slate-600 sm:h-full sm:w-full"></div> */}
-        {/* <div>{isLoaded && <Map center={center} />}</div> */}
+        <div>{isLoaded && <Map center={center} />}</div>
       </div>
     </section>
   );
