@@ -20,7 +20,9 @@
   },
   "contactsSection": {
     "contactUs": "Please contact or visit us",
-    "socials": "Our social media"
+    "socials": "Our social media",
+    "weWork": "Working hours:",
+    "time": "from 9:00 till 17:00"
   },
   "servicesValues": {
     "time": "minutes",

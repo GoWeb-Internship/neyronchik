@@ -10,7 +10,7 @@ import { useJsApiLoader } from "@react-google-maps/api";
 // } from "react-icons/fa";
 // import { Grid } from "src/components";
 // import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
-// import { Headings } from "src/components/Headings/Headings";
+import { Headings } from "src/components/Headings/Headings";
 import { Contact, Map } from "../../components";
 import * as s from "./Contacts.module.css";
 
@@ -59,41 +59,17 @@ export const Contacts = () => {
     googleMapsApiKey: GATSBY_GOOGLE_API_KEY,
   });
 
-  // H2
-  // font-family: 'Adigiana Extreme';
-  // font-style: normal;
-  // /* Sky/500 */
-  // color: #0EA5E9;
-  // text-shadow: 2px 1px 0px #000000;
-
-  // H3
-  // font-family: 'e-Ukraine';
-  // font-style: normal;
-
-  //   font-family: 'e-Ukraine';
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 16px;
-  // line-height: 150%;
-  // /* or 24px */
-
-  // display: flex;
-  // align-items: center;
-  // letter-spacing: -0.019em;
-
   return (
     <section className={s.section} id="contacts">
-      {/* <Headings
-        type="h2"
-        className="text mb-20 text-[52px] font-normal leading-normal tracking-[0.02em]"
+      <Headings type="h2" className={s.sectionTitle}>
+        {contacts_title}
+      </Headings>
+
+      <div
+        className={s.wrapper}
+        // className="grid h-[432px] grid-cols-2"
       >
-        {contacts_title}
-      </Headings> */}
-      <h2 className="text mb-20 text-[52px] font-normal leading-normal tracking-[0.02em]">
-        {contacts_title}
-      </h2>
-      <div className="absolute bottom-0 left-0 -z-10 h-[432px] w-full bg-sky-500"></div>
-      <div className="grid h-[432px] grid-cols-2">
+        {/* <div className={s.background}></div> */}
         <Contact
           contactUs={contactUs}
           phone_main={frontmatter.phone_main}
@@ -103,6 +79,7 @@ export const Contacts = () => {
           city={frontmatter[`${language}_city`]}
           address={frontmatter[`${language}_address`]}
         />
+        {/* <div className="bg-slate-600 sm:h-full sm:w-full"></div> */}
         {/* <div>{isLoaded && <Map center={center} />}</div> */}
       </div>
     </section>

@@ -1,0 +1,84 @@
+.contactsContainer {
+  @apply relative smOnly:px-3 smOnly:py-10 mdOnly:px-[60px] mdOnly:py-10 xl:py-[60px] xl:px-[52px];
+}
+
+.wrapper {
+  @apply rounded-[20px] border border-[#FAFAFA] bg-sky-200 py-5 px-3 text-[16px] font-medium leading-[1.5] tracking-[-0.019em] text-neutral-900 shadow-[0_0_19px_5px_rgba(52,101,123,0.15)_inset_-20px_-20px_40px_rgba(255,255,255,0.2)_inset_20px_20px_40px_rgba(255,255,255,0.2)] smOnly:text-[14px] mdOnly:px-[80px] md:py-7 xl:px-[30px];
+}
+
+.title {
+  @apply mb-6 font-medium  tracking-[-0.019em] md:mb-10;
+}
+
+.addressContainer {
+  @apply md:flex;
+}
+
+.contactContainer {
+  @apply not-italic smOnly:text-center md:grid md:grid-cols-2 md:text-left;
+}
+
+.detailsWrapper {
+  @apply smOnly:mb-10 md:flex md:flex-col md:self-end md:border-r-2 md:border-neutral-900;
+}
+
+.messengerList {
+  @apply mb-6 flex justify-center md:mb-9 md:justify-start xl:mb-10;
+}
+
+.socialList {
+  @apply flex justify-center md:justify-start;
+}
+
+.item {
+  @apply mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer smOnly:mr-4;
+}
+
+.location {
+  @apply mdOnly:pl-10;
+}
+
+.background {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -10;
+  height: 497px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #0ea5e9;
+  background-image: url("../../img/contacts/bgContact@1x.png");
+}
+
+@supports (background-image: url("../../img/contacts/bgContact@1x.webp")) {
+  .background {
+    background-image: url("../../img/contacts/bgContact@1x.webp");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    height: 424px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .background {
+      background-image: url("../../img/contacts/bgContact@2x.png");
+    }
+    @supports (background-image: url("../../img/contacts/bgContact@2x.webp")) {
+      .background {
+        background-image: url("../../img/contacts/bgContact@2x.webp");
+      }
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .background {
+      height: 464px;
+    }
+  }
+}
