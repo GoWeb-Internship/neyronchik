@@ -17,7 +17,7 @@ collections:
     name: "promo"
     folder: "content/promo"
     slug: "{{promo_title}}"
-    create: true
+    create: false
     delete: false
     fields:
       - {
@@ -57,7 +57,7 @@ collections:
     name: "about"
     folder: "content/about"
     slug: "{{about_title}}"
-    create: true
+    create: false
     delete: false
     fields:
       - {
@@ -344,7 +344,7 @@ collections:
     name: "contacts"
     folder: "content/contacts"
     slug: "{{contacts_title}}"
-    create: true
+    create: false
     delete: false
     fields:
       - {
