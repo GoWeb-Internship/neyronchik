@@ -5,7 +5,7 @@ import {
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa";
-import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 // import { Headings } from "../Headings/Headings";
 import * as s from "./Contact.module.css";
 

@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  @apply rounded-[20px] border border-[#FAFAFA] bg-sky-200 py-5 px-3 text-[16px] font-medium leading-[1.5] tracking-[-0.019em] text-neutral-900 shadow-[0_0_19px_5px_rgba(52,101,123,0.15)_inset_-20px_-20px_40px_rgba(255,255,255,0.2)_inset_20px_20px_40px_rgba(255,255,255,0.2)] smOnly:text-[14px] mdOnly:px-[80px] md:py-7 xl:px-[30px];
+  @apply rounded-[20px] border border-[#FAFAFA] bg-sky-200 py-5 px-3 text-[16px] font-medium leading-[1.5] tracking-[-0.019em] text-neutral-900 shadow-[0_0_19px_5px_rgba(52,101,123,0.15)_inset_-20px_-20px_40px_rgba(255,255,255,0.2)_inset_20px_20px_40px_rgba(255,255,255,0.2)]  smOnly:text-[14px] mdOnly:px-[80px] md:py-7 xl:pl-[30px] xl:pr-7;
 }
 
 .title {
@@ -15,11 +15,11 @@
 }
 
 .contactContainer {
-  @apply not-italic smOnly:text-center md:grid md:grid-cols-2 md:text-left;
+  @apply not-italic smOnly:text-center md:flex md:justify-center md:text-left;
 }
 
 .detailsWrapper {
-  @apply smOnly:mb-10 md:flex md:flex-col md:self-end md:border-r-2 md:border-neutral-900;
+  @apply smOnly:mb-10 md:flex md:flex-col md:self-end md:border-r-2 md:border-neutral-900 md:pr-4 xl:pr-[21px];
 }
 
 .messengerList {

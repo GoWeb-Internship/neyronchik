@@ -32,5 +32,9 @@
     "title": "Oops... something went wrong",
     "description": "Would you like to return to the home page?",
     "button": "Home"
+  },
+  "footer": {
+    "neyronchiki": "Neyronchyky – Speech Therapy Centre.",
+    "rights": "All rights reserved."
   }
 }
