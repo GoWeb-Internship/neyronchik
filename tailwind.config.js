@@ -36,6 +36,22 @@ module.exports = {
       fontFamily: {
         adigiana: ["Adigiana"],
       },
+      // SHADOWS
+      boxShadow: {
+        "insta-button":
+          "0px 20px 25px -5px rgba(108, 0, 0, 0.1), 0px 8px 10px -6px rgba(92, 0, 0, 0.1), inset -4px -4px 12px rgba(255, 255, 255, 0.25), inset 4px 4px 12px rgba(255, 255, 255, 0.25)", // class="shadow-insta-button"
+        "insta-card":
+          "0px 25px 50px -12px rgba(0, 0, 0, 0.15), inset -5px -4px 13px #DAE9EF, inset 5px 4px 13px #DAE9EF", // class="shadow-insta-card"
+      },
+      // TEXT COLORS
+      textColor: {
+        "insta-white": "#FAFAFA", // class="text-insta-white"
+        "insta-black": "#171717", // class="text-insta-black"
+      },
+      // BG-COLORS
+      backgroundColor: {
+        "insta-card": "rgba(253, 253, 253, 0.3)", // class="bg-insta-card"
+      },
     },
   },
   plugins: ["gatsby-plugin-postcss"],
