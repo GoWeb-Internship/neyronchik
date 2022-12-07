@@ -12,24 +12,14 @@ export const ServicesCard = ({ data }) => {
   const { time, currency } = t("servicesValues", {
     returnObjects: true,
   });
-  const swiperSlide = useSwiperSlide();
+  // const swiperSlide = useSwiperSlide();
 
   return (
-    <div
-      className={classnames(s.wrapper, s.wrapperBg, {
-        [s.wrapperActive]: swiperSlide.isActive,
-      })}
-    >
+    <div className={classnames(s.wrapperBg, s.wrapperActive)}>
       <div
-        className={classnames(s.pinkRectangle, s.pinkRectangleBg, {
-          [s.pinkRectangleActive]: swiperSlide.isActive,
-        })}
+        className={classnames(s.pinkRectangleActive, s.pinkRectangleBg)}
       ></div>
-      <div
-        className={classnames(s.infoBlock, s.infoBlockBg, {
-          [s.infoBlockActive]: swiperSlide.isActive,
-        })}
-      >
+      <div className={classnames(s.infoBlockActive, s.infoBlockBg)}>
         <p className={s.cardTitle}>{data[`${language}_service_title`]}</p>
 
         <table>
@@ -43,12 +33,7 @@ export const ServicesCard = ({ data }) => {
           </thead>
           <tbody>
             {data.service_list.map((list, index) => (
-              <tr
-                key={index}
-                className={classnames(s.trow, {
-                  [s.trowActive]: swiperSlide.isActive,
-                })}
-              >
+              <tr key={index} className={classnames(s.trowActive)}>
                 <td>
                   {capitalizeFirstLetter(
                     list[`${language}_service_description`]
@@ -61,11 +46,58 @@ export const ServicesCard = ({ data }) => {
           </tbody>
         </table>
       </div>
-      <div
-        className={classnames(s.logo, s.logoBg, {
-          [s.logoActive]: swiperSlide.isActive,
-        })}
-      ></div>
+      <div className={classnames(s.logoActive, s.logoBg)}></div>
     </div>
   );
 };
+
+// <div
+//   className={classnames(s.wrapper, s.wrapperBg, {
+//     [s.wrapperActive]: swiperSlide.isActive,
+//   })}
+// >
+//   <div
+//     className={classnames(s.pinkRectangle, s.pinkRectangleBg, {
+//       [s.pinkRectangleActive]: swiperSlide.isActive,
+//     })}
+//   ></div>
+//   <div
+//     className={classnames(s.infoBlock, s.infoBlockBg, {
+//       [s.infoBlockActive]: swiperSlide.isActive,
+//     })}
+//   >
+//     <p className={s.cardTitle}>{data[`${language}_service_title`]}</p>
+
+//     <table>
+//       <thead className={s.thead}>
+//         <tr>
+//           {/* TODO language */}
+//           <th>{capitalizeFirstLetter("послуга")}</th>
+//           <th>{<BsClockHistory size={24} />}</th>
+//           <th>{<BsWallet2 size={24} />}</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {data.service_list.map((list, index) => (
+//           <tr
+//             key={index}
+//             className={classnames(s.trow, {
+//               [s.trowActive]: swiperSlide.isActive,
+//             })}
+//           >
+//             <td>
+//               {capitalizeFirstLetter(list[`${language}_service_description`])}
+//             </td>
+//             <td>{`${list.service_duration} ${time}`}</td>
+//             <td>{`${list.service_price} ${currency}`}</td>
+//           </tr>
+//         ))}
+//       </tbody>
+//     </table>
+//   </div>
+//   <div
+//     className={classnames(s.logo, s.logoBg, {
+//       [s.logoActive]: swiperSlide.isActive,
+//     })}
+//   ></div>
+// </div>;

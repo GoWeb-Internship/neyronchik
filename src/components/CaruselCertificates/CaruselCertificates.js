@@ -31,6 +31,7 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
     height: 92,
     slidesPerView: 3,
     spaceBetween: 24,
+    height: 108,
     breakpoints: {
       // when window width is >= 320px
 
@@ -51,7 +52,7 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
   return (
     <div
       id="caruselCertificates"
-      className="wrapperCertificates md:auto relative flex truncate xl:h-[90px] xl:w-[260px]"
+      className="wrapperCertificates  relative flex truncate xl:h-[90px] xl:w-[260px]"
     >
       <Swiper {...settings}>
         {cerificates.map((item) => (

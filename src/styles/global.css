@@ -39,28 +39,27 @@ h2 {
 
 /* ======== swiper gallery styles ======== */
 .gallerySwiper {
-  @apply items-center sm:w-[280px] sm:max-w-[280px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
+  @apply items-center sm:h-[206px]  md:h-[412px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
 }
 .wrapperGallery .swiper-pagination {
   @apply bottom-0;
 }
+
 .wrapperGallery .swiper-pagination-bullet {
-  @apply h-4  w-4 bg-rose-400 opacity-100;
+  @apply bg-rose-400 opacity-100 md:h-3 md:w-3 xl:h-4 xl:w-4;
 }
 .wrapperGallery .swiper-pagination-bullet-active {
   @apply bg-sky-500;
 }
 
-/* ======== swiper Certificates styles ======== */
-.wrapperCertificates .swiper-slide img {
-  object-fit: cover;
-}
+/* ======== swiper Certificates carusel styles ======== */
+
 .wrapperCertificates .swiper-slide {
-  @apply flex h-auto max-h-[108px] w-[71px] items-center;
+  @apply flex h-auto max-h-[108px] w-[71px] min-w-[71px] items-center;
 }
-/* .wrapperCertificates {
-  @apply relative flex truncate md:w-[300px] xl:h-[90px] xl:w-[260px];
-} */
+.wrapperCertificates .swiper {
+  @apply w-full;
+}
 .buttonNextCertificate {
   @apply flex h-[108px] w-6  cursor-pointer items-center
    justify-center bg-[rgba(245,245,245,0.5)] backdrop-blur-[2px] transition-all
@@ -88,9 +87,15 @@ h2 {
 .servicesContainer {
   @apply px-3;
 }
-.servicesContainer .swiper-wrapper {
-  @apply items-end pb-[70px];
+.servicesContainer .swiper {
+  perspective-origin: bottom;
 }
+.servicesContainer .swiper-wrapper {
+  @apply pb-[70px];
+}
+/* .servicesContainer .swiper-container {
+  @apply items-end;
+} */
 .servicesContainer .swiper-pagination-bullet {
   @apply h-4  w-4 bg-sky-500 opacity-100;
 }
@@ -98,13 +103,10 @@ h2 {
   @apply bg-rose-600;
 }
 .servicesContainer .swiper-slide {
-  @apply flex w-[546px];
+  @apply flex w-[546px] justify-center self-end;
 }
 .servicesContainer .swiper-slide-active {
   @apply z-10 flex;
-}
-.servicesContainer .swiper-slide-prev {
-  @apply justify-end;
 }
 
 /* ======== team certificate modal styles ======== */

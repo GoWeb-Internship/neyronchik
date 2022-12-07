@@ -42,13 +42,11 @@ export const Team = ({ data }) => {
             >
               {data.allMarkdownRemark.edges?.map(({ node }) => (
                 <SwiperSlide>
-                  <div>
-                    <TeamCard
-                      key={node.id}
-                      id={node.id}
-                      data={node.frontmatter}
-                    />
-                  </div>
+                  <TeamCard
+                    key={node.id}
+                    id={node.id}
+                    data={node.frontmatter}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>

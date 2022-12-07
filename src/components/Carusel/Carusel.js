@@ -42,17 +42,32 @@ export const Carusel = ({ type, images }) => {
           loop: true,
           lazy: true,
           speed: 300,
-          slidesPerView: 2,
+          slidesPerView: 1.2,
           className: "gallerySwiper",
           centeredSlides: true,
           pagination: { clickable: true },
           slideToClickedSlide: true,
           effect: "coverflow",
           coverflowEffect: {
+            scale: 0.95,
             rotate: 0,
             slideShadows: false,
             pagination: {
               clickable: true,
+            },
+          },
+          breakpoints: {
+            // when window width is >= 320px
+
+            // when window width is >= 480px
+            768: {
+              slidesPerView: 1.35,
+              spaceBetween: 0,
+            },
+            // when window width is >= 640px
+            1280: {
+              slidesPerView: 1.6,
+              spaceBetween: 0,
             },
           },
         };
