@@ -2,7 +2,7 @@
   @apply select-none text-sky-500 sm:text-[36px] md:text-[44px]  xl:text-[56px];
 }
 .h2 {
-  @apply select-none text-sky-500 sm:text-[40px] md:text-[52px];
+  @apply select-none tracking-[0.02em] text-sky-500 sm:text-[40px] md:text-[52px];
 }
 .h3 {
   @apply select-none text-white sm:text-[40px];

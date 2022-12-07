@@ -1,10 +1,11 @@
 import React from "react";
 import { GoogleMap, Marker } from "@react-google-maps/api";
+import * as s from "./Map.module.css";
 
-const containerStyle = {
-  width: "100%",
-  height: "432px",
-};
+// const containerStyle = {
+//   width: "100%",
+//   height: "432px",
+// };
 
 const defaultOptions = {
   panControl: true,
@@ -31,7 +32,8 @@ export const Map = ({ center }) => {
 
   return (
     <GoogleMap
-      mapContainerStyle={containerStyle}
+      mapContainerClassName={s.map}
+      // mapContainerStyle={containerStyle}
       center={center}
       zoom={17}
       onLoad={onLoad}
@@ -39,11 +41,7 @@ export const Map = ({ center }) => {
       options={defaultOptions}
     >
       <>
-        <Marker
-          position={center}
-          // label={{ text: "Here" }}
-          title="Нейрончики"
-        />
+        <Marker position={center} title="Нейрончики" />
       </>
     </GoogleMap>
   );
