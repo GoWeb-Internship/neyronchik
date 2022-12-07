@@ -27,7 +27,7 @@ const InstaFeeds = () => {
   }, []);
 
   return (
-    <div className="mr-auto ml-auto max-w-[360px]">
+    <div className="smOnly:ml-auto smOnly:mr-auto smOnly:max-w-[360px] md:flex md:flex-row md:flex-wrap md:justify-between">
       {feeds && feeds.map((feed) => <Feed key={feed.id} feed={feed} />)}
     </div>
   );
