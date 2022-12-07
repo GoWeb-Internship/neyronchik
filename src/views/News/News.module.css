@@ -4,3 +4,25 @@
   background-position: 52% 40%;
   background-size: auto 1300px;
 }
+
+@media screen and (min-width: 768px) {
+  .newsBg {
+    background-image: url("../../img/news/news-bg-tablet@1x.png");
+    background-repeat: no-repeat;
+    background-position: 60% 48%;
+    background-size: auto 1800px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .newsBg {
+    background-image: url("../../img/news/news-bg-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 52.7%;
+    background-size: auto 1850px;
+  }
+}
+
+.textShadow {
+  text-shadow: 2px 1px 0px #000000;
+}
