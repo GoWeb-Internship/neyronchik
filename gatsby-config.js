@@ -14,6 +14,7 @@ const gatsbyRequiredRules = path.join(
 );
 const myCustomQueries = {
   sm: "(max-width: 767.98px)",
+  notSm: "(min-width: 768px)",
   md: "(max-width: 1279.98px)",
   xl: "(min-width: 1280px)",
 };

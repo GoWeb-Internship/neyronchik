@@ -71,54 +71,48 @@ export const Services = () => {
         </Headings>
 
         <Swiper
-          modules={[
-            Navigation,
-            Zoom,
-            EffectCoverflow,
-            Pagination,
-            Lazy,
-            Autoplay,
-          ]}
+          modules={[Navigation, Pagination, EffectCoverflow]}
           loop={true}
-          zoom={true}
-          // lazy={true}
           speed={300}
           slidesPerView={"auto"}
-          spaceBetween={20}
+          // spaceBetween={20}
           centeredSlides={true}
           pagination={{ clickable: true }}
           slideToClickedSlide={true}
-          // effect={"coverflow"}
-          // breakpoints={{
-          //   // when window width is >= 320px
-          //   320: {
-          //     slidesPerView: 1,
-          //     spaceBetween: 20,
-          //   },
-          //   // when window width is >= 480px
-          //   768: {
-          //     slidesPerView: 2,
-          //     spaceBetween: 30,
-          //   },
-          //   // when window width is >= 640px
-          //   1200: {
-          //     slidesPerView: 3,
-          //     spaceBetween: 90,
-          //   },
-          // }}
+          effect="coverflow"
           coverflowEffect={{
+            // scale: 0.95,
+            stretch: -120,
+            depth: 250,
+            modifier: 1,
             rotate: 0,
-            // scale: 0.8,
             slideShadows: false,
-            // pagination: {
-            //   clickable: true,
-            // },
+            pagination: {
+              clickable: true,
+            },
+          }}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            768: {
+              slidesPerView: 1.3,
+              spaceBetween: 0,
+            },
+            // when window width is >= 640px
+            1280: {
+              slidesPerView: 2.5,
+              spaceBetween: 0,
+            },
           }}
         >
           {nodes &&
             nodes?.map(({ frontmatter }) => (
               <SwiperSlide>
-                <div className="swiper-zoom-container">
+                <div>
                   <ServicesCard
                     data={frontmatter}
                     key={frontmatter.en_service_title}

@@ -23,6 +23,7 @@ html {
 }
 body {
   font-family: "Ukraine";
+  background-color: #fffbeb;
 }
 h1,
 h2 {
@@ -38,27 +39,35 @@ h2 {
 
 /* ======== swiper gallery styles ======== */
 .gallerySwiper {
-  @apply items-center sm:w-[280px] sm:max-w-[280px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
+  @apply items-center sm:h-[206px]  md:h-[412px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
 }
 .wrapperGallery .swiper-pagination {
   @apply bottom-0;
 }
+
 .wrapperGallery .swiper-pagination-bullet {
-  @apply h-4  w-4 bg-rose-400 opacity-100;
+  @apply bg-rose-400 opacity-100 md:h-3 md:w-3 xl:h-4 xl:w-4;
 }
 .wrapperGallery .swiper-pagination-bullet-active {
   @apply bg-sky-500;
 }
 
-/* ======== swiper team styles ======== */
-.wrapperTeam {
-  @apply max-h-24 min-h-full  truncate sm:w-[280px] md:w-[300px] xl:h-[90px] xl:w-[260px];
+/* ======== swiper Certificates carusel styles ======== */
+
+.wrapperCertificates .swiper-slide {
+  @apply flex h-auto max-h-[108px] w-[71px] min-w-[71px] items-center;
+}
+.wrapperCertificates .swiper {
+  @apply w-full;
 }
 .buttonNextCertificate {
-  @apply ml-6 flex h-24 w-6 cursor-pointer items-center justify-center rounded-[5px] bg-[rgba(245,245,245,0.5)] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
+  @apply flex h-[108px] w-6  cursor-pointer items-center
+   justify-center bg-[rgba(245,245,245,0.5)] backdrop-blur-[2px] transition-all
+    hover:bg-sky-500 hover:fill-white
+     hover:text-white sm:absolute sm:right-0
+      sm:top-0 sm:z-10 sm:rounded-[2px] xl:rounded-[5px];
 }
 .buttonNextCertificate {
-  /* background: rgba(245, 245, 245, 0.5); */
   box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
     0px 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
@@ -78,9 +87,15 @@ h2 {
 .servicesContainer {
   @apply px-3;
 }
-.servicesContainer .swiper-wrapper {
-  @apply items-end pb-[70px];
+.servicesContainer .swiper {
+  perspective-origin: bottom;
 }
+.servicesContainer .swiper-wrapper {
+  @apply pb-[70px];
+}
+/* .servicesContainer .swiper-container {
+  @apply items-end;
+} */
 .servicesContainer .swiper-pagination-bullet {
   @apply h-4  w-4 bg-sky-500 opacity-100;
 }
@@ -88,13 +103,10 @@ h2 {
   @apply bg-rose-600;
 }
 .servicesContainer .swiper-slide {
-  @apply flex w-[546px];
+  @apply flex w-[546px] justify-center self-end;
 }
 .servicesContainer .swiper-slide-active {
   @apply z-10 flex;
-}
-.servicesContainer .swiper-slide-prev {
-  @apply justify-end;
 }
 
 /* ======== team certificate modal styles ======== */

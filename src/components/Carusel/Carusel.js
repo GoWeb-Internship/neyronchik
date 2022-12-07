@@ -19,19 +19,6 @@ export const Carusel = ({ type, images }) => {
   // type -> в залежності від секції де використовується (hero, gallery...) налаштовується swiper в typeSettings
   // images -> масив об'єктів, що ми хочемо рендерити (налаштовується окреемо для різних видів даних в typeData)
   const { language } = useI18next();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState(null);
-  const [modalImageAlt, setModalImageAlt] = useState(null);
-
-  const handleOpenModal = (image, alt) => {
-    setModalImage(image);
-    setModalImageAlt(alt);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   const typeSettings = (type) => {
     switch (type) {
@@ -55,29 +42,34 @@ export const Carusel = ({ type, images }) => {
           loop: true,
           lazy: true,
           speed: 300,
-          slidesPerView: 2,
+          slidesPerView: 1.2,
           className: "gallerySwiper",
           centeredSlides: true,
           pagination: { clickable: true },
           slideToClickedSlide: true,
           effect: "coverflow",
           coverflowEffect: {
+            scale: 0.95,
             rotate: 0,
             slideShadows: false,
             pagination: {
               clickable: true,
             },
           },
-        };
-      case "team":
-        return {
-          modules: [Navigation, Lazy],
-          lazy: true,
-          speed: 400,
-          loop: true,
-          slidesPerView: 3,
-          spaceBetween: 24,
-          navigation: { nextEl: ".buttonNextCertificate" },
+          breakpoints: {
+            // when window width is >= 320px
+
+            // when window width is >= 480px
+            768: {
+              slidesPerView: 1.35,
+              spaceBetween: 0,
+            },
+            // when window width is >= 640px
+            1280: {
+              slidesPerView: 1.6,
+              spaceBetween: 0,
+            },
+          },
         };
 
       default:
@@ -120,26 +112,6 @@ export const Carusel = ({ type, images }) => {
               </SwiperSlide>
             ))
           : null;
-      case "team":
-        return images.length
-          ? images.map((item, idx) => (
-              <SwiperSlide key={item.cert_img.id}>
-                <div
-                  onClick={() =>
-                    handleOpenModal(
-                      item.cert_img.childrenImageSharp[0].gatsbyImageData,
-                      item[`${language}_cert_alt`]
-                    )
-                  }
-                >
-                  <GatsbyImage
-                    image={item.cert_img.childrenImageSharp[0].gatsbyImageData}
-                    alt={item[`${language}_cert_alt`]}
-                  />
-                </div>
-              </SwiperSlide>
-            ))
-          : null;
 
       default:
         return null;
@@ -158,12 +130,6 @@ export const Carusel = ({ type, images }) => {
       })}
     >
       <Swiper {...settings}>{data}</Swiper>
-      <Modal
-        image={modalImage}
-        alt={modalImageAlt}
-        isModalOpen={isModalOpen}
-        handleCloseModal={handleCloseModal}
-      />
     </div>
   );
 };
