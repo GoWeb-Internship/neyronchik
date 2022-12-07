@@ -7,7 +7,7 @@ import { CaruselCertificates } from "components/CaruselCertificates/CaruselCerti
 
 export const TeamCard = ({ data, id }) => {
   const { language } = useI18next();
-  // console.log(id);
+
   return (
     <div className={s.bgWrapper}>
       <div className={s.wrapper}>

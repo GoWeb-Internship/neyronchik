@@ -1,0 +1,12 @@
+.borders {
+  @apply border;
+}
+.one {
+  @apply ml-auto  mr-auto flex justify-around;
+}
+.two {
+  @apply ml-auto mr-auto flex  justify-around;
+}
+.middle {
+  @apply ml-auto mr-auto flex  justify-around;
+}
