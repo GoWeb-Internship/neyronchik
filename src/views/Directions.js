@@ -1,38 +1,54 @@
 import React from "react";
-import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
-import { Grid } from "src/components";
+import { useStaticQuery, graphql } from "gatsby";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 
+import { WorkDirectionsCard } from "../components/WorkDirectionsCard/WorkDirectionsCard";
+
 export const Directions = () => {
-  const { language } = useI18next();
   const { t } = useTranslation();
   const { work_title } = t("titles", {
     returnObjects: true,
   });
 
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query MyQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { work_identifier: { eq: "work" } } }
+        sort: { order: ASC, fields: frontmatter___work_range }
+      ) {
+        nodes {
+          frontmatter {
+            en_work_specialist
+            en_work_text
+            uk_work_specialist
+            uk_work_text
+            work_list {
+              en_work_description
+              uk_work_description
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { nodes } = allMarkdownRemark;
+  console.log(nodes);
+
   return (
-    <section className="w-full " id="directions">
+    <section className="w-full py-10" id="directions">
       <div className="container border-2">
-        <Headings type="h2">{work_title}:</Headings>
-        {/* <Grid className="relative" section="hero"> */}
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet,
-          viverra nec pretium fermentum ut cras. Id odio velit id ultrices
-          pretium aenean mauris neque, posuere. Varius nisi, ut fames lorem
-          scelerisque eget vitae. Porta proin rhoncus elementum, non at. Eu
-          aliquet etiam felis mi, eget justo, auctor diam nunc. Lectus non ipsum
-          dui urna, accumsan fermentum scelerisque interdum. Felis non diam
-          risus nibh dis at. Facilisis consequat libero, morbi erat commodo eu
-          congue. Rhoncus, elementum, vulputate adipiscing amet nam vivamus
-          mauris, lacinia. Nunc arcu in eget lorem lorem cras. Integer aliquam
-          purus turpis volutpat. Dolor id turpis porttitor morbi ultrices fames
-          aliquet. Malesuada blandit ornare volutpat dapibus. Egestas eros augue
-          pulvinar non fermentum in sit neque convallis. Elementum amet integer
-          in odio lobortis massa. Aliquam est, egestas malesuada gravida.
-          Egestas nisi risus nec duis odio dignissim. Amet ultrices at bibendum
-          fames id neq
-        </p>
-        {/* </Grid> */}
+        <Headings className="mb-10" type="h2">
+          {work_title}:
+        </Headings>
+
+        {nodes &&
+          nodes?.map(({ frontmatter }) => (
+            <WorkDirectionsCard
+              frontmatter={frontmatter}
+              key={frontmatter.en_work_specialist}
+            />
+          ))}
       </div>
     </section>
   );
