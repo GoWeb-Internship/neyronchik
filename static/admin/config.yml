@@ -106,18 +106,26 @@ collections:
       - { label: "Why needed", name: "en_work_text", widget: "string" }
       - { label: "Чому потрібен", name: "uk_work_text", widget: "string" }
       - {
-          label: "Текст",
-          name: "uk_work_body",
-          widget: "markdown",
-          required: true,
-          hint: "Введіть інформацію",
-        }
-      - {
-          label: "Text",
-          name: "en_work_body",
-          widget: "markdown",
-          required: true,
-          hint: "Enter information",
+          label: "Specialization description",
+          name: "work_list",
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Опис",
+                name: "uk_work_description",
+                widget: "string",
+                required: true,
+                hint: "З якою проблемою може допомогти спеціаліст",
+              },
+              {
+                label: "Description",
+                name: "en_work_description",
+                widget: "string",
+                required: true,
+                hint: "What problem the doctor can help with",
+              },
+            ],
         }
       - {
           label: "Range",
