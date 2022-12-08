@@ -12,7 +12,6 @@ const LanguageSwitch = (props) => {
   const { languages, originalPath, language } = useI18next();
 
   const handleOpen = () => {
-    console.log("click");
     setOpen(!open);
   };
 
@@ -24,14 +23,14 @@ const LanguageSwitch = (props) => {
         type="button"
         aria-label="open language switcher"
         onClick={handleOpen}
-        className="flex items-center"
+        className="flex items-center font-light leading-[1.5]"
       >
-        <BsChevronDown />
         <p>{showLanguage(language)}</p>
+        <BsChevronDown />
       </button>
       {open && (
         <>
-          <ul className="relative z-20 w-full">
+          <ul className="absolute z-20 w-full ">
             {langArray.map((lng) => {
               return (
                 <li key={lng}>

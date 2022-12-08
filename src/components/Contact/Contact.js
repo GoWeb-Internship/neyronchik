@@ -55,12 +55,12 @@ export const Contact = ({
                 className={s.item}
                 // className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer"
               >
-                <a href="">
+                <a href="https://web.telegram.org/">
                   <FaTelegramPlane />
                 </a>
               </li>
               <li className={s.item}>
-                <a href="">
+                <a href="https://www.whatsapp.com/">
                   <FaWhatsapp />
                 </a>
               </li>
@@ -68,12 +68,12 @@ export const Contact = ({
             <h3 className="mb-3 md:mb-4">{socials}</h3>
             <ul className={s.socialList}>
               <li className={s.item}>
-                <a href="">
+                <a href="https://www.facebook.com/">
                   <FaFacebookF />
                 </a>
               </li>
               <li className={s.item}>
-                <a href="">
+                <a href="https://instagram.com">
                   <FaInstagram />
                 </a>
               </li>
