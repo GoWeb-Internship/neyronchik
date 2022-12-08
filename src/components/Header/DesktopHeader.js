@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { FaTelegramPlane, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { Banner } from "../Banner/Banner";
 import DesktopNavbar from "./DesktopNavbar";
 import LanguageSwitch from "components/LanguageSwitch/LanguageSwitch";
 import * as s from "./Header.module.css";
@@ -28,6 +29,7 @@ const DesktopHeader = () => {
 
   return (
     <header className={`${s.desktop} `}>
+      <Banner />
       <div className="mr-auto ml-auto flex h-[72px] max-w-[1280px] items-center justify-between py-1 pl-[42px] pr-[83px] text-[14px] text-neutral-900">
         <DesktopNavbar />
         <a
