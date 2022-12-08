@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import { graphql, useStaticQuery } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { BsX } from "react-icons/bs";
 
 import * as s from "./Banner.module.css";
 
@@ -45,22 +45,23 @@ export const Banner = () => {
   return (
     frontmatter.promo_displayed && (
       <div
-        className={`container ${
-          isHidden ? "hidden" : "flex bg-black text-center text-white"
+        className={`${
+          isHidden
+            ? "hidden"
+            : "relative bg-sky-500 text-center text-neutral-50"
         }`}
       >
-        <div className="flex w-full ">
-          <h2 className="text-xl font-bold">{promo_title}</h2>
-          <strong className="ext-xl font-normal">
+        <div className="container relative mr-auto ml-auto h-11 py-3">
+          <p className="font-light leading-[1.5]">
             {frontmatter[`${language}_promo_body`]}
-          </strong>
+          </p>
+          <button
+            className="absolute top-3 right-[83px] flex h-5 w-5 items-center justify-center"
+            onClick={handleClick}
+          >
+            <BsX size="1.3rem" />
+          </button>
         </div>
-        <button
-          className="ml-5 flex h-[16px] w-[16px] justify-center font-black "
-          onClick={handleClick}
-        >
-          Х
-        </button>
       </div>
     )
   );

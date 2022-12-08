@@ -1,11 +1,12 @@
+/* .bannerTitle {
+  font-family: "Ukraine";
+} */
+
 /* .bannerVisible{
     @apply flex justify-center w-[100%];
 }
 .bannerHidden{
     @apply absolute w-px h-px p-0 m-[-1px] border-0 whitespace-nowrap overflow-hidden;
-}
-.bannerTitle{
-    @apply text-xl font-bold;
 }
 .bannerText{
     @apply text-xl font-normal;
