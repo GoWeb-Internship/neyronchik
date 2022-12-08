@@ -1,4 +1,12 @@
 {
+  "header": {
+    "about": "Про нас",
+    "team": "Наша команда",
+    "service": "Послуги",
+    "gallery": "Галерея",
+    "news": "Новини",
+    "contacts": "Контакти"
+  },
   "titles": {
     "promo_title": "Акція місяця",
     "about_title": "Про нас",

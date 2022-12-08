@@ -1,4 +1,12 @@
 {
+  "header": {
+    "about": "About us",
+    "team": "Our team",
+    "service": "Services",
+    "gallery": "Gallery",
+    "news": "News",
+    "contacts": "Contacts"
+  },
   "titles": {
     "promo_title": "Month Promo",
     "about_title": "About us",
