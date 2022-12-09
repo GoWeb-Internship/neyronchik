@@ -8,10 +8,10 @@
     "contacts": "Contacts"
   },
   "titles": {
-    "promo_title": "Month Promo",
+    "promo_title": "Monthly promotion",
     "about_title": "About us",
-    "whyUs_title": "Why do they choose us?",
-    "work_title": "Direction of work",
+    "whyUs_title": "Why we?",
+    "work_title": "Our activities",
     "team_title": "Our team",
     "services_title": "Services and prices",
     "gallery_title": "Gallery",
@@ -19,16 +19,16 @@
     "contacts_title": "Contacts"
   },
   "button": {
-    "contactUsBtn": "Contact us",
+    "contactUsBtn": "Make an appointment",
     "servicesBtn": "See all services",
     "servicesHideBtn": "Hide",
-    "instagramBtn": "See more",
+    "instagramBtn": "Learn more",
     "teamBtn": "All specialists",
     "teamHideBtn": "Hide"
   },
   "contactsSection": {
-    "contactUs": "Please contact or visit us",
-    "socials": "Our social media",
+    "contactUs": "Contact us or visit us",
+    "socials": "We are on social networks",
     "weWork": "Working hours:",
     "time": "from 9:00 till 17:00"
   },
@@ -43,6 +43,11 @@
   },
   "footer": {
     "neyronchiki": "Neyronchyky – Speech Therapy Centre.",
+    "rights": "All rights reserved."
+  },
+  "page": {
+    "title": "Neyronchyky",
+    "weAre": "Speech Therapy Centre",
     "rights": "All rights reserved."
   }
 }
