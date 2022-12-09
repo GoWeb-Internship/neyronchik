@@ -1,0 +1,10 @@
+.cardBg {
+  background-image: url("../../img/directions/directions-card-bg@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.textShadow {
+  text-shadow: 2px 2px 0px #000000;
+}

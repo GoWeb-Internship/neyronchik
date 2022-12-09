@@ -19,5 +19,5 @@ en_about_body: >-
 
 
   We are contacted by parents of children from various cities of the Kyiv region, Kyiv and other regions of our country. Achievements that children acquire during classes make it possible to better adapt and socialize in society. We know that the result of a child's success is the formula - Specialist+Parents+Child!
-about_img: static/img/about_us.jpg
+about_img: static/img/aboutus.jpg
 ---
