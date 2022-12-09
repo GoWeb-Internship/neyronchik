@@ -28,6 +28,7 @@ export default function useSliderQuery() {
             }
             name
             relativeDirectory
+            sourceInstanceName
           }
         }
       }

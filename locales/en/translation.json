@@ -32,5 +32,15 @@
     "title": "Oops... something went wrong",
     "description": "Would you like to return to the home page?",
     "button": "Home"
+  },
+  "why": {
+    "text1": "Contact us",
+    "text2": "15 years of experience",
+    "text3": "Specialist qualification grouth",
+    "text4": "See more",
+    "text5": "Developind plan of correction",
+    "text6": "Hide",
+    "text7": "Personal attitude to each family",
+    "text8": "involving parent on lessons"
   }
 }

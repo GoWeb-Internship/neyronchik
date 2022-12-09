@@ -22,7 +22,7 @@ export const Hero = ({ images }) => {
     `
   );
   const { frontmatter } = markdownRemark;
-
+  console.log(images);
   return (
     <section id="hero" className="pt-[100px]">
       <div className={classnames("container", s.heroContainer)}>

@@ -1,22 +1,24 @@
 .wrapper {
-  @apply flex items-center justify-center rounded-[50%] border
+  @apply relative flex items-center justify-center 
+  rounded-[50%] border
    px-3 py-3 transition  duration-300 ease-in-out 
    sm:h-10 sm:w-10 sm:px-[10px] sm:py-[10px]
    md:h-12 md:w-12 md:px-3 md:py-3 
-   xl:h-[72px] xl:w-[72px] xl:px-[18px] xl:py-[18px];
+   xl:h-[72px] xl:w-[72px] xl:px-[17px] xl:py-[17px];
 }
+
 .mobile {
-  @apply hover:rotate-[360deg];
+  @apply cursor-pointer hover:rotate-[360deg];
 }
 .redColor {
-  @apply border border-[#FFCFD6] fill-[#EC1E66] 
+  @apply border border-[#FFCFD6] fill-[#EC1E66] text-[#EC1E66] 
   shadow-[0px_0px_19px_rgba(227,112,139,0.2)]  hover:border-[#EC1E66];
 }
 .blueColor {
-  @apply border border-cyan-100 fill-sky-500 shadow-[0px_0px_19px_rgba(0,168,243,0.2)] hover:border-sky-500;
+  @apply border border-cyan-100 text-sky-500 shadow-[0px_0px_19px_rgba(0,168,243,0.2)] hover:border-sky-500;
 }
 .yellowColor {
-  @apply border border-[#FFEEC0] fill-amber-400 shadow-[0px_0px_19px_rgba(237,203,107,0.2)] hover:border-amber-400;
+  @apply border border-[#FFEEC0] text-amber-400 shadow-[0px_0px_19px_rgba(237,203,107,0.2)] hover:border-amber-400;
 }
 .isActive {
   @apply border-[2px] hover:w-10 sm:px-4 sm:py-4 xl:h-[52px] xl:w-[52px];
@@ -30,6 +32,6 @@
 .isActiveYellow {
   @apply border-amber-400;
 }
-.image {
-  @apply h-full w-full;
+.hand {
+  @apply xl:h-9 xl:w-9;
 }

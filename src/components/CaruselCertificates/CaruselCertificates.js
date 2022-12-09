@@ -19,7 +19,7 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
     setModalImageAlt(alt);
     setIsModalOpen(true);
   };
-  console.log(cerificates);
+  // console.log(cerificates);
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };

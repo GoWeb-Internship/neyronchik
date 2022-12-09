@@ -25,6 +25,10 @@ body {
   font-family: "Ukraine";
   background-color: #fffbeb;
 }
+section {
+  @apply w-full;
+}
+
 h1,
 h2 {
   font-family: "Adigiana";
