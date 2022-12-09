@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { BsX } from "react-icons/bs";
 
-import * as s from "./Banner.module.css";
+// import * as s from "./Banner.module.css";
 
 export const Banner = () => {
   const [isHidden, setHidden] = useState(false);
@@ -53,7 +53,7 @@ export const Banner = () => {
       >
         <div className="container relative mr-auto ml-auto h-11 py-3">
           <p className="font-light leading-[1.5]">
-            {frontmatter[`${language}_promo_body`]}
+            {promo_title} {frontmatter[`${language}_promo_body`]}
           </p>
           <button
             className="absolute top-3 right-[83px] flex h-5 w-5 items-center justify-center"
