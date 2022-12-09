@@ -4,9 +4,6 @@ import * as s from "./Footer.module.css";
 
 const Footer = () => {
   const { t } = useTranslation();
-  // const { neyronchiki, rights } = t("footer", {
-  //   returnObjects: true,
-  // });
   const { title, weAre, rights } = t("page", {
     returnObjects: true,
   });
