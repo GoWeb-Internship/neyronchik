@@ -1,8 +1,8 @@
 .cardBg {
   background-image: url("../../img/directions/directions-card-bg@1x.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: contain;
+  background-position: 50% 35%;
+  background-size: 319px 360px;
 }
 
 .textShadow {
