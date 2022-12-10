@@ -19,3 +19,19 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   @apply w-1 rounded-[5px] bg-rose-300;
 }
+
+/* Styles for WorkDirectionCard scrollbar */
+.innerScrollDirections::-webkit-scrollbar-track {
+  @apply mr-1 rounded-[5px] bg-sky-400;
+}
+.innerScrollDirections::-webkit-scrollbar {
+  @apply mr-1 w-1 rounded-[5px] bg-sky-400;
+}
+.innerScrollDirections::-webkit-scrollbar-thumb {
+  @apply mr-1 w-1 rounded-[5px] bg-sky-200;
+}
+
+.scrollBarFirefox {
+  scrollbar-color: light;
+  scrollbar-width: thin;
+}

@@ -1,11 +1,10 @@
 import React from "react";
-import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { useI18next } from "gatsby-plugin-react-i18next";
 
 import { textShadow, cardBg } from "./WorkDirectionsCard.module.css";
-// import { innerScroll } from "../../styles/scroll.css";
 
 export const WorkDirectionsCard = ({ frontmatter }) => {
-  console.log(frontmatter);
+  // console.log(frontmatter);
 
   const { language } = useI18next();
 
@@ -25,7 +24,7 @@ export const WorkDirectionsCard = ({ frontmatter }) => {
               {frontmatter[`${language}_work_text`]}
             </p>
           </div>
-          <div className={`h-[260px] overflow-y-auto pl-[14px] pr-5`}>
+          <div className="innerScrollDirections scrollBarFirefox ml-[14px] mr-3 h-[260px] overflow-y-auto pl-2 pr-[14px]">
             <ul className="list-outside list-disc pl-[14px] text-directions-white">
               {frontmatter.work_list?.map((list, index) => (
                 <li key={index}>
