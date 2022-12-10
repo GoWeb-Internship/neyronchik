@@ -57,14 +57,11 @@ export const Carusel = ({ type, images }) => {
             },
           },
           breakpoints: {
-            // when window width is >= 320px
-
-            // when window width is >= 480px
             768: {
               slidesPerView: 1.35,
               spaceBetween: 0,
             },
-            // when window width is >= 640px
+
             1280: {
               slidesPerView: 1.6,
               spaceBetween: 0,
@@ -79,7 +76,7 @@ export const Carusel = ({ type, images }) => {
   const typeData = (type, images) => {
     switch (type) {
       case "hero":
-        return images.edges.map(({ node }) => (
+        return images.map(({ node }) => (
           <SwiperSlide key={node.id}>
             <div key={node.id}>
               <GatsbyImage
@@ -91,8 +88,8 @@ export const Carusel = ({ type, images }) => {
         ));
 
       case "gallery":
-        return images.edges?.length
-          ? images.edges.map(({ node }) => (
+        return images?.length
+          ? images.map(({ node }) => (
               <SwiperSlide key={node.id}>
                 {({ isActive }) => (
                   <div

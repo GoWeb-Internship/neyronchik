@@ -5,17 +5,17 @@ import classnames from "classnames";
 
 export const HandInCircle = ({
   color = "red",
+  name = "",
   mobile = false,
-  isActive = false,
+  activeText = "",
+  className = "",
   onClick = {},
 }) => {
-  const handColor =
-    (color === "blue" && "#0EA5E9",
-    color === "yellow" && "#FBBF24",
-    color === "red" && "#EC1E66");
   return mobile ? (
     <button
+      name={name}
       type="button"
+      aria-label={name}
       onClick={onClick}
       className={classnames(
         s.wrapper,
@@ -23,12 +23,15 @@ export const HandInCircle = ({
         { [s.redColor]: color === "red" },
         { [s.blueColor]: color === "blue" },
         { [s.yellowColor]: color === "yellow" },
-        { [s.isActiveRed]: color === "red" },
-        { [s.isActiveBlue]: color === "blue" },
-        { [s.isActiveYellow]: color === "yellow" },
-        { [s.isActive]: isActive }
+        { [s.activeTextRed]: color === "red" && name === activeText },
+        { [s.isActiveBlue]: color === "blue" && name === activeText },
+        { [s.isActiveYellow]: color === "yellow" && name === activeText },
+        { [s.isActive]: name === activeText },
+        className
       )}
-    ></button>
+    >
+      <Hand className={s.hand} />
+    </button>
   ) : (
     <div
       className={classnames(

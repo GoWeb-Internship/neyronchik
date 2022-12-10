@@ -41,12 +41,8 @@ export const Team = ({ data }) => {
               slidesPerView={1}
             >
               {data.allMarkdownRemark.edges?.map(({ node }) => (
-                <SwiperSlide>
-                  <TeamCard
-                    key={node.id}
-                    id={node.id}
-                    data={node.frontmatter}
-                  />
+                <SwiperSlide key={node.id}>
+                  <TeamCard id={node.id} data={node.frontmatter} />
                 </SwiperSlide>
               ))}
             </Swiper>

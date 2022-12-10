@@ -1,8 +1,8 @@
+import classnames from "classnames";
+import { HandInCircle } from "components/HandInCircle/HandInCircle";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import * as s from "./WhyOther.module.css";
-import { HandInCircle } from "components/HandInCircle/HandInCircle";
-import classnames from "classnames";
-import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 
 export const WhyOther = () => {
   const { t } = useTranslation();
@@ -12,14 +12,14 @@ export const WhyOther = () => {
   });
 
   return (
-    <div className={s.borders}>
+    <div>
       <div className={classnames(s.one)}>
         <div className={s.justCenter}>
           <span className={s.textToTop}>{text1}</span>
           <HandInCircle color="blue" />
         </div>
       </div>
-      <div className={classnames(s.borders, s.two)}>
+      <div className={classnames(s.two)}>
         <div className={s.horizontalTextAlignToCircle}>
           <span className={s.textToLeft}>{text2}</span>
           <HandInCircle />
@@ -30,7 +30,7 @@ export const WhyOther = () => {
           <span className={s.textToRight}>{text3}</span>
         </div>
       </div>
-      <div className={classnames(s.borders, s.three)}>
+      <div className={classnames(s.three)}>
         <div className={s.horizontalTextAlignToCircle}>
           <span className={s.textToLeft}>{text4}</span>
           <HandInCircle color="yellow" />
@@ -45,9 +45,8 @@ export const WhyOther = () => {
           <span className={s.textToRight}>{text5}</span>
         </div>
       </div>
-      <div className={classnames(s.borders, s.four)}>
+      <div className={classnames(s.four)}>
         <div className={s.horizontalTextAlignToCircle}>
-          {" "}
           <span className={s.textToLeft}>{text6}</span>
           <HandInCircle color="blue" />
         </div>
@@ -57,7 +56,7 @@ export const WhyOther = () => {
           <span className={s.textToRight}>{text7}</span>
         </div>
       </div>
-      <div className={classnames(s.borders, s.five)}>
+      <div className={classnames(s.five)}>
         <div className={s.justCenter}>
           <HandInCircle />
           <span className={s.textToBottom}>{text8}</span>

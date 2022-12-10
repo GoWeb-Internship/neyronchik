@@ -1,56 +1,66 @@
 .whyContainer {
   @apply md:pb-[100px] xl:pb-[150px];
 }
+
 .header {
   @apply md:mb-[60px] xl:mb-20;
 }
-.borders div {
-  @apply border;
+.wrapper {
+  @apply relative h-[302px] w-[320px];
 }
-.borders span {
-  @apply font-medium md:w-[160px] md:max-w-[160px] md:text-base xl:w-[220px] xl:max-w-[220px] xl:text-xl;
+.textWrapper {
+  @apply flex h-full items-center justify-center px-20 text-center;
 }
+.buttonsWrapper {
+  @apply absolute top-0 left-0;
+}
+
+.buttonWrapper {
+  @apply relative h-10 w-10;
+}
+
 .one {
-  @apply flex flex-col items-center  justify-end xl:min-h-[144px];
+  @apply flex h-[43px] flex-col  items-center justify-end;
 }
 .two {
-  @apply flex items-start justify-center md:h-[91px] xl:h-[131px];
+  @apply flex h-[72px] items-start justify-center;
 }
 .twoCenterBlock {
-  @apply md:w-[176px] xl:w-[260px];
+  @apply sm:w-[152px];
 }
 .three {
-  @apply relative  flex  items-center justify-center md:h-[91px] xl:h-[131px];
+  @apply relative  flex  h-[72px] items-center justify-center;
 }
 .threeCenterBlock {
-  @apply flex md:w-[272px] xl:w-[404px];
+  @apply relative flex sm:w-[216px];
 }
 
 .four {
-  @apply flex  items-end justify-center md:h-[91px] xl:h-[131px];
+  @apply flex h-[72px] items-end justify-center;
 }
 .five {
-  @apply flex flex-col items-center  justify-start xl:min-h-[144px];
+  @apply flex h-[43px] flex-col  items-center  justify-start;
 }
 .justCenter {
   @apply flex flex-col items-center justify-center;
 }
-.textToRight {
-  @apply md:ml-4  xl:ml-6;
+
+.centerCirlce {
+  @apply absolute top-1/2 left-1/2 h-[256px] w-[256px] translate-y-[-50%]
+  translate-x-[-50%] rounded-[50%] border border-[#fafafa];
 }
-.textToLeft {
-  @apply md:mr-4 xl:mr-6;
-}
-.textToBottom {
-  @apply text-center md:mt-4 xl:mt-6;
-}
-.textToTop {
-  @apply text-center md:mb-4  xl:mb-6;
+.centerCirlceInner {
+  @apply absolute top-1/2 left-1/2 h-[240px] w-[240px] translate-y-[-50%]
+  translate-x-[-50%] rounded-[50%] border border-[#fafafa];
 }
 
 .centerCirlce {
-  @apply absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]  rounded-[50%] border md:h-[232px] md:w-[232px] xl:h-[356px] xl:w-[356px];
+  box-shadow: inset -5px -4px 13px #dae9ef, inset 5px 4px 13px #dae9ef;
 }
+.centerCirlceInner {
+  box-shadow: -5px -4px 13px #dae9ef, 5px 4px 13px #dae9ef;
+}
+
 .horizontalTextAlignToCircle {
   @apply flex items-center md:max-h-[48px] xl:max-h-[72px];
 }

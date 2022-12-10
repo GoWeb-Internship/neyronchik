@@ -111,12 +111,9 @@ export const Services = () => {
         >
           {nodes &&
             nodes?.map(({ frontmatter }) => (
-              <SwiperSlide>
+              <SwiperSlide key={frontmatter.en_service_title}>
                 <div>
-                  <ServicesCard
-                    data={frontmatter}
-                    key={frontmatter.en_service_title}
-                  />
+                  <ServicesCard data={frontmatter} />
                 </div>
               </SwiperSlide>
             ))}

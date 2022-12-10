@@ -18,7 +18,7 @@ export const Gallery = ({ images }) => {
           {gallery_title}
         </Headings>
 
-        <Carusel type="gallery" images={images} />
+        <Carusel type="gallery" images={images.edges} />
       </div>
     </section>
   );
