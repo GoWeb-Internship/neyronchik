@@ -1,0 +1,56 @@
+.whyContainer {
+  @apply md:pb-[100px] xl:pb-[150px];
+}
+.header {
+  @apply md:mb-[60px] xl:mb-20;
+}
+.borders div {
+  @apply border;
+}
+.borders span {
+  @apply font-medium md:w-[160px] md:max-w-[160px] md:text-base xl:w-[220px] xl:max-w-[220px] xl:text-xl;
+}
+.one {
+  @apply flex flex-col items-center  justify-end xl:min-h-[144px];
+}
+.two {
+  @apply flex items-start justify-center md:h-[91px] xl:h-[131px];
+}
+.twoCenterBlock {
+  @apply md:w-[176px] xl:w-[260px];
+}
+.three {
+  @apply relative  flex  items-center justify-center md:h-[91px] xl:h-[131px];
+}
+.threeCenterBlock {
+  @apply flex md:w-[272px] xl:w-[404px];
+}
+
+.four {
+  @apply flex  items-end justify-center md:h-[91px] xl:h-[131px];
+}
+.five {
+  @apply flex flex-col items-center  justify-start xl:min-h-[144px];
+}
+.justCenter {
+  @apply flex flex-col items-center justify-center;
+}
+.textToRight {
+  @apply md:ml-4  xl:ml-6;
+}
+.textToLeft {
+  @apply md:mr-4 xl:mr-6;
+}
+.textToBottom {
+  @apply text-center md:mt-4 xl:mt-6;
+}
+.textToTop {
+  @apply text-center md:mb-4  xl:mb-6;
+}
+
+.centerCirlce {
+  @apply absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%]  rounded-[50%] border md:h-[232px] md:w-[232px] xl:h-[356px] xl:w-[356px];
+}
+.horizontalTextAlignToCircle {
+  @apply flex items-center md:max-h-[48px] xl:max-h-[72px];
+}

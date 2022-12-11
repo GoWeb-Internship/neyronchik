@@ -75,13 +75,11 @@ export const Services = () => {
           loop={true}
           speed={300}
           slidesPerView={"auto"}
-          // spaceBetween={20}
           centeredSlides={true}
           pagination={{ clickable: true }}
           slideToClickedSlide={true}
           effect="coverflow"
           coverflowEffect={{
-            // scale: 0.95,
             stretch: -120,
             depth: 250,
             modifier: 1,
@@ -92,17 +90,14 @@ export const Services = () => {
             },
           }}
           breakpoints={{
-            // when window width is >= 320px
             320: {
               slidesPerView: 1,
               spaceBetween: 20,
             },
-            // when window width is >= 480px
             768: {
               slidesPerView: 1.3,
               spaceBetween: 0,
             },
-            // when window width is >= 640px
             1280: {
               slidesPerView: 2.5,
               spaceBetween: 0,
@@ -111,12 +106,9 @@ export const Services = () => {
         >
           {nodes &&
             nodes?.map(({ frontmatter }) => (
-              <SwiperSlide>
+              <SwiperSlide key={frontmatter.en_service_title}>
                 <div>
-                  <ServicesCard
-                    data={frontmatter}
-                    key={frontmatter.en_service_title}
-                  />
+                  <ServicesCard data={frontmatter} />
                 </div>
               </SwiperSlide>
             ))}

@@ -4,11 +4,7 @@ import {
   MdOutlineArrowBackIosNew,
 } from "react-icons/md";
 
-export const SliderButton = ({
-  back = false,
-  className = "",
-  aria = "button",
-}) => {
+export const SliderButton = ({ back = false, className, aria = "button" }) => {
   return (
     <button type="button" aria-label={aria} className={className}>
       {back ? (

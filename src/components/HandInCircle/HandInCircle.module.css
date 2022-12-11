@@ -1,0 +1,45 @@
+.wrapper {
+  @apply relative flex items-center justify-center 
+  rounded-[50%] border
+   px-3 py-3 transition  duration-300 ease-in-out 
+   sm:h-10 sm:w-10 sm:px-[10px] sm:py-[10px];
+}
+
+.mobile {
+  @apply cursor-pointer hover:rotate-[360deg];
+}
+.mobile button {
+  @apply absolute top-1/2 left-1/2 translate-x-[-50%]
+   translate-y-[-50%] bg-[#FAFAFA] hover:scale-125 
+    focus:scale-125  focus:outline-none   active:scale-125;
+}
+.redColor {
+  @apply border  border-[#FFCFD6] bg-[#FAFAFA] 
+  fill-[#EC1E66] text-[#EC1E66]   shadow-[0px_0px_19px_rgba(227,112,139,0.2)]  
+   hover:border-[#EC1E66] focus:border-[#EC1E66] active:border-[#EC1E66];
+}
+.blueColor {
+  @apply border border-cyan-100 bg-[#FAFAFA] text-sky-500
+   shadow-[0px_0px_19px_rgba(0,168,243,0.2)]  hover:border-sky-500 
+    focus:border-sky-500 active:border-sky-500;
+}
+.yellowColor {
+  @apply border border-[#FFEEC0] bg-[#FAFAFA] text-amber-400
+   shadow-[0px_0px_19px_rgba(237,203,107,0.2)]  hover:border-amber-400
+     focus:border-amber-400 active:border-amber-400;
+}
+.isActive {
+  @apply scale-125  border-[2px];
+}
+.isActiveRed {
+  @apply border-[#EC1E66];
+}
+.isActiveBlue {
+  @apply border-sky-500;
+}
+.isActiveYellow {
+  @apply border-amber-400;
+}
+.hand {
+  @apply pointer-events-none xl:h-9 xl:w-9;
+}

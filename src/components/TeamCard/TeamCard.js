@@ -7,7 +7,7 @@ import { CaruselCertificates } from "components/CaruselCertificates/CaruselCerti
 
 export const TeamCard = ({ data, id }) => {
   const { language } = useI18next();
-  // console.log(id);
+
   return (
     <div className={s.bgWrapper}>
       <div className={s.wrapper}>
@@ -25,13 +25,14 @@ export const TeamCard = ({ data, id }) => {
             <p className={s.specification}>
               {data[`${language}_team_member_specialization`]}
             </p>
-            <p className={s.experience}>
+            <p className={("innerScroll", s.experience)}>
               {data[`${language}_team_member_experience`]}
             </p>
           </div>
         </div>
         <div className={s.caruselWrapper}>
           <p className={s.sertificates}>
+            {/* TODO langusge */}
             {language === "uk" ? "Сартифікати:" : "Certificates:"}
           </p>
           {data?.cert_list?.length && (

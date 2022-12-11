@@ -25,6 +25,10 @@ body {
   font-family: "Ukraine";
   background-color: #fffbeb;
 }
+section {
+  @apply w-full;
+}
+
 h1,
 h2 {
   font-family: "Adigiana";
@@ -76,13 +80,13 @@ h2 {
 .wrapperHero {
   @apply absolute -z-10 truncate sm:max-h-[468px]  sm:w-[320px] md:max-h-[492px] md:w-[768px] xl:max-h-[700px] xl:w-[1280px];
 }
-.buttonPrevHero {
-  @apply absolute top-1/2 left-24 z-20 flex h-16 w-16 translate-y-[-50%] cursor-pointer items-center justify-center rounded-[50%] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
-}
-.buttonNextHero {
-  @apply absolute right-24 top-1/2  z-20 flex h-16 w-16 translate-y-[-50%] cursor-pointer items-center justify-center rounded-[50%] transition-all hover:bg-sky-500 hover:fill-white hover:text-white;
+.nextHero {
+  @apply absolute top-1/2 right-24 flex h-16 w-16 translate-y-[-50%]  items-center justify-center rounded-[50%] bg-zinc-100  hover:bg-sky-500 hover:fill-white hover:text-white;
 }
 
+.prevHero {
+  @apply absolute top-1/2 left-24 flex h-16 w-16 translate-y-[-50%]  items-center justify-center rounded-[50%] hover:bg-sky-500 hover:fill-white hover:text-white;
+}
 /* ======== swiper services styles ======== */
 .servicesContainer {
   @apply px-3;

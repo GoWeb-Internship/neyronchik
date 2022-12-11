@@ -1,0 +1,100 @@
+.whyContainer {
+  @apply md:pb-[100px] xl:pb-[150px];
+}
+.header {
+  @apply md:mb-[60px] xl:mb-20;
+}
+
+span {
+  @apply font-medium md:w-[160px] md:max-w-[160px]
+   md:text-base xl:w-[220px] xl:max-w-[220px] xl:text-xl;
+}
+.one {
+  @apply flex flex-col items-center  justify-end xl:min-h-[144px];
+}
+.two {
+  @apply flex items-start justify-center md:h-[91px] xl:h-[131px];
+}
+.twoCenterBlock {
+  @apply sm:w-[137px] md:w-[176px] xl:w-[260px];
+}
+.three {
+  @apply relative  flex  items-center justify-center 
+  md:h-[91px] xl:h-[131px];
+}
+.threeCenterBlock {
+  @apply flex sm:w-[207px] md:w-[272px] xl:w-[404px];
+}
+
+.four {
+  @apply flex  items-end justify-center md:h-[91px] xl:h-[131px];
+}
+.five {
+  @apply flex flex-col items-center  justify-start xl:min-h-[144px];
+}
+.justCenter {
+  @apply flex flex-col items-center justify-center;
+}
+.textToRight {
+  @apply md:ml-4  xl:ml-6;
+}
+.textToLeft {
+  @apply md:mr-4 xl:mr-6;
+}
+.textToBottom {
+  @apply text-center md:mt-4 xl:mt-6;
+}
+.textToTop {
+  @apply text-center md:mb-4  xl:mb-6;
+}
+
+.centerCirlce {
+  @apply absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] rounded-[50%]
+  border border-[#fafafa] md:h-[232px] md:w-[232px]
+   xl:h-[356px] xl:w-[356px];
+}
+.centerCirlceInner {
+  @apply absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] rounded-[50%]
+  border border-[#fafafa] md:h-[202px] md:w-[202px]
+   xl:h-[326px] xl:w-[326px];
+}
+
+@media screen and (max-width: 767.98px) {
+  .centerCirlceInner {
+    /* border: 1px solid #fafafa; */
+    box-shadow: inset 0px 16px 56px rgba(0, 0, 0, 0.15), -5px -4px 13px #dae9ef,
+      5px 4px 13px #dae9ef;
+    backdrop-filter: blur(4px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .centerCirlce {
+    box-shadow: 0px 16px 56px rgba(0, 0, 0, 0.15), inset -5px -4px 13px #dae9ef,
+      inset 5px 4px 13px #dae9ef;
+    backdrop-filter: blur(4px);
+    background-image: url("../../../static/img/boy3.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 173px 173px;
+  }
+  .centerCirlceInner {
+    /* border: 1px solid #fafafa; */
+    box-shadow: inset 0px 16px 56px rgba(0, 0, 0, 0.15), -5px -4px 13px #dae9ef,
+      5px 4px 13px #dae9ef;
+    /* backdrop-filter: blur(4px); */
+  }
+}
+@media screen and (min-width: 1280px) {
+  .centerCirlce {
+    background-size: 266px 266px;
+  }
+  .centerCirlceInner {
+    /* border: 1px solid #fafafa; */
+    box-shadow: inset 0px 16px 56px rgba(0, 0, 0, 0.15), -5px -4px 13px #dae9ef,
+      5px 4px 13px #dae9ef;
+    /* backdrop-filter: blur(4px); */
+  }
+}
+.horizontalTextAlignToCircle {
+  @apply flex items-center md:max-h-[48px] xl:max-h-[72px];
+}
