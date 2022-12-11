@@ -5,6 +5,12 @@ import { Headings } from "src/components/Headings/Headings";
 
 import { WorkDirectionsCard } from "../components/WorkDirectionsCard/WorkDirectionsCard";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Navigation, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 export const Directions = () => {
   const { t } = useTranslation();
   const { work_title } = t("titles", {
@@ -37,18 +43,33 @@ export const Directions = () => {
 
   return (
     <section className="w-full py-10" id="directions">
-      <div className="container border-2">
+      <div className="workDirectionsContainer container">
         <Headings className="mb-10" type="h2">
           {work_title}:
         </Headings>
 
-        {nodes &&
-          nodes?.map(({ frontmatter }) => (
-            <WorkDirectionsCard
-              frontmatter={frontmatter}
-              key={frontmatter.en_work_specialist}
-            />
-          ))}
+        <Swiper
+          modules={[Navigation, Pagination, EffectCoverflow]}
+          spaceBetween={50}
+          slidesPerView={1}
+          loop={true}
+          speed={500}
+          centeredSlides={true}
+          slideToClickedSlide={true}
+          pagination={{ clickable: true }}
+        >
+          {nodes &&
+            nodes?.map(({ frontmatter }) => (
+              <SwiperSlide key={frontmatter.en_work_specialist}>
+                <div>
+                  <WorkDirectionsCard
+                    frontmatter={frontmatter}
+                    key={frontmatter.en_work_specialist}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </div>
     </section>
   );
