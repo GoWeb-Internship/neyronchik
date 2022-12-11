@@ -8,7 +8,7 @@
 .mobile {
   @apply cursor-pointer hover:rotate-[360deg];
 }
-button {
+.mobile button {
   @apply absolute top-1/2 left-1/2 translate-x-[-50%]
    translate-y-[-50%] bg-[#FAFAFA] hover:scale-125 
     focus:scale-125  focus:outline-none   active:scale-125;
