@@ -23,7 +23,7 @@ export const HandInCircle = ({
         { [s.redColor]: color === "red" },
         { [s.blueColor]: color === "blue" },
         { [s.yellowColor]: color === "yellow" },
-        { [s.activeTextRed]: color === "red" && name === activeText },
+        { [s.isActiveRed]: color === "red" && name === activeText },
         { [s.isActiveBlue]: color === "blue" && name === activeText },
         { [s.isActiveYellow]: color === "yellow" && name === activeText },
         { [s.isActive]: name === activeText },
