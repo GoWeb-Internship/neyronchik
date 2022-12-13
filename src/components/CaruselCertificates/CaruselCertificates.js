@@ -82,7 +82,7 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
       />
       <button
         type="button"
-        // TODO language
+        // TODO language !!!
         aria-label={language === "en" ? "next slide" : "наступний слайд"}
         className={`buttonNextCertificate id-${id}`}
       >
