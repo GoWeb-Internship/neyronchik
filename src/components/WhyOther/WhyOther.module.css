@@ -1,9 +1,6 @@
 .whyContainer {
   @apply md:pb-[100px] xl:pb-[150px];
 }
-.header {
-  @apply md:mb-[60px] xl:mb-20;
-}
 
 span {
   @apply font-medium md:w-[160px] md:max-w-[160px]

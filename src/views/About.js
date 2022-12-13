@@ -37,7 +37,7 @@ export const About = () => {
 
   return (
     <section className="w-full " id="about">
-      <div className="container border-2">
+      <div className="containerPaddingBottom container border-2">
         <Headings type="h2">{about_title}</Headings>
         <Grid className="relative" section="hero">
           <GatsbyImage image={aboutImg} alt={about_title} />

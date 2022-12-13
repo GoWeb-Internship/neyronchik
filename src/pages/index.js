@@ -20,19 +20,16 @@ const HomePage = () => {
   const images = useSliderQuery();
 
   return (
-    <>
-      <Layout>
-        <Hero images={images?.hero} />
-        <About />
-        <Directions />
-        <Why />
-        <Team data={teamData} />
-        <Services />
-        <Gallery images={images?.gallery} />
-        <News />
-        <Contacts />
-      </Layout>
-    </>
+    <Layout>
+      <Hero images={images?.hero} />
+      <About />
+      <Why /> <Directions />
+      <Services />
+      <Team data={teamData} />
+      <Gallery images={images?.gallery} />
+      <News />
+      <Contacts />
+    </Layout>
   );
 };
 

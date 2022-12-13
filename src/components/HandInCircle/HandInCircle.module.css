@@ -2,7 +2,8 @@
   @apply relative flex items-center justify-center 
   rounded-[50%] border
    px-3 py-3 transition  duration-300 ease-in-out 
-   sm:h-10 sm:w-10 sm:px-[10px] sm:py-[10px];
+   sm:h-10 sm:w-10 sm:px-[10px] sm:py-[10px]
+   md:h-[48px]  md:w-[48px] xl:h-[72px]  xl:w-[72px];
 }
 
 .mobile {

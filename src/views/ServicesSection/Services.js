@@ -1,23 +1,16 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-// import Markdown from 'markdown-to-jsx';
-import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 import { Headings } from "components/Headings/Headings";
-import {
-  Autoplay,
-  EffectCoverflow,
-  Lazy,
-  Navigation,
-  Pagination,
-  Zoom,
-} from "swiper";
 import { ServicesCard } from "components/ServicesCard/ServicesCard";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import { EffectCoverflow, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Button } from "../../components/Button/Button";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
 
 export const Services = () => {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { allMarkdownRemark, phone } = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
         sort: { order: ASC, fields: frontmatter___service_range }
@@ -41,31 +34,29 @@ export const Services = () => {
           }
         }
       }
+      phone: markdownRemark(
+        frontmatter: { contacts_identifier: { eq: "contacts" } }
+      ) {
+        frontmatter {
+          phone_main
+        }
+      }
     }
   `);
-
+  const { phone_main } = phone.frontmatter;
   const { nodes } = allMarkdownRemark;
-
-  const { language } = useI18next();
   const { t } = useTranslation();
   const { services_title } = t("titles", {
     returnObjects: true,
   });
-  const { servicesBtn, servicesHideBtn } = t("button", {
+  const { contactUsBtn } = t("button", {
     returnObjects: true,
   });
+  const breakpoints = useBreakpoint();
 
-  const items =
-    nodes &&
-    nodes?.map(({ frontmatter }) => (
-      <ServicesCard data={frontmatter} key={frontmatter.en_service_title} />
-    ));
   return (
-    <section
-      className={` w-full overflow-hidden transition-all duration-[2500ms] ease-linear`}
-      id="services"
-    >
-      <div className="servicesContainer container">
+    <section id="services">
+      <div className="servicesContainer containerPaddingBottom container">
         <Headings type="h2" className="mb-20">
           {services_title}
         </Headings>
@@ -79,12 +70,17 @@ export const Services = () => {
           pagination={{ clickable: true }}
           slideToClickedSlide={true}
           effect="coverflow"
+          navigation={{
+            prevEl: ".services-prev",
+            nextEl: ".services-next",
+          }}
           coverflowEffect={{
             stretch: -120,
             depth: 250,
             modifier: 1,
             rotate: 0,
             slideShadows: false,
+
             pagination: {
               clickable: true,
             },
@@ -95,11 +91,11 @@ export const Services = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 1.3,
+              slidesPerView: "auto",
               spaceBetween: 0,
             },
             1280: {
-              slidesPerView: 2.5,
+              slidesPerView: "auto",
               spaceBetween: 0,
             },
           }}
@@ -112,7 +108,20 @@ export const Services = () => {
                 </div>
               </SwiperSlide>
             ))}
+          <button className="services-prev">
+            <BsArrowLeft size={breakpoints.sm ? 35 : 49} />
+          </button>
+          <button className="services-next">
+            <BsArrowRight size={breakpoints.sm ? 35 : 49} />
+          </button>
         </Swiper>
+        <Button
+          className="mx-auto mt-[92px]"
+          blue
+          phone={phone_main}
+          aria={contactUsBtn}
+          text={contactUsBtn}
+        />
       </div>
     </section>
   );

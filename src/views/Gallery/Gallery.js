@@ -12,8 +12,8 @@ export const Gallery = ({ images }) => {
   });
 
   return (
-    <section className="w-full py-5" id="gallery">
-      <div className={`container ${s.wrapper}`}>
+    <section id="gallery">
+      <div className={`containerPaddingBottom container ${s.wrapper}`}>
         <Headings className="sm:mb-24 md:mb-[100px]  xl:mb-[130px]" type="h2">
           {gallery_title}
         </Headings>

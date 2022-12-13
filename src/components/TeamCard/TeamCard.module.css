@@ -5,6 +5,7 @@
 .bgWrapper {
   @apply smOnly:pt-6 smOnly:pb-4 md:mb-10;
 }
+
 .wrapper {
   background: rgba(253, 253, 253, 0.8);
   border: 1px solid #ffffff;

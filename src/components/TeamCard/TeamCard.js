@@ -1,13 +1,16 @@
 import React from "react";
 import * as s from "./TeamCard.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { useI18next } from "gatsby-plugin-react-i18next";
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { CaruselCertificates } from "components/CaruselCertificates/CaruselCertificates";
-// import { SliderButton } from "components/SliderButton/SliderButton";
+import classnames from "classnames";
 
 export const TeamCard = ({ data, id }) => {
   const { language } = useI18next();
-
+  const { t } = useTranslation();
+  const { certificates } = t("team", {
+    returnObjects: true,
+  });
   return (
     <div className={s.bgWrapper}>
       <div className={s.wrapper}>
@@ -25,16 +28,13 @@ export const TeamCard = ({ data, id }) => {
             <p className={s.specification}>
               {data[`${language}_team_member_specialization`]}
             </p>
-            <p className={("innerScroll", s.experience)}>
+            <p className={classnames("innerScroll", s.experience)}>
               {data[`${language}_team_member_experience`]}
             </p>
           </div>
         </div>
         <div className={s.caruselWrapper}>
-          <p className={s.sertificates}>
-            {/* TODO langusge */}
-            {language === "uk" ? "Сартифікати:" : "Certificates:"}
-          </p>
+          <p className={s.sertificates}>{certificates}</p>
           {data?.cert_list?.length && (
             <div className={s.caruselNavigationWrapper}>
               <CaruselCertificates id={id} cerificates={data.cert_list} />
