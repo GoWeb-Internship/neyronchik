@@ -33,6 +33,7 @@
     "time": "from 9:00 till 17:00"
   },
   "servicesValues": {
+    "service_header": "Service",
     "time": "minutes",
     "currency": "uah"
   },
@@ -55,5 +56,6 @@
     "title": "Neyronchyky",
     "weAre": "Speech Therapy Centre",
     "rights": "All rights reserved."
-  }
+  },
+  "team": { "certificates": "Certificates:" }
 }

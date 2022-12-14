@@ -5,15 +5,19 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AnimateHeight from "react-animate-height";
+import { BsArrowDownShort, BsArrowUpShort } from "react-icons/bs";
 
 import { TeamCard } from "../../components/TeamCard/TeamCard";
 import * as s from "./Team.module.css";
 import classnames from "classnames";
+import { Button } from "../../components/Button/Button";
 
 export const Team = ({ data }) => {
-  const { language } = useI18next();
   const { t } = useTranslation();
   const { teamBtn, teamHideBtn } = t("button", {
+    returnObjects: true,
+  });
+  const { team_title } = t("titles", {
     returnObjects: true,
   });
 
@@ -27,12 +31,11 @@ export const Team = ({ data }) => {
 
   return (
     <section className="w-full " id="teamSection">
-      <div className=" container ">
+      <div className="containerPaddingBottom container">
         {breakpoints.sm && data.allMarkdownRemark.edges.length && (
           <div className="mobileCertificatesRrapper">
             <Headings type="h2" className={s.heading}>
-              {/* TODO lang */}
-              {language === "uk" ? " Наша команда" : "Our team"}
+              {team_title}
             </Headings>
             <Swiper
               modules={[Navigation]}
@@ -49,9 +52,9 @@ export const Team = ({ data }) => {
           </div>
         )}
         {breakpoints.notSm && (
-          <div className={classnames(s.teamBg)}>
+          <div className={s.teamBg}>
             <Headings type="h2" className={s.heading}>
-              {language === "uk" ? " Наша команда" : "Our team"}
+              {team_title}
             </Headings>
             {visibleTeam.map(({ node }) => (
               <TeamCard key={node.id} id={node.id} data={node.frontmatter} />
@@ -59,7 +62,7 @@ export const Team = ({ data }) => {
             {hiddenTeam && (
               <div>
                 <AnimateHeight
-                  id="example-panel"
+                  id="team-panel"
                   duration={700}
                   height={height}
                   aria-hidden="false"
@@ -73,15 +76,21 @@ export const Team = ({ data }) => {
                       />
                     ))}
                 </AnimateHeight>
-                <button
-                  className="h-10 w-48 bg-green-500"
-                  type="button"
+                <Button
+                  className="mx-auto"
+                  white
                   aria-expanded={height !== 0.1}
-                  aria-controls="example-panel"
+                  aria-controls="team-panel"
                   onClick={() => setHeight(height === 0.1 ? "auto" : 0.1)}
-                >
-                  {height === 0.1 ? `${teamBtn}` : `${teamHideBtn}`}
-                </button>
+                  icon={
+                    height === 0.1 ? (
+                      <BsArrowDownShort size={25} />
+                    ) : (
+                      <BsArrowUpShort size={25} />
+                    )
+                  }
+                  text={height === 0.1 ? `${teamBtn}` : `${teamHideBtn}`}
+                />
               </div>
             )}
           </div>

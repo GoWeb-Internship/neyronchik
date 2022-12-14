@@ -2,9 +2,7 @@
   @apply md:pb-[100px] xl:pb-[150px];
 }
 
-.header {
-  @apply md:mb-[60px] xl:mb-20;
-}
+
 .wrapper {
   @apply relative h-[302px] w-[320px];
 }
@@ -55,7 +53,8 @@
 }
 
 .centerCirlce {
-  box-shadow: inset -5px -4px 13px #dae9ef, inset 5px 4px 13px #dae9ef;
+  box-shadow: inset -5px -4px 13px rgb(218, 233, 239),
+    inset 5px 4px 13px #dae9ef;
 }
 .centerCirlceInner {
   box-shadow: -5px -4px 13px #dae9ef, 5px 4px 13px #dae9ef;

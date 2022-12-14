@@ -1,5 +1,6 @@
 .wrapper {
-  @apply relative bg-[url('../../../static/img/boy.svg'),_url("../../../static/img/boy-mirror.svg")] bg-[position:left_46px_top_250px,_right_46px_top_250px] 
+  @apply relative bg-[url('../../../static/img/boy.svg'),_url("../../../static/img/boy-mirror.svg")]
+   bg-[position:left_46px_top_250px,_right_46px_top_250px] 
 bg-no-repeat
 text-center sm:bg-[length:80px,_80px] 
  sm:bg-[position:left_0px_top_100px,_right_0px_top_100px] 
@@ -8,5 +9,5 @@ text-center sm:bg-[length:80px,_80px]
  xl:max-w-[1280px]
  xl:bg-[length:188px,_188px] 
  xl:bg-[position:left_14px_top_260px,_right_14px_top_260px] 
- xl:px-0  xl:pt-[150px];
+ xl:px-0;
 }

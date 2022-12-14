@@ -56,7 +56,11 @@ module.exports = {
         "insta-card": "rgba(253, 253, 253, 0.3)", // class="bg-insta-card"
         "directions-card": "rgba(250, 250, 250, 0.4)", // class="bg-directions-card"
       },
+      textShadow: {
+        small: "2px 1px 0px #171717",
+        medium: "2px 2px 0px #171717",
+      },
     },
+    plugins: ["gatsby-plugin-postcss"],
   },
-  plugins: ["gatsby-plugin-postcss"],
 };

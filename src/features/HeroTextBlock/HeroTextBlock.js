@@ -2,7 +2,14 @@ import React from "react";
 import { Headings } from "components";
 import { Button } from "../../components/Button/Button";
 import * as s from "./HeroTextBlock.module.css";
-export const HeroTextBlock = ({ phone = 103 }) => {
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
+
+export const HeroTextBlock = ({ phone }) => {
+  const { t } = useTranslation();
+  const { contactUsBtn } = t("button", {
+    returnObjects: true,
+  });
+
   return (
     <div className={s.wrapper}>
       <Headings className="sm:pb-1 md:pb-3" type="h1">
@@ -14,12 +21,7 @@ export const HeroTextBlock = ({ phone = 103 }) => {
         tempus elementum enim diam. Facilisis integer ut sed viverra facilisi
         molestie
       </p>
-      <Button
-        phone={phone}
-        // TODO language
-        aria={"call us"}
-        text={"Записатися на прийом"}
-      />
+      <Button phone={phone} red aria={contactUsBtn} text={contactUsBtn} />
     </div>
   );
 };

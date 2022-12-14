@@ -1,6 +1,5 @@
 import classnames from "classnames";
 import { CaruselHero } from "components/CaruselHero/CaruselHero";
-// import { SliderButton } from "components/SliderButton/SliderButton";
 import { graphql, useStaticQuery } from "gatsby";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import React, { useEffect, useState } from "react";
@@ -13,9 +12,10 @@ import {
 
 export const Hero = ({ images }) => {
   const breakpoints = useBreakpoint();
+
   const { markdownRemark } = useStaticQuery(
     graphql`
-      query Hero {
+      query Phone {
         markdownRemark(
           frontmatter: { contacts_identifier: { eq: "contacts" } }
         ) {
@@ -54,21 +54,21 @@ export const Hero = ({ images }) => {
 
   return (
     <section id="hero">
-      <div className={classnames("container", s.heroContainer)}>
+      <div
+        className={classnames(
+          "containerPaddingBottom container ",
+          s.heroContainer
+        )}
+      >
         {imagesSet && (
           <>
             <CaruselHero images={imagesSet} />
-
-            {breakpoints.xl && (
-              <button className="prevHero">
-                <MdOutlineArrowBackIosNew size={40} />
-              </button>
-            )}
-            {breakpoints.xl && (
-              <button className="nextHero">
-                <MdOutlineArrowForwardIos size={40} />
-              </button>
-            )}
+            <button className="prevHero">
+              <MdOutlineArrowBackIosNew size={40} />
+            </button>{" "}
+            <button className="nextHero">
+              <MdOutlineArrowForwardIos size={40} />
+            </button>
           </>
         )}
 
