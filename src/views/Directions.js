@@ -1,5 +1,8 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 
@@ -56,7 +59,10 @@ export const Directions = () => {
           speed={500}
           centeredSlides={true}
           slideToClickedSlide={true}
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: "#swiper-button-my-prev",
+            nextEl: "#swiper-button-my-next",
+          }}
         >
           {nodes &&
             nodes?.map(({ frontmatter }) => (
@@ -69,6 +75,20 @@ export const Directions = () => {
                 </div>
               </SwiperSlide>
             ))}
+          <div className="mt-10 flex w-[320px] flex-row justify-between px-[100px]">
+            <div
+              id="swiper-button-my-prev"
+              className="flex h-8 w-10 cursor-pointer items-center justify-center"
+            >
+              <BsArrowLeft size={35} className="text-[#0EA5E9]" />
+            </div>
+            <div
+              id="swiper-button-my-next"
+              className="flex h-8 w-10 cursor-pointer items-center justify-center"
+            >
+              <BsArrowRight size={35} className="text-[#0EA5E9]" />
+            </div>
+          </div>
         </Swiper>
       </div>
     </section>
