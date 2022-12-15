@@ -49,7 +49,7 @@ export const Services = () => {
   const { services_title } = t("titles", {
     returnObjects: true,
   });
-  const { contactUsBtn } = t("button", {
+  const { contactUsBtn, prevSlide, nextSlide } = t("button", {
     returnObjects: true,
   });
   const breakpoints = useBreakpoint();
@@ -108,10 +108,18 @@ export const Services = () => {
                 </div>
               </SwiperSlide>
             ))}
-          <button className="services-prev">
+          <button
+            type="button"
+            aria-label={prevSlide}
+            className="services-prev"
+          >
             <BsArrowLeft size={breakpoints.sm ? 35 : 49} />
           </button>
-          <button className="services-next">
+          <button
+            type="button"
+            aria-label={nextSlide}
+            className="services-next"
+          >
             <BsArrowRight size={breakpoints.sm ? 35 : 49} />
           </button>
         </Swiper>

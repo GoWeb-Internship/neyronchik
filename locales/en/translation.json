@@ -19,6 +19,10 @@
     "contacts_title": "Contacts"
   },
   "button": {
+    "closeModal": "Close modal window",
+    "nextSlide": "Next slide",
+    "prevSlide": "Previous slide",
+    "closeBanner": "Close banner",
     "contactUsBtn": "Make an appointment",
     "servicesBtn": "See all services",
     "servicesHideBtn": "Hide",

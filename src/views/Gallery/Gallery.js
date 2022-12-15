@@ -13,7 +13,7 @@ export const Gallery = ({ images }) => {
 
   return (
     <section id="gallery">
-      <div className={`containerPaddingBottom container ${s.wrapper}`}>
+      <div className={`containerPaddingBottom  ${s.wrapper}`}>
         <Headings className="sm:mb-24 md:mb-[100px]  xl:mb-[130px]" type="h2">
           {gallery_title}
         </Headings>

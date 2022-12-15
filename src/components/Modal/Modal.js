@@ -1,5 +1,6 @@
 import React from "react";
 import ReactModal from "react-modal";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import { GatsbyImage } from "gatsby-plugin-image";
 import * as s from "./Modal.module.css";
@@ -10,6 +11,10 @@ export const Modal = ({
   isModalOpen = false,
   handleCloseModal = {},
 }) => {
+  const { t } = useTranslation();
+  const { closeModal } = t("button", {
+    returnObjects: true,
+  });
   return (
     <ReactModal
       isOpen={isModalOpen}
@@ -35,6 +40,7 @@ export const Modal = ({
         type="button"
         className={s.closeButton}
         onClick={handleCloseModal}
+        aria-label={closeModal}
       >
         X
       </button>
