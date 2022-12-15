@@ -1,6 +1,6 @@
 import React from "react";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
-import { Headings } from "src/components/Headings/Headings";
+import { Heading } from "src/components/Heading/Heading";
 import { CaruselGallery } from "components/CaruselGallery/CaruselGallery";
 import * as s from "./Gallery.module.css";
 
@@ -14,9 +14,9 @@ export const Gallery = ({ images }) => {
   return (
     <section id="gallery">
       <div className={`containerPaddingBottom  ${s.wrapper}`}>
-        <Headings className="sm:mb-24 md:mb-[100px]  xl:mb-[130px]" type="h2">
+        <Heading className="sm:mb-24 md:mb-[100px]  xl:mb-[130px]" type="h2">
           {gallery_title}
-        </Headings>
+        </Heading>
 
         <CaruselGallery images={images.edges} />
       </div>

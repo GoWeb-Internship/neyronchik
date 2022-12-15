@@ -1,5 +1,5 @@
 import React from "react";
-import { Headings } from "components";
+import { Heading } from "components";
 import { Button } from "../../components/Button/Button";
 import * as s from "./HeroTextBlock.module.css";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
@@ -12,9 +12,9 @@ export const HeroTextBlock = ({ phone }) => {
 
   return (
     <div className={s.wrapper}>
-      <Headings className="sm:pb-1 md:pb-3" type="h1">
+      <Heading className="sm:pb-1 md:pb-3" type="h1">
         НЕЙРОНЧИКИ
-      </Headings>
+      </Heading>
       <p className={s.subtitle}>Логопедичний центр</p>
       <p className={s.text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed

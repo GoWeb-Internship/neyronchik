@@ -1,12 +1,11 @@
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import {
-  FaTelegramPlane,
-  FaWhatsapp,
   FaFacebookF,
   FaInstagram,
+  FaTelegramPlane,
+  FaWhatsapp,
 } from "react-icons/fa";
-import { useTranslation } from "gatsby-plugin-react-i18next";
-// import { Headings } from "../Headings/Headings";
 import * as s from "./Contact.module.css";
 
 export const Contact = ({

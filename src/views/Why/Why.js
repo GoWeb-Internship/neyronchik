@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { Headings } from "components/Headings/Headings";
+import { Heading } from "components/Heading/Heading";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import React from "react";
 import * as s from "./Why.module.css";
@@ -20,7 +20,7 @@ export const Why = () => {
   return (
     <section id="why">
       <div className={"containerPaddingBottom container"}>
-        <Headings className={s.header}>{whyUs_title}</Headings>
+        <Heading className={s.header}>{whyUs_title}</Heading>
         {breakpoints.notSm && <WhyOther />}
         {breakpoints.sm && <WhyMobile />}
       </div>

@@ -1,4 +1,4 @@
 export { Grid } from "./Grid/Grid";
-export { Headings } from "./Headings/Headings";
+export { Heading } from "./Heading/Heading";
 export { Contact } from "./Contact/Contact";
 export { Map } from "./Map/Map";

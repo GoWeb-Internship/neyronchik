@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 import { useTranslation } from "gatsby-plugin-react-i18next";
-import { Headings } from "src/components/Headings/Headings";
+import { Heading } from "src/components/Heading/Heading";
 
 import { WorkDirectionsCard } from "../components/WorkDirectionsCard/WorkDirectionsCard";
 
@@ -47,9 +47,9 @@ export const Directions = () => {
   return (
     <section className="w-full py-10" id="directions">
       <div className="workDirectionsContainer container">
-        <Headings className="mb-10" type="h2">
+        <Heading className="mb-10" type="h2">
           {work_title}:
-        </Headings>
+        </Heading>
 
         <Swiper
           modules={[Navigation, Pagination, EffectCoverflow]}
