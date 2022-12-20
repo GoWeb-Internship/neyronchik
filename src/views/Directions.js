@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { Tab } from "@headlessui/react";
 
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
@@ -7,6 +8,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next";
 import { Headings } from "src/components/Headings/Headings";
 
 import { WorkDirectionsCard } from "../components/WorkDirectionsCard/WorkDirectionsCard";
+import { Tabs } from "../components/Tabs/Tabs";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper";
@@ -42,7 +44,7 @@ export const Directions = () => {
     }
   `);
   const { nodes } = allMarkdownRemark;
-  console.log(nodes);
+  // console.log(nodes);
 
   return (
     <section className="w-full py-10" id="directions">
@@ -52,6 +54,7 @@ export const Directions = () => {
         </Headings>
 
         <Swiper
+          className="hidden smOnly:block"
           modules={[Navigation, Pagination, EffectCoverflow]}
           spaceBetween={50}
           slidesPerView={1}
@@ -90,6 +93,8 @@ export const Directions = () => {
             </div>
           </div>
         </Swiper>
+
+        <Tabs list={nodes} />
       </div>
     </section>
   );

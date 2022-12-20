@@ -16,7 +16,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 export const CaruselGallery = ({ images }) => {
   const { language } = useI18next();
-  console.log(images);
+  // console.log(images);
   const settings = {
     modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
     loop: true,
