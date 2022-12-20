@@ -3,6 +3,8 @@ import { Tab } from "@headlessui/react";
 
 import { WorkDirectionsCard } from "../WorkDirectionsCard/WorkDirectionsCard";
 
+import { textShadow } from "./Tabs.module.css";
+
 export const Tabs = ({ list }) => {
   console.log(list);
 
@@ -18,7 +20,9 @@ export const Tabs = ({ list }) => {
             return (
               <Tab as="li" key={index}>
                 {({ selected }) => (
-                  <div>
+                  <div
+                    className={`font-adigiana text-[28px] font-normal leading-[100%] text-[#FAFAFA] ${textShadow}`}
+                  >
                     <p
                       className={
                         selected
