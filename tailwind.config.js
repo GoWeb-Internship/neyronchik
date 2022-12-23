@@ -43,6 +43,8 @@ module.exports = {
           "0px 25px 50px -12px rgba(0, 0, 0, 0.15), inset -5px -4px 13px #DAE9EF, inset 5px 4px 13px #DAE9EF", // class="shadow-insta-card"
         "directions-card":
           "0px 25px 50px -12px rgba(11, 87, 121, 0.2), inset -5px -4px 25px rgba(255, 255, 255, 0.5), inset 5px 4px 25px rgba(255, 255, 255, 0.5)", // class="shadow-directions-card"
+        "tab-selected":
+          "0px 0px 19px 5px rgba(52, 101, 123, 0.15), inset -20px -20px 40px rgba(255, 255, 255, 0.2), inset 20px 20px 40px rgba(255, 255, 255, 0.2)", // class="shadow-tab-selected"
       },
       // TEXT COLORS
       textColor: {

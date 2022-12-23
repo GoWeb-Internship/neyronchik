@@ -1,6 +1,5 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { Tab } from "@headlessui/react";
 
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 

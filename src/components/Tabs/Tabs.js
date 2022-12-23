@@ -12,26 +12,29 @@ export const Tabs = ({ list }) => {
     <Tab.Group
       as="div"
       vertical
-      className="flex flex-row-reverse justify-end smOnly:hidden"
+      className="flex flex-row-reverse justify-end px-3 smOnly:hidden"
     >
       <Tab.List as="ul" className="pt-5">
         {list &&
           list.map(({ frontmatter }, index) => {
             return (
-              <Tab as="li" key={index}>
+              <Tab
+                as="li"
+                key={index}
+                className="h-84[px] relative flex w-[232px] cursor-pointer items-center justify-center focus:outline-none"
+              >
                 {({ selected }) => (
                   <div
-                    className={`font-adigiana text-[28px] font-normal leading-[100%] text-[#FAFAFA] ${textShadow}`}
+                    className={`flex items-center justify-center overflow-hidden rounded-[10px] font-adigiana text-[28px] font-normal leading-[100%] text-[#FAFAFA] ${textShadow} h-[84px] w-[216px]  bg-[#0EA5E9] shadow-directions-card`}
                   >
-                    <p
+                    <p className="z-10">{frontmatter.en_work_specialist}</p>
+                    <div
                       className={
                         selected
-                          ? `h-[84px] w-[216px] bg-slate-500`
-                          : `h-[84px] w-[216px] cursor-pointer bg-red-400 text-center`
+                          ? `shadow-tab-selected absolute h-[60px] w-[232px] rounded-[10px]  border border-solid border-[#FAFAFA] bg-directions-card backdrop-blur-[8px]`
+                          : `absolute h-[60px] w-[232px] bg-directions-card opacity-0`
                       }
-                    >
-                      {frontmatter.en_work_specialist}
-                    </p>
+                    ></div>
                   </div>
                 )}
               </Tab>
@@ -42,7 +45,7 @@ export const Tabs = ({ list }) => {
         {list &&
           list.map(({ frontmatter }, index) => {
             return (
-              <Tab.Panel as="div" key={index}>
+              <Tab.Panel as="div" key={index} className="mr-6">
                 <WorkDirectionsCard frontmatter={frontmatter} />
               </Tab.Panel>
             );

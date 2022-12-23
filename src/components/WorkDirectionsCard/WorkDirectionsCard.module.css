@@ -5,6 +5,15 @@
   background-size: 319px 360px;
 }
 
+@media screen and (min-width: 768px) {
+  .cardBg {
+    background-image: url("../../img/directions/directions-card-bg-tablet@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 473px 320px;
+  }
+}
+
 .textShadow {
   text-shadow: 2px 2px 0px #000000;
 }
