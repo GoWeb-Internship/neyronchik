@@ -25,6 +25,9 @@ export const Banner = () => {
   const { promo_title } = t("titles", {
     returnObjects: true,
   });
+  const { closeBanner } = t("button", {
+    returnObjects: true,
+  });
 
   const { markdownRemark } = useStaticQuery(
     graphql`
@@ -56,6 +59,7 @@ export const Banner = () => {
             {promo_title} {frontmatter[`${language}_promo_body`]}
           </p>
           <button
+            aria-label={closeBanner}
             className="absolute top-3 right-[83px] flex h-5 w-5 items-center justify-center"
             onClick={handleClick}
           >

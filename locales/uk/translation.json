@@ -19,6 +19,10 @@
     "contacts_title": "Контакти"
   },
   "button": {
+    "closeModal": "Закрити модальне вікно",
+    "nextSlide": "Наступний слайд",
+    "prevSlide": "Попередній слайд",
+    "closeBanner": "Закрити баннер",
     "contactUsBtn": "Записатися на прийом",
     "servicesBtn": "Усі послуги",
     "servicesHideBtn": "Згорнути",

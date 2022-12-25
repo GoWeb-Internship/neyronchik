@@ -1,12 +1,11 @@
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import React from "react";
 import {
-  FaTelegramPlane,
-  FaWhatsapp,
   FaFacebookF,
   FaInstagram,
+  FaTelegramPlane,
+  FaWhatsapp,
 } from "react-icons/fa";
-import { useTranslation } from "gatsby-plugin-react-i18next";
-// import { Headings } from "../Headings/Headings";
 import * as s from "./Contact.module.css";
 
 export const Contact = ({
@@ -36,7 +35,11 @@ export const Contact = ({
         <h3 className={s.title}>{contactUs}</h3>
         <address className={s.contactContainer}>
           <div className={s.detailsWrapper}>
-            <a href={`tel:${phone_main}`} className="block sm:mb-3 md:mb-4">
+            <a
+              rel="noopener noreferrer nofollow"
+              href={`tel:${phone_main}`}
+              className="block sm:mb-3 md:mb-4"
+            >
               {phone_main}
             </a>
             {phone_add && (
@@ -55,12 +58,20 @@ export const Contact = ({
                 className={s.item}
                 // className="mr-3 flex h-8 w-8 items-center justify-center rounded border border-neutral-900 hover:cursor-pointer"
               >
-                <a href="https://web.telegram.org/">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href="https://web.telegram.org/"
+                >
                   <FaTelegramPlane />
                 </a>
               </li>
               <li className={s.item}>
-                <a href="https://www.whatsapp.com/">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href="https://www.whatsapp.com/"
+                >
                   <FaWhatsapp />
                 </a>
               </li>
@@ -68,12 +79,20 @@ export const Contact = ({
             <h3 className="mb-3 md:mb-4">{socials}</h3>
             <ul className={s.socialList}>
               <li className={s.item}>
-                <a href="https://www.facebook.com/">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href="https://www.facebook.com/"
+                >
                   <FaFacebookF />
                 </a>
               </li>
               <li className={s.item}>
-                <a href="https://instagram.com">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  href="https://instagram.com"
+                >
                   <FaInstagram />
                 </a>
               </li>

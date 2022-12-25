@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import { Headings } from "components/Headings/Headings";
+import { Heading } from "components/Heading/Heading";
 import { ServicesCard } from "components/ServicesCard/ServicesCard";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { EffectCoverflow, Navigation, Pagination } from "swiper";
@@ -49,7 +49,7 @@ export const Services = () => {
   const { services_title } = t("titles", {
     returnObjects: true,
   });
-  const { contactUsBtn } = t("button", {
+  const { contactUsBtn, prevSlide, nextSlide } = t("button", {
     returnObjects: true,
   });
   const breakpoints = useBreakpoint();
@@ -57,9 +57,9 @@ export const Services = () => {
   return (
     <section id="services">
       <div className="servicesContainer containerPaddingBottom container">
-        <Headings type="h2" className="mb-20">
+        <Heading type="h2" className="mb-20">
           {services_title}
-        </Headings>
+        </Heading>
 
         <Swiper
           modules={[Navigation, Pagination, EffectCoverflow]}
@@ -108,10 +108,18 @@ export const Services = () => {
                 </div>
               </SwiperSlide>
             ))}
-          <button className="services-prev">
+          <button
+            type="button"
+            aria-label={prevSlide}
+            className="services-prev"
+          >
             <BsArrowLeft size={breakpoints.sm ? 35 : 49} />
           </button>
-          <button className="services-next">
+          <button
+            type="button"
+            aria-label={nextSlide}
+            className="services-next"
+          >
             <BsArrowRight size={breakpoints.sm ? 35 : 49} />
           </button>
         </Swiper>

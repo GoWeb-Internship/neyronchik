@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import { h1, h2, h3 } from "./Headings.module.css";
+import { h1, h2, h3, textShadow } from "./Heading.module.css";
 
-export const Headings = ({ children, type = "h2", className, ...props }) => {
+export const Heading = ({ children, type = "h2", className, ...props }) => {
   switch (type) {
     case "h1":
       return (
@@ -12,7 +12,7 @@ export const Headings = ({ children, type = "h2", className, ...props }) => {
       );
     case "h2":
       return (
-        <h2 className={classNames(h2, className)} {...props}>
+        <h2 className={classNames(h2, textShadow, className)} {...props}>
           {children}
         </h2>
       );

@@ -47,10 +47,13 @@ h2 {
 
 /* ======== swiper gallery styles ======== */
 .gallerySwiper {
-  @apply items-center sm:h-[206px]  md:h-[412px] md:w-[728px] md:max-w-[728px] xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
+  @apply items-center sm:h-[206px]  md:h-[412px]   xl:h-[436px] xl:w-[1280px] xl:min-w-[1280px];
 }
 .wrapperGallery .swiper-pagination {
   @apply bottom-0;
+}
+.wrapperGallery .swiper-slide {
+  @apply sm:w-[256px] md:w-[544px];
 }
 
 .wrapperGallery .swiper-pagination-bullet {

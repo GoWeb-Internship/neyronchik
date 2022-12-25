@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Headings } from "src/components/Headings/Headings";
+import { Heading } from "src/components/Heading/Heading";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import { Navigation } from "swiper";
@@ -34,9 +34,9 @@ export const Team = ({ data }) => {
       <div className="containerPaddingBottom container">
         {breakpoints.sm && data.allMarkdownRemark.edges.length && (
           <div className="mobileCertificatesRrapper">
-            <Headings type="h2" className={s.heading}>
+            <Heading type="h2" className={s.heading}>
               {team_title}
-            </Headings>
+            </Heading>
             <Swiper
               modules={[Navigation]}
               spaceBetween={20}
@@ -53,9 +53,9 @@ export const Team = ({ data }) => {
         )}
         {breakpoints.notSm && (
           <div className={s.teamBg}>
-            <Headings type="h2" className={s.heading}>
+            <Heading type="h2" className={s.heading}>
               {team_title}
-            </Headings>
+            </Heading>
             {visibleTeam.map(({ node }) => (
               <TeamCard key={node.id} id={node.id} data={node.frontmatter} />
             ))}

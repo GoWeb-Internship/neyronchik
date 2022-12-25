@@ -1,5 +1,6 @@
 .slideGallery {
-  @apply flex truncate  rounded-[30px] blur-[2px] sm:h-[168px] md:h-[360px];
+  @apply mx-auto flex justify-center truncate rounded-[30px] blur-[2px] sm:h-[168px] sm:w-[256px]
+   md:h-[360px] md:w-[544px];
 }
 .slideGalleryActive {
   @apply blur-0;

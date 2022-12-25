@@ -1,12 +1,12 @@
 import { useI18next } from "gatsby-plugin-react-i18next";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Lazy, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { SliderButton } from "components/SliderButton/SliderButton";
 
 import { Modal } from "components/Modal/Modal";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 export const CaruselCertificates = ({ cerificates, id = "" }) => {
   const { language } = useI18next();
@@ -14,12 +14,17 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
   const [modalImage, setModalImage] = useState(null);
   const [modalImageAlt, setModalImageAlt] = useState(null);
 
+  const { t } = useTranslation();
+  const { nextSlide } = t("button", {
+    returnObjects: true,
+  });
+
   const handleOpenModal = (image, alt) => {
     setModalImage(image);
     setModalImageAlt(alt);
     setIsModalOpen(true);
   };
-  // console.log(cerificates);
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -33,14 +38,11 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
     spaceBetween: 24,
     height: 108,
     breakpoints: {
-      // when window width is >= 320px
-
-      // when window width is >= 480px
       768: {
         slidesPerView: "auto",
         spaceBetween: 24,
       },
-      // when window width is >= 640px
+
       1280: {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -82,8 +84,7 @@ export const CaruselCertificates = ({ cerificates, id = "" }) => {
       />
       <button
         type="button"
-        // TODO language !!!
-        aria-label={language === "en" ? "next slide" : "наступний слайд"}
+        aria-label={nextSlide}
         className={`buttonNextCertificate id-${id}`}
       >
         <MdOutlineArrowForwardIos size={13} />

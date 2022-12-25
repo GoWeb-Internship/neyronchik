@@ -2,12 +2,14 @@ import classnames from "classnames";
 import { CaruselHero } from "components/CaruselHero/CaruselHero";
 import { graphql, useStaticQuery } from "gatsby";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import React, { useEffect, useState } from "react";
 import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
 import * as s from "./Hero.module.css";
+
 import {
-  MdOutlineArrowForwardIos,
   MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
 } from "react-icons/md";
 
 export const Hero = ({ images }) => {
@@ -30,6 +32,10 @@ export const Hero = ({ images }) => {
   const { frontmatter } = markdownRemark;
 
   const [imagesSet, setImagesSet] = useState(null);
+  const { t } = useTranslation();
+  const { nextSlide, prevSlide } = t("button", {
+    returnObjects: true,
+  });
 
   useEffect(() => {
     breakpoints.sm &&
@@ -63,10 +69,10 @@ export const Hero = ({ images }) => {
         {imagesSet && (
           <>
             <CaruselHero images={imagesSet} />
-            <button className="prevHero">
+            <button type="button" aria-label={prevSlide} className="prevHero">
               <MdOutlineArrowBackIosNew size={40} />
-            </button>{" "}
-            <button className="nextHero">
+            </button>
+            <button type="button" aria-label={nextSlide} className="nextHero">
               <MdOutlineArrowForwardIos size={40} />
             </button>
           </>

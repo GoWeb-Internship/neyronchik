@@ -1,16 +1,9 @@
-import React from "react";
+import { useJsApiLoader } from "@react-google-maps/api";
 import { graphql, useStaticQuery } from "gatsby";
 import { useI18next, useTranslation } from "gatsby-plugin-react-i18next";
-import { useJsApiLoader } from "@react-google-maps/api";
-// import {
-//   FaTelegramPlane,
-//   FaWhatsapp,
-//   FaFacebookF,
-//   FaInstagram,
-// } from "react-icons/fa";
-// import { Grid } from "src/components";
-// import { HeroTextBlock } from "src/features/HeroTextBlock/HeroTextBlock";
-import { Headings } from "src/components/Headings/Headings";
+import React from "react";
+
+import { Heading } from "src/components/Heading/Heading";
 import { Contact, Map } from "../../components";
 import * as s from "./Contacts.module.css";
 
@@ -61,9 +54,9 @@ export const Contacts = () => {
 
   return (
     <section className={s.section} id="contacts">
-      <Headings type="h2" className={s.sectionTitle}>
+      <Heading type="h2" className={s.sectionTitle}>
         {contacts_title}
-      </Headings>
+      </Heading>
 
       <div
         className={s.wrapper}

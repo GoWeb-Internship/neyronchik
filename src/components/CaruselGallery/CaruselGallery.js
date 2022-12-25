@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useI18next } from "gatsby-plugin-react-i18next";
+import React from "react";
 import {
   Autoplay,
   EffectCoverflow,
@@ -7,22 +8,20 @@ import {
   Pagination,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useI18next } from "gatsby-plugin-react-i18next";
 
-import * as s from "./CaruselGallery.module.css";
 import classNames from "classnames";
+import * as s from "./CaruselGallery.module.css";
 
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export const CaruselGallery = ({ images }) => {
   const { language } = useI18next();
-  console.log(images);
   const settings = {
     modules: [Navigation, EffectCoverflow, Pagination, Lazy, Autoplay],
     loop: true,
     lazy: true,
     speed: 300,
-    slidesPerView: 1.2,
+    slidesPerView: "auto",
     className: "gallerySwiper",
     centeredSlides: true,
     pagination: { clickable: true },
@@ -32,20 +31,6 @@ export const CaruselGallery = ({ images }) => {
       scale: 0.95,
       rotate: 0,
       slideShadows: false,
-      pagination: {
-        clickable: true,
-      },
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1.35,
-        spaceBetween: 0,
-      },
-
-      1280: {
-        slidesPerView: 1.6,
-        spaceBetween: 0,
-      },
     },
   };
 
